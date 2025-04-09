@@ -1,0 +1,58 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- MENTORS -->
+<section class="section">
+    <section class="mentors-section" id="mentors">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <h1>Наши менторы</h1>
+            </div>
+        </div>
+
+        {% if mentors %}
+            <ul class="mentor-list">
+                {% for mentor in mentors %}
+                    <li class="mentor-item">
+                        <img src="{% if mentor.photo %}{{ mentor.photo.url }}{% endif %}" alt="Mentor Photo">
+                        <h2>{{ mentor.full_name }}</h2>
+                        <p>{{ mentor.position }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="no-mentors-message">
+                <p>На данный момент менторов нет.</p>
+            </div>
+        {% endif %}
+        
+    </section>
+</section>
+
+<!-- CONTACTS -->
+<section class="section">
+    <div class="contacts" id="contact-us">
+        <div class="contacts-content">
+            <div class="contacts-details">
+                <h2>Будьте в курсе всех новостей</h2>
+                <p>Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами</p>
+                <div class="social-links">
+                    <a href="#">
+                        <img src="{% static 'images/email-link.png' %}" alt="Email Icon">
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/tg-link.png' %}" alt="Telegram Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="qr-code">
+                <img src="{% static 'images/qr-code.png' %}" alt="QR Code">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

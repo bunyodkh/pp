@@ -1,0 +1,161 @@
+{% extends 'layouts/base.html' %}
+
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- ABOUT THE EVENT -->
+<section class="section"> 
+    <div class="event-section">
+        <div class="event-image">
+            <div class="image-gradient"></div>
+            <img src="{% static 'images/event-image.png'%}" alt="Event Image">
+        </div>
+        
+        <div class="event-details">
+            <h1 class="event-title">Students Cup <span class="event-spot">2025</span></h1>
+            <div class="event-desctiption"> <!-- see about-text class in css -->
+                <p>— Это студенческий хакатон, где участники в командах создают решения за ограниченное время.</p>
+                <p>Это шанс прокачать навыки, поработать с кейсами и побороться за призы!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- REGISTRATION TO THE EVENT -->
+<section class="section">
+    <section class="mentor-add-section">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <section class="mentor-add-content">
+            {% if success %}
+                <div class="">Success. Your application is received</div>
+            {% else %}
+                <div class="form-container">
+                    <form class="mentor-add-form" method="POST" enctype="multipart/form-data" action="{{ event.get_absolute_url }}">
+                        {% csrf_token %}
+                        
+                        {% if event %}
+                            <input type="hidden" name="event_number" value="{{ event.event_number }}">
+                        {% endif %}
+
+                        <div class="input-group">
+                            <div class="form-group">
+                                <label for="id_full_name">{{ form.full_name.label }}*</label>
+                                {% if form.full_name.errors %}
+                                    {{ form.full_name|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.full_name.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.full_name }}
+                                {% endif %}         
+                            </div>  
+
+                            <div class="form-group">
+                                <label for="id_institution">{{ form.institution.label }}*</label>
+                                {% if form.institution.errors %}
+                                    {{ form.institution|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.institution.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.institution }}
+                                {% endif %}         
+                            </div>  
+                    
+                            <div class="form-group">
+                                <label for="id_tg">{{ form.tg.label }}*</label>
+                                {% if form.tg.errors %}
+                                    {{ form.tg|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.tg.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.tg }}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_email">{{ form.email.label }}*</label>
+                                {% if form.email.errors %}
+                                    {{ form.email|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.email.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.email }}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_project">{{ form.project.label }}*</label>
+                                {% if form.project.errors %}
+                                    {{ form.project|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.project.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.project }}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_role">{{ form.role.label }}*</label>
+                                {% if form.role.errors %}
+                                    {{ form.role|add_class:"error-input" }}
+                                    <p class="input-error-message">{{ form.role.errors.0 }}</p>
+                                {% else %}
+                                    {{ form.role }}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_link">{{ form.link.label }}</label>
+                            {% if form.link.errors %}
+                                {{ form.link|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.link.errors.0 }}</p>
+                            {% else %}
+                                {{ form.link }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_description">{{ form.description.label }}</label>
+                            {{ form.description|add_class:"form-textarea" }}
+                        </div>
+                        <button type="submit" class="mentor-add-button">Отправить заявку</button>
+                    </form>
+                </div>
+            {% endif %}
+        </section>  
+    </section>
+</section>
+
+<!-- CONTACTS -->
+<section class="section">
+    <div class="contacts" id="contact-us">
+        <div class="contacts-content">
+            <div class="contacts-details">
+                <h2>Будьте в курсе всех новостей</h2>
+                <p>Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами</p>
+                <div class="social-links">
+                    <a href="#">
+                        <img src="{% static 'images/email-link.png' %}" alt="Email Icon">
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/tg-link.png' %}" alt="Telegram Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="qr-code">
+                <img src="{% static 'images/qr-code.png' %}" alt="QR Code">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

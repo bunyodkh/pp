@@ -1,0 +1,1183 @@
+@font-face {
+    font-family: 'TT Travels';
+    src: url(./fonts/TTTravels-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'TT Travels Bold';
+    src: url(./fonts/TTTravels-Bold.woff) format('woff');
+}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  
+  * {
+      box-sizing: border-box;
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+    margin: 0;
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+    display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /* Grouping content
+     ========================================================================== */
+  
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /* Text-level semantics
+     ========================================================================== */
+  
+  /**
+   * Remove the gray background on active links in IE 10.
+   */
+  
+  a {
+    background-color: transparent;
+  }
+  
+  /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /**
+   * Add the correct font size in all browsers.
+   */
+  
+  small {
+    font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  /* Embedded content
+     ========================================================================== */
+  
+  /**
+   * Remove the border on images inside links in IE 10.
+   */
+  
+  img {
+    border-style: none;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  /**
+   * Correct the padding in Firefox.
+   */
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+  
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+  
+  /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+  
+  progress {
+    vertical-align: baseline;
+  }
+  
+  /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+  
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+  
+  /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+  
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+  
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+  /* Interactive
+     ========================================================================== */
+  
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+    display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+    display: list-item;
+  }
+  
+  /* Misc
+     ========================================================================== */
+  
+  /**
+   * Add the correct display in IE 10+.
+   */
+  
+  template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+    display: none;
+  }
+
+
+:root {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 16px;
+    --main-color: #ffffff;
+    --secondary-color: #000000;
+    --spot-color: #ff6701;
+    --bg-color: rgb(246, 246, 246);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+
+.section {
+    width: 100%;
+    background-color: var(--main-color);
+    color: var(--secondary-color)
+}
+
+.section-dark {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+
+.menu-item > a {
+    font-family: 'TT Travels', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.menu-item > a:hover {
+    color: var(--spot-color);
+}
+
+
+.lang-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--bg-color);
+    border-radius: 1.1rem;
+}
+
+.lang-item > a {
+    font-family: inherit, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.lang-item-selected > a {
+    color: var(--spot-color);
+}
+
+
+/* Event block */
+.event-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    max-width: 1632px;
+    margin: 0 auto;
+    padding: 4.5rem 0;
+    min-height: 50rem;
+}
+
+.event-details,
+.event-image {
+    position: relative;
+    max-width: 49%;
+}
+
+.event-image {
+    overflow: hidden;
+    position: relative;
+    background-color: #fff; 
+}
+
+.event-image > img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 5rem;
+}
+
+
+.event-title {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.event-spot {
+    display: inline-block;
+    color: var(--spot-color);
+}
+
+
+/* COUNTDOWN TIMER */
+.event-timer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'TT Travels Bold', sans-serif;
+}
+
+.event-timer > p {
+    font-size: 4.2rem;
+}
+
+.timer-item {
+    width: 30%;
+    border-radius: 1rem;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.timer-item > p {
+    margin: 0;
+    
+}
+
+.timer-item > p:first-child {
+    font-size: 4.2rem;
+    padding: 1rem;
+}
+
+
+.timer-item > p:last-child {
+    font-family: inherit,sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #8298ab;
+    padding-bottom: 1rem;
+}
+
+
+.btn {
+    position: relative;
+    text-align: center;
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 3rem;
+    color: var(--main-color);   
+    padding: 2rem 3rem;
+    border-radius: 4rem;
+    background-color: var(--spot-color);
+    border: none;
+    cursor: pointer;
+}
+
+
+.register-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.submit-btn {
+    width: fit-content;
+    align-self: center;
+}
+
+.link-btn {
+    text-align: left;
+    margin-top: 3rem;
+    display: block;
+    border-radius: 2rem;
+    width: 110%;
+}
+
+.link-btn > img {
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+}
+
+
+
+/* About section */
+.about-section {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0;
+}
+
+
+.about-heading-text {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-weight: 600;
+    font-size: 6rem;
+    margin: 0;
+} 
+
+.about-details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+}
+
+.about-image, 
+.about-text {
+    max-width: 48%;
+}
+
+.about-image > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-text > p{
+    font-size: 2.5rem;
+}
+
+.about-text > p:last-child {
+    padding-top: 2rem;
+}
+
+
+/* Event sections */
+.events-section {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 4.5rem 0;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0 0rem 0;
+}
+
+.event-item {
+    width: 48%;
+    position: relative;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 3rem;
+}
+
+.event-item > img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 3rem;
+}
+
+.event-item > h2 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    color: var(--main-color);
+
+    position: absolute;
+    bottom: 2.5rem;
+    left: 3rem;
+}
+
+.event-item > h2 > a {
+    color: var(--main-color);
+}
+
+
+.event-item > h2 > a:hover {
+    color: var(--spot-color);
+}
+
+
+/* Partners */
+.partners-section {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 4.5rem 0;
+}
+
+
+.partner-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.partner-item {
+    width: 23%;
+    max-height: 9rem;
+    border-radius: 2rem;
+    background-color: #252627;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.partner-item > img {
+    max-width: 60%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.partner-item > a {
+    text-align: center;
+} 
+
+.partner-item > a > p {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 1rem 0 0 0;
+}
+
+
+/* Mentors section */
+.mentors-section {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 4.5rem 0 0 0;
+}
+
+
+.mentor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.mentor-item {
+    width: 31%;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.mentor-item > h2 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--secondary-color);
+    padding-top: 2rem;
+}
+
+.mentor-item > p {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 1.5rem;
+    color: rgba(130, 152, 171, 1);
+    padding-top: 1rem;
+    margin: 0;
+}
+
+.mentor-item > img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}   
+
+
+.mentor-item:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mentor-item:last-child > img {
+    max-width: 100%;
+}   
+
+/* Contacts section */
+.contacts {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 4.5rem 0;
+}
+
+.contacts-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--spot-color);
+    border-radius: 5rem;
+    padding: 2rem 0;
+}
+
+.contacts-details {
+    width: 54%;
+    padding: 4rem;
+    color: var(--main-color)
+}
+
+.contacts-details > h2 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 6rem;
+    margin: 0;
+}
+
+.contacts-details > p {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    padding-top: 2rem;
+}
+
+.social-links {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-links > a {
+    max-width: 48%;
+}
+
+.social-links > a > img {
+    max-width: 100%;
+}
+
+.qr-code {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4rem;
+}
+
+.qr-code > img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Footer section */
+.footer-content {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 4.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials-list {
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+/* Mentor add */
+.mentor-add-section {
+	max-width: 1700px;
+	margin: 0 auto;
+	padding: 4.5rem 0;
+}
+
+.form-container {
+	max-width: 100%;
+	margin-top: 5rem;
+	background-color: var(--bg-color);
+	border-radius: 5rem;
+}
+
+.mentor-add-form {
+	display: flex;
+	flex-direction: column;
+	padding: 4rem 6rem;
+}
+
+.form-control {
+	width: 100%;
+	border-radius: 2rem;
+	border: none;
+	padding: 2rem 2rem;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	background-color: rgba(235, 235, 235, 1);
+    resize: vertical;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.form-group {
+    position: relative
+}
+
+.input-group > .form-group {
+	width: 47%;
+    position: relative;
+}
+
+.input-group > .form-group > label,
+.form-group > label {
+	display: block;	
+	font-size: 2.3rem;
+	font-family: 'TT Travels', sans-serif;
+	font-weight: 600;
+	margin: 2rem 0;
+}
+
+.form-textarea {
+    width: 100%;
+}
+
+.input-error-message {
+    position: absolute;
+    top: 13rem;
+    left: 0;
+    font-size: 1rem;
+    color: #a50000;
+    font-family: 'TT Travels', sans-serif;
+}
+
+.error-input {
+    border: 2px solid #a50000;
+}
+
+.error-input::placeholder {
+    color: rgb(165, 0, 0);
+}
+
+
+.alert {
+    padding: 1rem 2rem;
+    margin: 2rem auto 0 auto;
+    font-size: 1.3rem;
+    border-radius: 5rem ;
+    max-width: fit-content ;
+}
+
+.alert-error {
+    background-color: #ffe7e7;
+    color: #a50000;
+}
+
+.alert-success {
+    background-color: #deffdf;
+    color: #006a11
+}
+
+
+@media (max-width: 1550px) {
+    .event-section,
+    .about-section,
+    .footer-content,
+    .event-list,
+    .mentor-list,
+    .partner-list,
+    .mentor-add-content {
+        padding: 3.5rem 2rem;
+    }
+
+
+    .event-title {
+        font-size: 7rem;
+    }
+
+    .event-item > h2 {
+        font-size: 3.5rem;
+    }
+
+    .timer-item > p:first-child {
+        font-size: 3rem;
+    }
+
+    .navbar {
+        padding: 0 2rem;
+    }
+
+    .contacts {
+        padding: 4.5rem 2rem;
+    }
+
+    .contacts-details {
+        padding: 3rem;
+    }
+
+    .contacts-details > h2{
+        font-size: 4rem;
+    }   
+
+    .mentor-add-form {
+        padding: 4rem 4rem;
+    }
+
+    .about-image,
+    .about-text {
+        width: 46%;
+    }
+
+    .about-text > p {
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 1350px) {
+    .event-section {
+        padding: 1.5rem 2rem;
+        min-height: 0;
+    }
+
+    .event-title {
+        font-size: 6.5rem;
+    }
+
+    .event-image {
+        min-height: auto;
+    }
+
+    .event-image > img {
+        height: 90%;
+    }
+    
+    .btn {
+        font-size: 2rem;
+        bottom: 10%;
+    } 
+
+    .timer-item > p:first-child {
+        font-size: 2.5rem;
+    }
+
+    .timer-item > p:last-child {
+        font-size: 1.5rem;
+    }
+
+    .event-timer > p {
+        font-size: 3rem;
+    }
+
+    .menu-item > a {
+        font-size: 1rem;
+    }
+
+    .about-details {
+        padding-top: 3.5rem;
+    } 
+
+    .about-heading-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-heading-img > img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .about-text > p {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    .lang-item > a {
+        font-size: 0.9rem;
+    }
+
+    .input-group > .form-group > label, .form-group > label {
+        font-size: 1.5rem
+    }
+
+    .input-error-message {
+        top: 3rem;
+    }
+
+    .mentors-section {
+        padding: 3.5rem 0 0 0;
+    }
+
+    .contacts {
+        padding-top: 0;
+    }
+
+    .contacts-content {
+        padding: 0;
+    }
+
+    .mentor-add-section {
+        padding: 0;
+    }
+
+    .mentor-add-button {
+        font-size: 1.5rem;
+        padding: 1.5rem 6rem;
+    }
+
+    .contacts-details > p {
+        font-size: 1.8rem;
+    }
+
+    .contacts-details > h2 {
+        font-size: 3rem;
+    }   
+
+    .mentor-add-content {
+        padding: 2rem;
+    }
+
+    .mentor-add-form {
+        padding: 2rem 3rem;
+    }
+
+    .form-container {
+        margin-top: 0;
+    }
+
+    .form-control {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .messages {
+        font-size: 1rem;
+    }
+
+    .partner-item > a > p {
+        font-size: 1.3rem;
+    }
+
+    .mentor-item {
+        padding: 1rem;
+    }
+
+    .mentor-item > h2 {
+        font-size: 1.5rem;
+    }
+
+    .mentor-item > p {
+        font-size: 1.2rem;
+    }
+
+    .footer-content {
+        padding: 1.5rem 2rem;
+    }
+}

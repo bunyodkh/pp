@@ -1,0 +1,263 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% load i18n %}
+
+{% block content %}
+
+<!-- HERO -->
+{% if event %}
+    <section class="section"> 
+        <div class="event-section">
+            <div class="event-details">
+                <h1 class="event-title">{{ event.name }}<span class="event-spot">{{ event.emphasis_to_name }}</span></h1>
+                <div class="event-timer">
+                    <div class="timer-item">
+                        <p id="days-left">20</p>
+                        <p>days</p>
+                    </div>   
+                    <p>:</p>
+                    <div class="timer-item">
+                        <p id="hours-left">17</p>
+                        <p>hours</p>
+                    </div>   
+                    <p>:</p>
+                    <div class="timer-item">
+                        <p id="minutes-left">43</p>
+                        <p>minutes</p>
+                    </div>   
+                </div>
+
+                <div id="countdown"></div>
+
+                <a href="{{ event.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
+            </div>
+
+            <div class="event-image">
+                <img src="{{ event.get_hero_image }}" alt="{{ event.name }}">
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<!-- ABOUT -->
+<section class="section-dark">
+    <div class="about-section" id="about">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <img src="{% static 'images/about-title.png' %}" alt="Pizza Pitch White Heading">
+            </div>
+        </div>
+
+        <div class="about-details">
+            <div class="about-image">
+                <img src="{% static 'images/about-image.png' %}" alt="Image About Pizza Pitch">
+            </div>
+
+            <div class="about-text trapezoid-bg">
+                <p> &#8212; Это студенческий хакатон, где участники в командах создают решения за ограниченное время.</p>
+                <p>Это шанс прокачать навыки, поработать с кейсами и побороться за призы!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section">
+    <div class="events-section" id="events">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <img src="{% static 'images/events-title.png' %} " alt="Pizza Pitch White Heading">
+            </div>
+        </div>
+
+        <ul class="event-list">
+            <li class="event-item">
+                <div class="image-gradient"></div>
+                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
+                <h2><a href="#">Pizza Pitch XL</a></h2>
+            </li>
+
+            <li class="event-item">
+                <div class="image-gradient"></div>
+                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
+                <h2><a href="#">Pizza Pitch Mini</a></h2>
+            </li>
+
+            <li class="event-item">
+                <div class="image-gradient"></div>
+                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
+                <h2><a href="#">Pizza Pitch Women</a></h2>
+            </li>
+
+            <li class="event-item">
+                <div class="image-gradient"></div>
+                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
+                <h2><a href="#">Students Cup</a></h2>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section-dark">
+    <section class="partners-section" id="partners">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <img src="{% static 'images/partners-title.png' %}" alt="Pizza Pitch White Heading">
+            </div>
+        </div>
+
+        <ul class="partner-list">
+            {% for partner in partners %}
+                <li class="partner-item">
+                    <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                </li>
+            {% endfor %}
+
+            <li class="partner-item">
+                <a href="{% url 'partners:partner-add' %}">
+                    <img src="{% static 'images/plus-sign.png' %}" alt="Become a partner link">
+                    <p>Стать партнером</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <a href="{% url 'mentors:mentor-list' %}" class="btn link-btn">
+                    Показать всех
+                    <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the mentor's page">
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- MENTORS -->
+<section class="section">
+    <section class="mentors-section" id="mentors">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <img src="{% static 'images/mentors-title.png' %}" alt="Pizza Pitch White Heading">
+            </div>
+        </div>
+
+        <ul class="mentor-list">
+            <li class="mentor-item">
+                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
+                <h2>Фаррух Максумов</h2>
+                <p>CEO of C-Space Startup Center</p>
+            </li>
+
+            <li class="mentor-item">
+                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
+                <h2>Фаррух Максумов</h2>
+                <p>CEO of C-Space Startup Center</p>
+            </li>
+
+            <li class="mentor-item">
+                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
+                <h2>Фаррух Максумов</h2>
+                <p>CEO of C-Space Startup Center</p>
+            </li>
+
+            <li class="mentor-item">
+                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
+                <h2>Фаррух Максумов</h2>
+                <p>CEO of C-Space Startup Center</p>
+            </li>
+
+            <li class="mentor-item">
+                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
+                <h2>Фаррух Максумов</h2>
+                <p>CEO of C-Space Startup Center</p>
+            </li>
+
+            <li class="mentor-item">
+                <a href="{% url 'mentors:mentor-add' %}">
+                    <img src="{% static 'images/plus-sign.png' %}" alt="Become Mentor Button">
+                    <h2>Стать ментором</h2>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <a href="{% url 'mentors:mentor-list' %}" class="btn link-btn">
+                    Показать всех
+                    <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the mentor's page">
+                </a>
+            </div>
+        </div>
+        
+    </section>
+</section>
+
+<!-- CONTACTS -->
+<section class="section">
+    <div class="contacts" id="contact-us">
+        <div class="contacts-content">
+            <div class="contacts-details">
+                <h2>Будьте в курсе всех новостей</h2>
+                <p>Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами</p>
+                <div class="social-links">
+                    <a href="#">
+                        <img src="{% static 'images/email-link.png' %}" alt="Email Icon">
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/tg-link.png' %}" alt="Telegram Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="qr-code">
+                <img src="{% static 'images/qr-code.png' %}" alt="QR Code">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTDOWN SCRIPT -->
+<script defer>
+    const plannedDate = new Date("{{ event.registration_deadline|date:'Y-m-d H:i:s' }}");
+
+    function startCountdown() {
+        const daysElement = document.getElementById('days-left');
+        const hoursElement = document.getElementById('hours-left');
+        const minutesElement = document.getElementById('minutes-left');
+
+        function formatWithLeadingZero(number) {
+            return number < 10 ? `0${number}` : number;
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = plannedDate - now;
+
+
+            if (timeDifference <= 0) {
+                daysElement.innerHTML = "00";
+                hoursElement.innerHTML = "00";
+                minutesElement.innerHTML = "00";
+                clearInterval(interval);
+                return;
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            daysElement.innerHTML = formatWithLeadingZero(days);
+            hoursElement.innerHTML = formatWithLeadingZero(hours);
+            minutesElement.innerHTML = formatWithLeadingZero(minutes);
+        }
+
+        updateCountdown(); 
+        const interval = setInterval(updateCountdown, 1000);
+    }
+
+    startCountdown();
+</script>
+
+{% endblock %}

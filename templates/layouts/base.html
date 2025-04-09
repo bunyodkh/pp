@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'includes/head.html' %}
+<body>
+    {% if request.path == '/'%}
+        {% include 'includes/homepage_navbar.html' %}
+    {% else %}
+        {% include 'includes/base_navbar.html' %}
+    {% endif %}
+
+    {% block content %} {% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="section-dark">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'images/footer-logo.png' %}" alt="Footer Logo">
+            </div>
+
+            <ul class="socials-list">
+                <li class="social-item">
+                    <a href="#">
+                        <img src="{% static 'images/tg-icon.png' %}" alt="Telegram Icon">
+                    </a>
+                </li>
+
+                <li class="social-item">
+                    <a href="#">
+                        <img src="{% static 'images/ln-icon.png' %}" alt="Linkedin Icon">
+                    </a>
+                </li>
+
+                <li class="social-item">
+                    <a href="#">
+                        <img src="{% static 'images/insta-icon.png' %}" alt="Instagram Icon">
+                    </a>
+                </li>
+
+                <li class="social-item">
+                    <a href="#">
+                        <img src="{% static 'images/fb-icon.png' %}" alt="Facebook Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
