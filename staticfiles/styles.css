@@ -761,7 +761,6 @@ a {
 .mentor-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 2rem;
     padding-top: 3rem;
 }

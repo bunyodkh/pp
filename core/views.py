@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.shortcuts import render
 from django.utils.translation import gettext as _
 
 from events.models import Event
 from partners.models import Partner
+from mentors.models import Mentor
 
 def index(request):
-    event = get_object_or_404(Event, show_on_main=True)
-    partners = get_list_or_404(Partner)
-    return render(request, 'index.html', { 'event': event, 'partners': partners })
+    event = Event.objects.get(show_on_main=True)
+    partners = Partner.objects.all()
+    mentors = Mentor.objects.all()
+    return render(request, 'index.html', { 'event': event, 'partners': partners, 'mentors': mentors })

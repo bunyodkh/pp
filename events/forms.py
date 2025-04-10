@@ -102,10 +102,7 @@ class RegistrationForm(forms.ModelForm):
         if not link or not link.strip():
             raise forms.ValidationError(_('Link cannot be empty.'))
         if len(link.strip()) < 2:
-            raise forms.ValidationError(_('Link must be at least 2 characters long.'))
+            raise forms.ValidationError(_('Link must be at least 3 characters long.'))
         if len(link.strip()) > 500:
             raise forms.ValidationError(_('Link cannot exceed 500 characters.'))
-        # Regex validation: Must be a valid URL format
-        if link and not re.match(r'^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$', link.strip()):
-            raise forms.ValidationError(_('Enter a valid website URL (e.g., https://example.com).'))
         return link

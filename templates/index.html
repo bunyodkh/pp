@@ -144,35 +144,14 @@
         </div>
 
         <ul class="mentor-list">
-            <li class="mentor-item">
-                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
-                <h2>Фаррух Максумов</h2>
-                <p>CEO of C-Space Startup Center</p>
-            </li>
-
-            <li class="mentor-item">
-                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
-                <h2>Фаррух Максумов</h2>
-                <p>CEO of C-Space Startup Center</p>
-            </li>
-
-            <li class="mentor-item">
-                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
-                <h2>Фаррух Максумов</h2>
-                <p>CEO of C-Space Startup Center</p>
-            </li>
-
-            <li class="mentor-item">
-                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
-                <h2>Фаррух Максумов</h2>
-                <p>CEO of C-Space Startup Center</p>
-            </li>
-
-            <li class="mentor-item">
-                <img src="{% static 'images/mentor-photo.png' %}" alt="Mentor Photo">
-                <h2>Фаррух Максумов</h2>
-                <p>CEO of C-Space Startup Center</p>
-            </li>
+            {% for mentor in mentors %}
+                <li class="mentor-item">
+                    <img src="{{ mentor.photo.url }}" alt="Mentor Photo">
+                    <h2>{{ mentor.full_name }}</h2>
+                    <p>{{ mentor.position }}</p>
+                </li>
+            {% endfor %}
+            
 
             <li class="mentor-item">
                 <a href="{% url 'mentors:mentor-add' %}">
