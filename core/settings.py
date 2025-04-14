@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3$wq%2to8e07bl5x4l6^&!5cx@q(sgkxgi@(kemn2_t!imi%^5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['pizzapitch.uz', 'http://64.226.100.175/', '64.226.100.175']
+ALLOWED_HOSTS = ['pizzapitch.uz', 'http://64.226.100.175/', '64.226.100.175', 'localhost', '127.0.0.1']
 
 
 # Application definition
