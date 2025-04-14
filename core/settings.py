@@ -28,6 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['pizzapitch.uz', 'www.pizzapitch.uz', 'http://64.226.100.175/', '64.226.100.175', 'localhost', '127.0.0.1']
 
+# certbot install --cert-name pizzapitch.uz
+
 
 # Application definition
 
@@ -193,3 +195,8 @@ UNFOLD = {
         "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
     ],
 }
+
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
