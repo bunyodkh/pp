@@ -515,6 +515,61 @@ a {
 }
 
 
+.event-info {
+    position: absolute;
+    width: 100%;
+    left: 3rem;
+    bottom: 3rem;
+}
+
+.event-date, 
+.event-location {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.event-date > img, 
+.event-location > img {
+    width: 5%;
+}   
+
+
+.event-date > p, 
+.event-location > p {
+    margin: 0;
+    width: 90%;
+    font-family: 'TT Travels', sans-serif;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.event-date {
+    margin-bottom: 1rem;
+}
+
+.submission-success {
+    margin: 5rem 0 3rem 0;
+    padding: 10rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-radius: 5rem;
+}   
+
+.submission-success-text {
+    text-align: center;
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 5rem;
+}
+
+
 /* COUNTDOWN TIMER */
 .event-timer {
     display: flex;

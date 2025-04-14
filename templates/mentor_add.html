@@ -28,7 +28,15 @@
 
         <section class="mentor-add-content">
             {% if success %}
-                <div class="">Success. Your application is received</div>
+                <div class="submission-success">
+                    <div class="submission-success-icon">
+                        <img src="{% static 'images/application-success-icon.png '%}" alt="Submission Success Icon">
+                    </div>
+                    
+                    <div class="submission-success-text">
+                        <p>Ваша заявка принята,мы скоро свяжемся с вами!</p>
+                    </div>
+                </div>
             {% else %}
                 <div class="form-container">
                     <form class="mentor-add-form" method="post" enctype="multipart/form-data" action="{% url 'mentors:mentor-add'%}">
