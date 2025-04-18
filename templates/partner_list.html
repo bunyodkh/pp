@@ -1,13 +1,33 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% load widget_tweaks %}
-{% load static %}
+{% load i18n %}
 
 {% block content %}
 
+<!-- PARTNERS -->
+<section class="section-dark">
+    <section class="partners-section" id="partners">
+        <div class="section-heading">
+            <div class="about-heading-img">
+                <img src="{% static 'images/partners-title.png' %}" alt="Pizza Pitch White Heading">
+            </div>
+        </div>
+
+        <ul class="partner-list">
+            {% for partner in partners %}
+                <li class="partner-item">
+                    {% if partner.logo %}
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</section>
 
 
-<!-- MENTORS -->
 <section class="section">
     <section class="mentor-add-section">
         <div class="section-heading">
@@ -31,7 +51,7 @@
                 <div class="">Success. Your application is received</div>
             {% else %}
                 <div class="form-container">
-                    <form class="mentor-add-form" method="post" enctype="multipart/form-data" action="{% url 'partners:partner-add'%}">
+                    <form id="be-partner" class="mentor-add-form" method="post" enctype="multipart/form-data" action="{% url 'partners:partner-add'%}">
                         {% csrf_token %}
                         <div class="input-group">
                             <div class="form-group">
@@ -110,5 +130,4 @@
         </div>
     </div>
 </section>
-
 {% endblock %}

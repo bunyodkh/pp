@@ -7,20 +7,22 @@ from .forms import MentorForm
 
 
 def mentor_list(request):
-    mentors = Mentor.objects.all()
-    return render(request, 'mentor_list.html', {'mentors': mentors})
+    mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')
+    form = MentorForm()
+    return render(request, 'mentor_list.html', {'mentors': mentors, 'form': form})
 
 
 def mentor_add(request):
+    mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')
     if request.method == 'POST':
         form = MentorForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, _('Your application has been successfully submitted.'))
-            return redirect('mentors:mentor-add')
+            return render(request, 'mentor_list.html', {'form': form, 'mentors': mentors})
         else:
             messages.error(request, _('There was an error submitting your application. Please correct the errors below.'))
     else:
         form = MentorForm()
 
-    return render(request, 'mentor_add.html', {'form': form})
+    return render(request, 'mentor_list.html', {'form': form, 'mentors': mentors})

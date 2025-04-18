@@ -6,7 +6,26 @@ from django.utils.translation import gettext as _
 
 from core.utils import rename_uploaded_image
 
+
+class EventType(models.Model):
+    name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
+    image = models.ImageField(_('Изображение'), upload_to=rename_uploaded_image, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = _('Тип мероприятия')
+        verbose_name_plural = _('Типы мероприятий')
+
+
 class Event(models.Model):
+    event_type = models.ForeignKey('EventType', on_delete=models.DO_NOTHING, verbose_name=_('Тип мероприятия'), blank=True, null=True)
+
     name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
     emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
     description = models.TextField(_('Описание'), blank=False, null=False)
@@ -17,7 +36,6 @@ class Event(models.Model):
     event_number = models.CharField(max_length=8, unique=True, blank=True, editable=False)
     active = models.BooleanField(_('Активно'), default=True)
     show_on_main = models.BooleanField(_('Показывать на главной'), default=False)
-
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

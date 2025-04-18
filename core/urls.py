@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 from .views import index
+from mentors.views import mentor_add
+from partners.views import partner_add
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),

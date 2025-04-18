@@ -1,7 +1,7 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin, TabularInline
 
-from .models import Event, Participant, EventPhoto
+from .models import EventType, Event, Participant, EventPhoto
 
 
 class EventPhotoInline(TabularInline):  # or admin.StackedInline for a different layout
@@ -22,3 +22,7 @@ class EventAdmin(ModelAdmin):
 @admin.register(Participant)
 class ParticipantAdmin(ModelAdmin):
     pass
+
+@admin.register(EventType)
+class EventTypeAdmin(ModelAdmin):
+    pass    

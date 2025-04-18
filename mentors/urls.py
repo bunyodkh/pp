@@ -9,5 +9,5 @@ app_name = 'mentors'
 
 urlpatterns = [
     path('', mentor_list, name='mentor-list'),
-    path('become-a-mentor/', mentor_add, name='mentor-add'),
+    path('be-mentor/', mentor_add, name='mentor-add'),
 ]

@@ -10,6 +10,8 @@ class Partner(models.Model):
     reason = models.TextField(_('Почему хотите стать партнером?'), blank=True, null=True)
     logo = models.ImageField(_('Логотипа'), upload_to='partners/', blank=True, null=True)
 
+    show_on_website = models.BooleanField(_('Показать на сайте'), default=False)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

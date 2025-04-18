@@ -6,13 +6,8 @@ from .models import Event
 from .forms import RegistrationForm
 
 
-def event_list(request):
-    events = Event.objects.all()
-    return render(request, 'event_list.html', {'events': events})
-
-
 def event_detail(request):    
-    pass
+    return render(request, 'event_detail.html', {})
 
 
 def event_registration(request, event_number):
@@ -35,5 +30,5 @@ def event_registration(request, event_number):
         form = RegistrationForm()
 
     # Render the registration page with the form and event details
-    return render(request, 'event_registration.html', {'form': form, 'event': event})
+    return render(request, 'event_detail.html', {'form': form, 'event': event})
 

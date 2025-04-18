@@ -111,12 +111,14 @@
         <ul class="partner-list">
             {% for partner in partners %}
                 <li class="partner-item">
-                    <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                    {% if partner.logo %}
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                    {% endif %}
                 </li>
             {% endfor %}
 
             <li class="partner-item">
-                <a href="{% url 'partners:partner-add' %}">
+                <a href="{% url 'partners:partner-list' %}#be-partner">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become a partner link">
                     <p>Стать партнером</p>
                 </a>
@@ -125,9 +127,9 @@
 
         <div class="section-heading">
             <div class="about-heading-img">
-                <a href="{% url 'mentors:mentor-list' %}" class="btn link-btn">
+                <a href="{% url 'partners:partner-list' %}" class="btn link-btn">
                     Показать всех
-                    <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the mentor's page">
+                    <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the partners's page">
                 </a>
             </div>
         </div>
@@ -146,15 +148,17 @@
         <ul class="mentor-list">
             {% for mentor in mentors %}
                 <li class="mentor-item">
-                    <img src="{{ mentor.photo.url }}" alt="Mentor Photo">
+                    {% if  mentor.photo %}
+                        <img src="{{ mentor.photo.url }}" alt="Mentor Photo">
+                    {% endif %}
                     <h2>{{ mentor.full_name }}</h2>
-                    <p>{{ mentor.position }}</p>
+                    <p>{{ mentor.position }}, {{ mentor.organization }}</p>
                 </li>
             {% endfor %}
             
 
             <li class="mentor-item">
-                <a href="{% url 'mentors:mentor-add' %}">
+                <a href="{% url 'mentors:mentor-list' %}#be-mentor">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become Mentor Button">
                     <h2>Стать ментором</h2>
                 </a>

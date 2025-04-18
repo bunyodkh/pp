@@ -13,6 +13,8 @@ class Mentor(models.Model):
     reason = models.TextField(_('Почему хотите стать ментором?'), blank=True, null=True)
     photo = models.ImageField(_('Фотография'), upload_to='mentors/', blank=True, null=True)
 
+    show_on_website = models.BooleanField(_('Показать на сайте'), default=False)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

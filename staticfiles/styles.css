@@ -1086,7 +1086,7 @@ a {
 
     .about-image,
     .about-text {
-        width: 46%;
+        max-width: 46%;
     }
 
     .about-text > p {
@@ -1236,3 +1236,260 @@ a {
         padding: 1.5rem 2rem;
     }
 }
+
+
+
+@media (max-width: 500px) {
+    .event-section {
+        flex-direction: column;
+    }
+
+    .event-section, 
+    .about-section, 
+    .footer-content, 
+    .event-list, 
+    .mentor-list, 
+    .partner-list {
+        padding: 2.5rem 1rem;
+    }
+
+    .event-title {
+        font-size: 4rem;
+    }
+
+    .about-section {
+        padding: 2rem;
+    }
+
+    .about-details {
+        flex-direction: column;
+        justify-content: start;
+        align-items: baseline;
+
+    }
+
+    .about-text,
+    .about-image {
+        max-width: 100%;
+    } 
+
+    .about-text {
+        margin-top: 2rem;
+    }
+
+    .about-text > p {
+        font-size: 1.3rem;
+    }
+
+    .events-section {
+        padding: 2rem;
+    }
+
+    .event-list {
+        padding: 1rem 0 0 0;
+    }
+
+    .event-item {
+        width: 100%;
+    }
+
+    .event-item > h2 {
+        bottom: 1rem;
+        left: 2.5rem;
+    }
+
+    .event-item > h2 > a {
+        font-size: 1.5rem;
+    }
+
+    .event-item > img {
+        border-radius: 3rem;
+    }
+
+    .partners-section {
+        padding: 2rem 0;
+    }
+
+    .partner-list {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .partner-item {
+        width: 45%;
+    }
+
+    .partner-item > a > p {
+        font-size: 0.8rem;
+    }
+
+    .partner-item > a > img {
+        width: 25%;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .link-btn {
+        margin-top: 1rem;
+    }
+
+    .link-btn > img {
+        display: none;
+    }
+
+    .contacts {
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .contacts-content {
+        flex-direction: column;
+        margin-top: 2rem;
+        border-radius: 3rem 3rem 3rem 3rem;
+    }
+
+    .contacts-details {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    
+    .contacts-details > h2 {
+        font-size: 2rem;
+    }
+
+    .contacts-details > p {
+        font-size: 1.4rem;
+    }
+
+    .qr-code {
+        width: 100%;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .rounded-section {
+        border-radius: 3rem 3rem 0 0;
+    }
+
+    .footer-content {
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .footer-logo {
+        max-width: 30%;
+    }
+
+    .footer-logo > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .socials-list {
+        max-width: 65%;
+        margin: 0;
+        align-items: center;
+    }
+
+    .social-item > a > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mentor-item {
+        width: 45%;
+        border-radius: 1.5rem;
+        padding: 0 0 1rem 0;
+    }
+
+    .mentor-item > h2 {
+        font-size: 0.9rem;
+        padding-top: 0.5rem; 
+    }
+
+    .mentor-item > p {
+        font-size: 0.8rem;
+        padding-top: 0.5rem;
+    }
+
+    .mentor-item > a > img {
+        padding-top: 1rem;
+        width: 25%;
+    }
+
+    .mentor-item > a > h2 {
+        font-size: 0.8rem;
+    }
+
+    .mentor-item > img {
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .input-group > .form-group {
+        width: 100%;
+    }
+
+    .mentor-add-content {
+        margin-top: 2rem;
+        padding: 0;
+    }
+
+    .mentor-add-form {
+        padding: 2rem 0;
+    }
+
+    .form-container {
+        padding: 1rem;
+        border-radius: 3rem;
+    }
+
+    .input-group > .form-group > label,
+    .form-group > label {
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+    }
+
+    .form-control {
+        border-radius: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 2.6rem;
+    }
+
+    .input-error-message {
+        top: 6.8rem;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    .event-section {
+        position: relative;
+    }
+
+    .event-details {
+        max-width: 100%;
+        height: 20rem;
+    }
+
+    .event-image {
+        width: 100%;
+    }
+
+    .event-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .event-details {
+        z-index: 1;
+    }
+
+    .event-image {
+        position:absolute;
+    }
+
+}
+    

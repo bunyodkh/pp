@@ -7,6 +7,6 @@ from mentors.models import Mentor
 
 def index(request):
     event = Event.objects.get(show_on_main=True)
-    partners = Partner.objects.all()
-    mentors = Mentor.objects.all()
+    partners = Partner.objects.filter(show_on_website=True).order_by('-created_at')
+    mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')
     return render(request, 'index.html', { 'event': event, 'partners': partners, 'mentors': mentors })
