@@ -7,45 +7,48 @@
 
 <!-- HERO -->
 {% if event %}
-    <section class="section"> 
-        <div class="event-section">
-            <div class="event-details">
-                <h1 class="event-title">{{ event.event_type.name }}<span class="event-spot">{{ event.event_type.emphasis_to_name }}</span></h1>
-                <div class="event-timer">
-                    <div class="timer-item">
-                        <p id="days-left">20</p>
-                        <p>days</p>
-                    </div>   
-                    <p>:</p>
-                    <div class="timer-item">
-                        <p id="hours-left">17</p>
-                        <p>hours</p>
-                    </div>   
-                    <p>:</p>
-                    <div class="timer-item">
-                        <p id="minutes-left">43</p>
-                        <p>minutes</p>
-                    </div>   
+    <section class="section">
+        <div class="section-content">
+            <div class="active-event">
+                <div class="active-event-details">
+                    <h1 class="active-event-title">{{ event.event_type.name }}<span class="active-event-spot">{{ event.event_type.emphasis_to_name }}</span></h1>
+                    <div class="active-event-timer">
+                        <div class="timer-item">
+                            <p id="days-left">20</p>
+                            <p>days</p>
+                        </div>   
+                        <p>:</p>
+                        <div class="timer-item">
+                            <p id="hours-left">17</p>
+                            <p>hours</p>
+                        </div>   
+                        <p>:</p>
+                        <div class="timer-item">
+                            <p id="minutes-left">43</p>
+                            <p>minutes</p>
+                        </div>   
+                    </div>
+    
+                    <div id="countdown"></div>
+    
+                    <a href="{{ event.event_type.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
                 </div>
-
-                <div id="countdown"></div>
-
-                <a href="{{ event.event_type.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
+    
+                <div class="active-event-image">
+                    <img src="{{ event.get_hero_image }}" alt="{{ event.name }}">
+                </div>
             </div>
-
-            <div class="event-image">
-                <img src="{{ event.get_hero_image }}" alt="{{ event.name }}">
-            </div>
-        </div>
+        </div> 
     </section>
 {% endif %}
 
 <!-- ABOUT -->
 <section class="section-dark">
-    <div class="about-section" id="about">
+    <div class="section-content" id="about">
         <div class="section-heading">
-            <div class="about-heading-img">
-                <img src="{% static 'images/about-title.png' %}" alt="Pizza Pitch White Heading">
+            <h1>Что такое</h1>
+            <div class="styled-heading">
+                <h2>PIZZAPITCH</h2> 
             </div>
         </div>
 
@@ -65,10 +68,11 @@
 {% if event_types %}
 <!-- EVENTS -->
 <section class="section">
-    <div class="events-section" id="events">
+    <div class="section-content" id="events">
         <div class="section-heading">
-            <div class="about-heading-img">
-                <img src="{% static 'images/events-title.png' %} " alt="Pizza Pitch White Heading">
+            <h1>Наши</h1>
+            <div class="styled-heading">
+                <h2>мероприятия</h2> 
             </div>
         </div>
 
@@ -87,10 +91,11 @@
 
 <!-- PARTNERS -->
 <section class="section-dark">
-    <section class="partners-section" id="partners">
+    <section class="section-content" id="partners">
         <div class="section-heading">
-            <div class="about-heading-img">
-                <img src="{% static 'images/partners-title.png' %}" alt="Pizza Pitch White Heading">
+            <h1>{% trans 'Наши' %} </h1>
+            <div class="styled-heading">
+                <h2>{% trans 'партнеры' %}</h2> 
             </div>
         </div>
 
@@ -124,10 +129,11 @@
 
 <!-- MENTORS -->
 <section class="section">
-    <section class="mentors-section" id="mentors">
+    <section class="section-content" id="mentors">
         <div class="section-heading">
-            <div class="about-heading-img">
-                <img src="{% static 'images/mentors-title.png' %}" alt="Pizza Pitch White Heading">
+            <h1>Наши</h1>
+            <div class="styled-heading">
+                <h2>ментора</h2> 
             </div>
         </div>
 
@@ -161,30 +167,6 @@
         </div>
         
     </section>
-</section>
-
-<!-- CONTACTS -->
-<section class="section">
-    <div class="contacts" id="contact-us">
-        <div class="contacts-content">
-            <div class="contacts-details">
-                <h2>Будьте в курсе всех новостей</h2>
-                <p>Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами</p>
-                <div class="social-links">
-                    <a href="#">
-                        <img src="{% static 'images/email-link.png' %}" alt="Email Icon">
-                    </a>
-                    <a href="#">
-                        <img src="{% static 'images/tg-link.png' %}" alt="Telegram Icon">
-                    </a>
-                </div>
-            </div>
-
-            <div class="qr-code">
-                <img src="{% static 'images/qr-code.png' %}" alt="QR Code">
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- COUNTDOWN SCRIPT -->

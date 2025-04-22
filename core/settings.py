@@ -11,7 +11,6 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 INSTALLED_APPS = [
-    # djnago unford for admin restyling 
     'unfold',  
     'unfold.contrib.filters',  
     'unfold.contrib.forms',  

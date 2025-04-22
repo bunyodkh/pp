@@ -21,6 +21,8 @@ def event_type_detail(request, slug):
         else:
             messages.error(request, _('There was an error with your registration. Please try again.'))
     else:
+        if not active_event:
+            return render(request, 'event_detail.html', {'event_type': event_type })
         form = RegistrationForm()
    
     return render(request, 'event_detail.html', {'event_type': event_type, 'event':active_event, 'form': form})
