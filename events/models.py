@@ -3,6 +3,9 @@ from django.utils import timezone
 from django.urls import reverse
 import uuid
 from django.utils.translation import gettext as _
+from PIL import Image
+from django.utils.text import slugify
+
 
 from core.utils import rename_uploaded_image
 
@@ -10,6 +13,10 @@ from core.utils import rename_uploaded_image
 class EventType(models.Model):
     name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
     image = models.ImageField(_('Изображение'), upload_to=rename_uploaded_image, blank=True, null=True)
+    emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
+    description = models.TextField(_('Описание'), blank=False, null=False, default='Event description')
+
+    slug = models.SlugField(_('Slug'), max_length=200, unique=True, blank=True)  # Add slug field
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -17,28 +24,60 @@ class EventType(models.Model):
     def __str__(self):
         return self.name
 
+    def get_active_event(self):
+        return self.event_set.filter(active=True).first()
+    
+    def get_absolute_url(self):
+        return reverse('events:eventtype-detail', kwargs={'slug': self.slug})
+
     class Meta:
         ordering = ['-created_at']
         verbose_name = _('Тип мероприятия')
         verbose_name_plural = _('Типы мероприятий')
 
 
-class Event(models.Model):
-    event_type = models.ForeignKey('EventType', on_delete=models.DO_NOTHING, verbose_name=_('Тип мероприятия'), blank=True, null=True)
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.name)
+            slug = base_slug
+            counter = 1
 
-    name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
-    emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
-    description = models.TextField(_('Описание'), blank=False, null=False)
+            # Ensure the slug is unique
+            while EventType.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            self.slug = slug
+        
+        super().save(*args, **kwargs)
+
+        # Optimize the image
+        if self.image:
+            image_path = self.image.path  # Get the file path of the uploaded image
+            image = Image.open(image_path)
+
+            # Resize the image if it exceeds the desired dimensions
+            max_width, max_height = 800, 800  # Set the maximum dimensions
+            if image.width > max_width or image.height > max_height:
+                image.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+                image.save(image_path, optimize=True, quality=85)  # Save the optimized image
+
+
+class Event(models.Model):
+    event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, verbose_name=_('Тип мероприятия'), blank=True, null=True)
+
+    name = models.CharField(_('Название'), max_length=200, blank=False, null=False, default='Название мероприятия')
     location = models.CharField(_('Место проведения'), max_length=200, blank=False, null=False)
     planned_date = models.DateTimeField(_('Дата проведения'), blank=True, null=True)
     registration_deadline = models.DateTimeField(_('Дата окончания регистрации'), blank=False, null=False)
 
     event_number = models.CharField(max_length=8, unique=True, blank=True, editable=False)
-    active = models.BooleanField(_('Активно'), default=True)
+    active = models.BooleanField(_('Активно'), default=False)
     show_on_main = models.BooleanField(_('Показывать на главной'), default=False)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.name
@@ -50,15 +89,13 @@ class Event(models.Model):
         return self.planned_date.year if self.planned_date else None
 
     def get_hero_image(self):
-        hero_image = self.eventphoto_set.filter(hero_image=True).first()
+        hero_image = self.event_photos.filter(hero_image=True).first()
         return hero_image.photo.url if hero_image else None
-    
-    
-    def get_absolute_url(self):
-        return reverse('events:event-registration', kwargs={'event_number': self.event_number})
 
 
     def save(self, *args, **kwargs):
+        if self.active:
+            Event.objects.filter(active=True).exclude(id=self.id).update(active=False)
         if not self.event_number:
             self.event_number = str(uuid.uuid4().hex[:8])
         if self.show_on_main:
@@ -74,7 +111,7 @@ class Event(models.Model):
 
 
 class EventPhoto(models.Model):
-    event = models.ForeignKey('Event', on_delete=models.DO_NOTHING)
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, related_name='event_photos', verbose_name=_('Мероприятие'))
     photo = models.ImageField(_('Фотография мероприятия'), upload_to=rename_uploaded_image, blank=False, null=False)
     hero_image = models.BooleanField(_('Главное изображение'), default=False)
 
@@ -107,7 +144,7 @@ class Participant(models.Model):
     link = models.CharField(_('Ссылка на презентацию'), max_length=500, blank=True, null=True)
     description = models.TextField(_('Описание проекта'), max_length=500, blank=True, null=True)
 
-    event = models.ForeignKey('Event', on_delete=models.DO_NOTHING, related_name='participants')
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, related_name='participants')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

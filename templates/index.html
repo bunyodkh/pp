@@ -10,7 +10,7 @@
     <section class="section"> 
         <div class="event-section">
             <div class="event-details">
-                <h1 class="event-title">{{ event.name }}<span class="event-spot">{{ event.emphasis_to_name }}</span></h1>
+                <h1 class="event-title">{{ event.event_type.name }}<span class="event-spot">{{ event.event_type.emphasis_to_name }}</span></h1>
                 <div class="event-timer">
                     <div class="timer-item">
                         <p id="days-left">20</p>
@@ -30,7 +30,7 @@
 
                 <div id="countdown"></div>
 
-                <a href="{{ event.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
+                <a href="{{ event.event_type.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
             </div>
 
             <div class="event-image">
@@ -62,6 +62,7 @@
     </div>
 </section>
 
+{% if event_types %}
 <!-- EVENTS -->
 <section class="section">
     <div class="events-section" id="events">
@@ -72,32 +73,17 @@
         </div>
 
         <ul class="event-list">
+            {% for event_type in event_types %}
             <li class="event-item">
                 <div class="image-gradient"></div>
-                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
-                <h2><a href="#">Pizza Pitch XL</a></h2>
+                <img src="{{ event_type.image.url }}" alt="{{ event_type.name}} Photo">
+                <h2><a href="{{ event_type.get_absolute_url }}">{{ event_type.name }}</a></h2>
             </li>
-
-            <li class="event-item">
-                <div class="image-gradient"></div>
-                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
-                <h2><a href="#">Pizza Pitch Mini</a></h2>
-            </li>
-
-            <li class="event-item">
-                <div class="image-gradient"></div>
-                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
-                <h2><a href="#">Pizza Pitch Women</a></h2>
-            </li>
-
-            <li class="event-item">
-                <div class="image-gradient"></div>
-                <img src="{% static 'images/pizza-pitch-xl-event-photo.png' %}" alt="Pizza Pitch XL Event Photo">
-                <h2><a href="#">Students Cup</a></h2>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 </section>
+{% endif %}
 
 <!-- PARTNERS -->
 <section class="section-dark">
@@ -204,6 +190,8 @@
 <!-- COUNTDOWN SCRIPT -->
 <script defer>
     const plannedDate = new Date("{{ event.registration_deadline|date:'Y-m-d H:i:s' }}");
+    console.log('{{event}}');
+    console.log(plannedDate);
 
     function startCountdown() {
         const daysElement = document.getElementById('days-left');

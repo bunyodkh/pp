@@ -2,33 +2,27 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
 
-from .models import Event
+from .models import EventType
 from .forms import RegistrationForm
 
 
-def event_detail(request):    
-    return render(request, 'event_detail.html', {})
-
-
-def event_registration(request, event_number):
-    # Fetch the event or return a 404 if not found
-    event = get_object_or_404(Event, event_number=event_number)
+def event_type_detail(request, slug):
+    event_type = get_object_or_404(EventType, slug=slug)
+    active_event = event_type.event_set.filter(active=True).first()
 
     if request.method == 'POST':
-        print(request.POST)  # Debugging line to check the POST data
         form = RegistrationForm(request.POST)
-        print(form.is_valid())  # Debugging line to check if the form is valid
         if form.is_valid():
             participant = form.save(commit=False)
-            participant.event = event
+            participant.event = active_event
             participant.save()
             messages.success(request, _('You have successfully registered for the event.'))
-            return redirect(event.get_absolute_url())  # Redirect to the event's absolute URL
+            return redirect(event_type.get_absolute_url())  # Redirect to the event's absolute URL
         else:
             messages.error(request, _('There was an error with your registration. Please try again.'))
     else:
         form = RegistrationForm()
+   
+    return render(request, 'event_detail.html', {'event_type': event_type, 'event':active_event, 'form': form})
 
-    # Render the registration page with the form and event details
-    return render(request, 'event_detail.html', {'form': form, 'event': event})
 

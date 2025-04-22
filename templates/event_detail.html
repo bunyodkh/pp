@@ -27,11 +27,11 @@
                 </div>
             </div>
             
-            <img src="{% static 'images/event-image.png'%}" alt="Event Image">
+            <img src="{{ event.get_hero_image }}" alt="{{ event.name }}">
         </div>
         
         <div class="event-details">
-            <h1 class="event-title">Students Cup <span class="event-spot">2025</span></h1>
+            <h1 class="event-title">{{ event_type.name }}<span class="event-spot">{{ event_type.emphasis_to_name }}</span></h1>
             <div class="event-desctiption">
                 <p>{{ event.description }}</p>
             </div>
@@ -58,12 +58,8 @@
                 <div class="">Success. Your application is received</div>
             {% else %}
                 <div class="form-container">
-                    <form class="mentor-add-form" method="POST" enctype="multipart/form-data" action="{{ event.get_absolute_url }}">
+                    <form class="mentor-add-form" method="POST" enctype="multipart/form-data" action="{{ event_type.get_absolute_url }}">
                         {% csrf_token %}
-                        
-                        {% if event %}
-                            <input type="hidden" name="event_number" value="{{ event.event_number }}">
-                        {% endif %}
 
                         <div class="input-group">
                             <div class="form-group">

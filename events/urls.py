@@ -1,10 +1,9 @@
 from django.urls import path
 
-from .views import event_detail, event_registration
+from .views import event_type_detail
 
 app_name = 'events'
 
 urlpatterns = [
-    path('<str:event_number>', event_detail, name='event-registration'),
-    path('<str:event_number>/registration', event_registration, name='event-registration'),
+    path('<slug:slug>', event_type_detail, name='eventtype-detail'),
 ]
