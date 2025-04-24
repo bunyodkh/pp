@@ -62,6 +62,24 @@ class EventType(models.Model):
                 image.save(image_path, optimize=True, quality=85)  # Save the optimized image
 
 
+class EventTimeline(models.Model):   
+    event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='event_timelines', verbose_name=_('Тип мероприятия'), blank=True, null=True) 
+    step_title = models.CharField(_('Название этапа'), max_length=200, blank=False, null=False)
+    step_deadline = models.DateTimeField(_('Срок выполнения'), blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = _('Этап мероприятия')
+        verbose_name_plural = _('Этапы мероприятий')
+    
+    def __str__(self):
+        return f'{self.event_type} {self.step_title} {self.step_deadline}'
+
+
+
 class Event(models.Model):
     event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='events', verbose_name=_('Тип мероприятия'), blank=True, null=True)
 

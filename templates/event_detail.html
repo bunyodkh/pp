@@ -144,6 +144,29 @@
 </section>
 {% endif %}
 
+{% if event_type.event_timelines.all %}
+<!-- TIMELINE -->
+<section class="section">
+    <section class="section-content" id="mentors">
+        <div class="section-heading">
+            <h1>Наш</h1>
+            <div class="styled-heading">
+                <h2>таймлайн</h2> 
+            </div>
+        </div>
+
+        <div class="timeline-list">
+            {% for timeline in event_type.event_timelines.all %}
+                <div class="timeline-item">
+                    <p class="timeline-deadline">{{ timeline.step_deadline|date:"d/m/Y" }}</p>
+                    <div class="timeline-elem"><span></span></div>
+                    <p class="timeline-title">{{ timeline.step_title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</section>
+{% endif %}
 
 {% if form %} 
 <!-- REGISTRATION SECTION -->
