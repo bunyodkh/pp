@@ -13,7 +13,6 @@ from core.utils import rename_uploaded_image
 class EventType(models.Model):
     name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
     image = models.ImageField(_('Изображение'), upload_to=rename_uploaded_image, blank=True, null=True)
-    emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
     description = models.TextField(_('Описание'), blank=False, null=False, default='Event description')
 
     slug = models.SlugField(_('Slug'), max_length=200, unique=True, blank=True)  # Add slug field
@@ -67,6 +66,7 @@ class Event(models.Model):
     event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='events', verbose_name=_('Тип мероприятия'), blank=True, null=True)
 
     name = models.CharField(_('Название'), max_length=200, blank=False, null=False, default='Название мероприятия')
+    emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
     location = models.CharField(_('Место проведения'), max_length=200, blank=False, null=False)
     planned_date = models.DateTimeField(_('Дата проведения'), blank=True, null=True)
     registration_deadline = models.DateTimeField(_('Дата окончания регистрации'), blank=False, null=False)
