@@ -6,7 +6,7 @@ from partners.models import Partner
 from mentors.models import Mentor
 
 def index(request):
-    event = Event.objects.filter(show_on_main=True).first()
+    event = Event.objects.filter(show_on_main=True, active=True).first()
     event_types = EventType.objects.all()
     partners = Partner.objects.filter(show_on_website=True).order_by('-created_at')
     mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')

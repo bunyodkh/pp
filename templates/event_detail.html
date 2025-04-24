@@ -65,7 +65,7 @@
         <div class="section-heading">
             <h1>{% trans 'Наши' %} </h1>
             <div class="styled-heading">
-                <h2>{% trans 'партнеры' %}</h2> 
+                <h2>{% trans 'достижения' %}</h2> 
             </div>
         </div>
 
@@ -112,40 +112,36 @@
         <div class="section-heading">
             <h1>{% trans 'Наши' %} </h1>
             <div class="styled-heading">
-                <h2>{% trans 'участники' %}</h2> 
+                <h2>{% trans 'победители' %}</h2> 
             </div>
         </div>
 
-        <div class="vertical-list-container">
-            <div class="vertical-list">
-                <div class="list-title">
-                    <h2>PizzaPitch XL #2</h2>
-                    <p>(04/04/2024)</p>
-                </div>
+        {% if past_events %}
+            <div class="vertical-list-container">
+                {% for event in past_events %}
+                    <div class="vertical-list">
+                        <div class="list-title">
+                            <h2>{{ event.name }}</h2>
+                            <p>({{ event.planned_date|date:"d/m/Y" }})</p>
+                        </div>
 
-                <div class="list-items">
-                    <div class="list-item"></div>
-                    <div class="list-item"></div>
-                    <div class="list-item"></div>
-                    <div class="list-item"></div>
-                </div>
-            </div>
-
-            <div class="vertical-list">
-                <div class="list-title">
-                    <h2>PizzaPitch XL #1</h2>
-                    <p>(04/04/2024)</p>
-                </div>
-
-                <div class="list-items">
-                    <div class="list-item">
+                        <div class="list-items">
+                            {% for winner in event.event_winners.all %}
+                            <div class="list-item">
+                                {% if winner.logo %}
+                                    <div class="list-item-image"> 
+                                        <img src="{{ winner.logo.url }}" alt="{{ winner.name }} Logo">
+                                    </div>
+                                {% endif %}
+                                <h3>{{ winner.name }}</h3>
+                                <p>{{ winner.description }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    <div class="list-item"></div>
-                    <div class="list-item"></div>
-                    <div class="list-item"></div>
-                </div>
-            </div>
-        </div>     
+                {% endfor %}
+            </div>  
+        {% endif %}    
 
     </section>
 </section>

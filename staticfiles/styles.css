@@ -904,10 +904,46 @@ form {
 }
 
 .list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 19rem;
     background-color: var(--bg-color);
     border-radius: 3rem;
     width: 48%;
+}
+
+.list-item > h3 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--spot-color);
+}
+
+.list-item > p {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0 0;
+    color: var(--secondary-color);
+}
+
+.list-item-image {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    height: 5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.list-item-image > img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Partners */
@@ -938,8 +974,8 @@ form {
 }
 
 .sm-card > img {
-    max-width: 60%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }

@@ -64,7 +64,7 @@ class EventType(models.Model):
 
 
 class Event(models.Model):
-    event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, verbose_name=_('Тип мероприятия'), blank=True, null=True)
+    event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='events', verbose_name=_('Тип мероприятия'), blank=True, null=True)
 
     name = models.CharField(_('Название'), max_length=200, blank=False, null=False, default='Название мероприятия')
     location = models.CharField(_('Место проведения'), max_length=200, blank=False, null=False)
@@ -175,3 +175,21 @@ class Achievement(models.Model):
         ordering = ['-created_at']
         verbose_name = _('Достижение')
         verbose_name_plural = _('Достижения')
+
+
+class EventWinner(models.Model):
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, related_name='event_winners', verbose_name=_('Мероприятие'), blank=True, null=True)
+    name = models.CharField(_('Название стартапа'), max_length=100, blank=True, null=True)
+    description = models.TextField(_('Описание стартапа'), max_length=500, blank=True, null=True)
+    logo = models.ImageField(_('Логотип стартапа'), upload_to=rename_uploaded_image, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = _('Победитель')
+        verbose_name_plural = _('Победители')
+
+    def __str__(self):
+        return f'{self.name} {self.event}'
