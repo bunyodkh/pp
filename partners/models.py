@@ -3,6 +3,8 @@ from django.utils.translation import gettext as _
 
 
 class Partner(models.Model):
+    # event_type = models.ForeignKey('events.EventType', on_delete=models.CASCADE, related_name='partners', verbose_name=_('Тип мероприятия'), blank=True, null=True)
+    event_type = models.ManyToManyField('events.EventType', related_name='partners', verbose_name=_('Тип мероприятия'), blank=True)
     name = models.CharField(_('Название'), max_length=200, blank=True, null=True)
     email = models.CharField(_('Электронная почта'), max_length=200, blank=True, null=True)
     phone = models.CharField(_('Телефон'), max_length=20, blank=True, null=True)

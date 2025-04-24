@@ -801,8 +801,8 @@ form {
     height: auto;
 }
 
-.about-text > p{
-    font-size: 2.5rem;
+.about-text > p {
+    font-size: 2rem;
 }
 
 .about-text > p:last-child {
@@ -864,8 +864,54 @@ form {
 }
 
 
+/* Event details page */
+.vertical-list-container {
+    padding: 4rem 0 0 0;
+}
+
+.vertical-list {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem 0;
+}
+
+.list-title {
+    width: 40%;
+
+}
+
+.list-title > h2 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+.list-title > p {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #8298AB;
+}
+
+.list-items {
+    width: 60%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list-item {
+    min-height: 19rem;
+    background-color: var(--bg-color);
+    border-radius: 3rem;
+    width: 48%;
+}
+
 /* Partners */
-.partner-list {
+.sm-card-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -874,33 +920,50 @@ form {
     padding-top: 3rem;
 }
 
-.partner-item {
+.sm-card {
     width: 23%;
     max-height: 9rem;
     border-radius: 2rem;
     background-color: #252627;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
+    padding: 2rem;
     overflow: hidden;
     position: relative;
 }
 
-.partner-item > img {
+.sm-card-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-card > img {
     max-width: 60%;
     height: auto;
     object-fit: cover;
     object-position: center;
 }
 
+.sm-card > h3 {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+    color: var(--spot-color);
+}
 
-.partner-item > a {
+
+.sm-card > p {
+    font-family: 'TT Travels Bold', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--main-color);
+}
+
+.sm-card > a {
     text-align: center;
 } 
 
-.partner-item > a > p {
+.sm-card > a > p {
     font-family: 'TT Travels', sans-serif;
     font-size: 2rem;
     color: var(--main-color);
@@ -908,15 +971,14 @@ form {
 }
 
 
-/* Mentors section */
-.mentor-list {
+.lg-card-list {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     padding-top: 3rem;
 }
 
-.mentor-item {
+.lg-card {
     width: 31%;
     border-radius: 2.5rem;
     padding: 2rem;
@@ -924,7 +986,7 @@ form {
     text-align: center;
 }
 
-.mentor-item > h2 {
+.lg-card > h2 {
     font-family: 'TT Travels Bold', sans-serif;
     font-size: 2rem;
     margin: 0;
@@ -932,7 +994,7 @@ form {
     padding-top: 2rem;
 }
 
-.mentor-item > p {
+.lg-card > p {
     font-family: 'TT Travels', sans-serif;
     font-size: 1.5rem;
     color: rgba(130, 152, 171, 1);
@@ -940,22 +1002,28 @@ form {
     margin: 0;
 }
 
-.mentor-item > img {
+.lg-card > img {
     max-width: 100%;
     height: auto;
     border-radius: 2rem;
 }   
 
 
-.mentor-item:last-child {
+.lg-card:last-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mentor-item:last-child > img {
+.lg-card:last-child > img {
     max-width: 100%;
+}   
+
+.lg-card:last-child > a > p {
+    font-family: 'TT Travels', sans-serif;
+    font-size: 2rem;
+    margin: 1rem 0 0 0;
 }   
 
 /* Contacts section */

@@ -57,7 +57,7 @@
                 <img src="{% static 'images/about-image.png' %}" alt="Image About Pizza Pitch">
             </div>
 
-            <div class="about-text trapezoid-bg">
+            <div class="about-text">
                 <p> PizzaPitch &#8212; это платформа для стартапов на ранних этапах развития. Здесь они могут представить свои проекты, получить советы и обратную связь от экспертов.</p>
                 <p>Участники также могут принимать участие в тренингах и расширять свои деловые связи, находя потенциальных партнеров или инвесторовю.</p>
             </div>
@@ -99,19 +99,19 @@
             </div>
         </div>
 
-        <ul class="partner-list">
+        <ul class="sm-card-list">
             {% for partner in partners %}
-                <li class="partner-item">
+                <li class="sm-card sm-card-centered">
                     {% if partner.logo %}
                         <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
                     {% endif %}
                 </li>
             {% endfor %}
 
-            <li class="partner-item">
+            <li class="sm-card sm-card-centered">
                 <a href="{% url 'partners:partner-list' %}#be-partner">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become a partner link">
-                    <p>Стать партнером</p>
+                    <p>{% trans 'Стать партнером'%}</p>
                 </a>
             </li>
         </ul>
@@ -119,7 +119,7 @@
         <div class="section-heading">
             <div class="about-heading-img">
                 <a href="{% url 'partners:partner-list' %}" class="btn link-btn">
-                    Показать всех
+                    {% trans 'Показать всех' %}
                     <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the partners's page">
                 </a>
             </div>
@@ -137,11 +137,11 @@
             </div>
         </div>
 
-        <ul class="mentor-list">
+        <ul class="lg-card-list">
             {% for mentor in mentors %}
-                <li class="mentor-item">
+                <li class="lg-card">
                     {% if  mentor.photo %}
-                        <img src="{{ mentor.photo.url }}" alt="Mentor Photo">
+                        <img src="{{ mentor.photo.url }}" alt="{{ mentor.full_name }} Photo">
                     {% endif %}
                     <h2>{{ mentor.full_name }}</h2>
                     <p>{{ mentor.position }}, {{ mentor.organization }}</p>
@@ -149,10 +149,10 @@
             {% endfor %}
             
 
-            <li class="mentor-item">
+            <li class="lg-card">
                 <a href="{% url 'mentors:mentor-list' %}#be-mentor">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become Mentor Button">
-                    <h2>Стать ментором</h2>
+                    <p>Стать ментором</p>
                 </a>
             </li>
         </ul>

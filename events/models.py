@@ -156,3 +156,22 @@ class Participant(models.Model):
         ordering = ['-created_at']
         verbose_name = _('Участник')
         verbose_name_plural = _('Участники')
+
+
+
+class Achievement(models.Model):
+    event = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='achievements', verbose_name=_('Тип мероприятия'), blank=True, null=True)
+    value = models.CharField(_('Значение'), max_length=20, blank=True, null=True)
+    title = models.CharField(_('Название'), max_length=20, blank=True, null=True)
+    
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.value} {self.title} {self.event}'
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = _('Достижение')
+        verbose_name_plural = _('Достижения')

@@ -3,6 +3,8 @@
 {% load widget_tweaks %}
 {% load static %}
 
+{% load i18n %}
+
 {% block content %}
 
 
@@ -57,21 +59,109 @@
     </section>
 {% endif%}
 
+{% if achievements %}
+<section class="section-dark">
+    <section class="section-content" id="partners">
+        <div class="section-heading">
+            <h1>{% trans 'Наши' %} </h1>
+            <div class="styled-heading">
+                <h2>{% trans 'партнеры' %}</h2> 
+            </div>
+        </div>
+
+        <ul class="sm-card-list">
+            {% for achievement in achievements %}
+                <li class="sm-card">
+                    <h3>{{ achievement.value }}</h3>
+                    <p>{{ achievement.title }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+</section>
+{% endif %}    
+
+{% if partners %}
+<section class="section-dark">
+    <section class="section-content" id="partners">
+        <div class="section-heading">
+            <h1>{% trans 'Наши' %} </h1>
+            <div class="styled-heading">
+                <h2>{% trans 'партнеры' %}</h2> 
+            </div>
+        </div>
+
+        <ul class="sm-card-list">
+            {% for partner in partners %}
+                <li class="sm-card sm-card-centered">
+                    {% if partner.logo %}
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+</section>
+{% endif %}
+
+
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
-            <h1>Наши</h1>
+            <h1>{% trans 'Наши' %} </h1>
             <div class="styled-heading">
-                <h2>достижения</h2> 
+                <h2>{% trans 'участники' %}</h2> 
             </div>
         </div>
+
+        <div class="vertical-list-container">
+            <div class="vertical-list">
+                <div class="list-title">
+                    <h2>PizzaPitch XL #2</h2>
+                    <p>(04/04/2024)</p>
+                </div>
+
+                <div class="list-items">
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                </div>
+            </div>
+
+            <div class="vertical-list">
+                <div class="list-title">
+                    <h2>PizzaPitch XL #1</h2>
+                    <p>(04/04/2024)</p>
+                </div>
+
+                <div class="list-items">
+                    <div class="list-item">
+                    </div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                </div>
+            </div>
+        </div>     
+
     </section>
-</section>     
+</section>
+
 
 {% if form %} 
 <!-- REGISTRATION TO THE EVENT -->
 <section class="section">
     <section class="section-content">
+        <div class="section-heading">
+            <h1>{% trans 'Хотите стать' %} </h1>
+            <div class="styled-heading">
+                <h2>{% trans 'ментором?' %}</h2> 
+            </div>
+        </div>
+
         {% if messages %}
             <div class="messages">
                 {% for message in messages %}
