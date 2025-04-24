@@ -16,9 +16,9 @@
             </div>
         </div>
 
-        <ul class="partner-list">
+        <ul class="sm-card-list">
             {% for partner in partners %}
-                <li class="partner-item">
+                <li class="sm-card sm-card-centered">
                     {% if partner.logo %}
                         <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
                     {% endif %}
