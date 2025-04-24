@@ -80,7 +80,7 @@ class Event(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.emphasis_to_name} {self.planned_date}'
 
     def is_registration_open(self):
         return timezone.now() <= self.registration_deadline

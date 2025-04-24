@@ -106,7 +106,8 @@
 </section>
 {% endif %}
 
-
+{% if past_events %}
+<!-- PAST EVENTS' WINNERS SECTION -->
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
@@ -115,40 +116,37 @@
                 <h2>{% trans 'победители' %}</h2> 
             </div>
         </div>
-
-        {% if past_events %}
-            <div class="vertical-list-container">
-                {% for event in past_events %}
-                    <div class="vertical-list">
-                        <div class="list-title">
-                            <h2>{{ event.name }}</h2>
-                            <p>({{ event.planned_date|date:"d/m/Y" }})</p>
-                        </div>
-
-                        <div class="list-items">
-                            {% for winner in event.event_winners.all %}
-                            <div class="list-item">
-                                {% if winner.logo %}
-                                    <div class="list-item-image"> 
-                                        <img src="{{ winner.logo.url }}" alt="{{ winner.name }} Logo">
-                                    </div>
-                                {% endif %}
-                                <h3>{{ winner.name }}</h3>
-                                <p>{{ winner.description }}</p>
-                            </div>
-                            {% endfor %}
-                        </div>
+        <div class="vertical-list-container">
+            {% for event in past_events %}
+                <div class="vertical-list">
+                    <div class="list-title">
+                        <h2>{{ event.name }}</h2>
+                        <p>({{ event.planned_date|date:"d/m/Y" }})</p>
                     </div>
-                {% endfor %}
-            </div>  
-        {% endif %}    
 
+                    <div class="list-items">
+                        {% for winner in event.event_winners.all %}
+                        <div class="list-item">
+                            {% if winner.logo %}
+                                <div class="list-item-image"> 
+                                    <img src="{{ winner.logo.url }}" alt="{{ winner.name }} Logo">
+                                </div>
+                            {% endif %}
+                            <h3>{{ winner.name }}</h3>
+                            <p>{{ winner.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  
     </section>
 </section>
+{% endif %}
 
 
 {% if form %} 
-<!-- REGISTRATION TO THE EVENT -->
+<!-- REGISTRATION SECTION -->
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
