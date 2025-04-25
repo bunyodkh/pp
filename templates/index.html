@@ -15,17 +15,17 @@
                     <div class="active-event-timer">
                         <div class="timer-item">
                             <p id="days-left">20</p>
-                            <p>days</p>
+                            <p>{% trans 'дней'%}</p>
                         </div>   
                         <p>:</p>
                         <div class="timer-item">
                             <p id="hours-left">17</p>
-                            <p>hours</p>
+                            <p>{% trans 'часов'%}</p>
                         </div>   
                         <p>:</p>
                         <div class="timer-item">
                             <p id="minutes-left">43</p>
-                            <p>minutes</p>
+                            <p>{% trans 'мин'%}</p>
                         </div>   
                     </div>
     
@@ -108,7 +108,7 @@
                 </li>
             {% endfor %}
 
-            <li class="sm-card sm-card-centered">
+            <li class="sm-card sm-card-centered card-link">
                 <a href="{% url 'partners:partner-list' %}#be-partner">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become a partner link">
                     <p>{% trans 'Стать партнером'%}</p>
@@ -117,7 +117,7 @@
         </ul>
 
         <div class="section-heading">
-            <div class="about-heading-img">
+            <div class="btn-container">
                 <a href="{% url 'partners:partner-list' %}" class="btn link-btn">
                     {% trans 'Показать всех' %}
                     <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the partners's page">
@@ -149,7 +149,7 @@
             {% endfor %}
             
 
-            <li class="lg-card">
+            <li class="lg-card card-link">
                 <a href="{% url 'mentors:mentor-list' %}#be-mentor">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become Mentor Button">
                     <p>Стать ментором</p>
@@ -158,7 +158,7 @@
         </ul>
         
         <div class="section-heading">
-            <div class="about-heading-img">
+            <div class="btn-container">
                 <a href="{% url 'mentors:mentor-list' %}" class="btn link-btn">
                     Показать всех
                     <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the mentor's page">
@@ -207,7 +207,7 @@
         }
 
         updateCountdown(); 
-        const interval = setInterval(updateCountdown, 1000);
+        const interval = setInterval(updateCountdown, 60000); // Update every minute
     }
 
     startCountdown();
