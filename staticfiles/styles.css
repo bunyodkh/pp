@@ -59,7 +59,7 @@ a {
 }
 
 .navbar-mobile {
-    visibility: hidden;
+    display: none;
 }   
 
 .nav {
@@ -1084,7 +1084,6 @@ form {
 
     .navbar-mobile {
         position: relative;
-        visibility: visible;
         display: flex;
         background-color: var(--secondary-color);
         width: 100%;
@@ -1212,11 +1211,16 @@ form {
         min-height: 45rem;
         padding: 0;
         justify-content: start;
+        position: relative;
     }
 
     .active-event-details,
     .active-event-image {
         width: 100%;
+    }
+
+    .active-event-details {
+        position: unset;
     }
 
     .active-event-details > p {
@@ -1240,7 +1244,7 @@ form {
     }
 
     .active-event-details > .btn {
-        bottom: -20rem;
+        bottom: 1.5rem;
         font-size: 1.5rem;
         padding: 1.5rem 0;
     }
