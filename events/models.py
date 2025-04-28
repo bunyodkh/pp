@@ -11,9 +11,15 @@ from core.utils import rename_uploaded_image
 
 
 class EventType(models.Model):
-    name = models.CharField(_('Название'), max_length=200, blank=False, null=False)
+    name = models.CharField(_('Название на русском'), max_length=200, blank=False, null=False)
+    name_en = models.CharField(_('Название на английском'), max_length=200, blank=False, null=False)
+    name_uz = models.CharField(_('Название на узбекском'), max_length=200, blank=False, null=False)
+
     image = models.ImageField(_('Изображение'), upload_to=rename_uploaded_image, blank=True, null=True)
-    description = models.TextField(_('Описание'), blank=False, null=False, default='Event description')
+    
+    description = models.TextField(_('Описание на русском'), blank=False, null=False, default='Event description')
+    description_en = models.TextField(_('Описание на английском'), blank=True, null=True, default='Event description')
+    description_uz = models.TextField(_('Описание на узбекском'), blank=True, null=True, default='Tadbir haqida ma\'lumot')
 
     slug = models.SlugField(_('Slug'), max_length=200, unique=True, blank=True)  # Add slug field
 
@@ -64,14 +70,18 @@ class EventType(models.Model):
 
 class EventTimeline(models.Model):   
     event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='event_timelines', verbose_name=_('Тип мероприятия'), blank=True, null=True) 
-    step_title = models.CharField(_('Название этапа'), max_length=200, blank=False, null=False)
+    
+    step_title = models.CharField(_('Название этапа на русском'), max_length=200, blank=False, null=False)
+    step_title_en = models.CharField(_('Название этапа на английском'), max_length=200, blank=False, null=False)
+    step_title_uz = models.CharField(_('Название этапа на узбекском'), max_length=200, blank=False, null=False)
+
     step_deadline = models.DateTimeField(_('Срок выполнения'), blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['created_at']
         verbose_name = _('Этап мероприятия')
         verbose_name_plural = _('Этапы мероприятий')
     
@@ -83,9 +93,18 @@ class EventTimeline(models.Model):
 class Event(models.Model):
     event_type = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='events', verbose_name=_('Тип мероприятия'), blank=True, null=True)
 
-    name = models.CharField(_('Название'), max_length=200, blank=False, null=False, default='Название мероприятия')
+    name = models.CharField(_('Название на русском'), max_length=200, blank=False, null=False, default='Название мероприятия')
+    name_en = models.CharField(_('Название на английском'), max_length=200, blank=False, null=False, default='Event name')
+    name_uz = models.CharField(_('Название на узбекском'), max_length=200, blank=False, null=False, default='Tadbir nomi')
+
     emphasis_to_name = models.CharField(_('Акцент к названию'), max_length=10, blank=False, null=False, default='Event')
-    location = models.CharField(_('Место проведения'), max_length=200, blank=False, null=False)
+    emphasis_to_name_en = models.CharField(_('Акцент к названию на английском'), max_length=10, blank=False, null=False, default='Event')
+    emphasis_to_name_uz = models.CharField(_('Акцент к названию на узбекском'), max_length=10, blank=False, null=False, default='Tadbir')
+
+    location = models.CharField(_('Место проведения на русском'), max_length=200, blank=False, null=False)
+    location_en = models.CharField(_('Место проведения на английском'), max_length=200, blank=False, null=False)
+    location_uz = models.CharField(_('Место проведения на узбекском'), max_length=200, blank=False, null=False)
+
     planned_date = models.DateTimeField(_('Дата проведения'), blank=True, null=True)
     registration_deadline = models.DateTimeField(_('Дата окончания регистрации'), blank=False, null=False)
 
@@ -179,8 +198,12 @@ class Participant(models.Model):
 
 class Achievement(models.Model):
     event = models.ForeignKey('EventType', on_delete=models.CASCADE, related_name='achievements', verbose_name=_('Тип мероприятия'), blank=True, null=True)
+    
     value = models.CharField(_('Значение'), max_length=20, blank=True, null=True)
-    title = models.CharField(_('Название'), max_length=20, blank=True, null=True)
+    
+    title = models.CharField(_('Название на русском'), max_length=20, blank=True, null=True)
+    title_en = models.CharField(_('Название на английском'), max_length=20, blank=True, null=True)
+    title_uz = models.CharField(_('Название на узбекском'), max_length=20, blank=True, null=True)  
     
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -197,8 +220,13 @@ class Achievement(models.Model):
 
 class EventWinner(models.Model):
     event = models.ForeignKey('Event', on_delete=models.CASCADE, related_name='event_winners', verbose_name=_('Мероприятие'), blank=True, null=True)
+    
     name = models.CharField(_('Название стартапа'), max_length=100, blank=True, null=True)
-    description = models.TextField(_('Описание стартапа'), max_length=500, blank=True, null=True)
+
+    description = models.TextField(_('Описание стартапа на русском'), max_length=500, blank=True, null=True)
+    description_en = models.TextField(_('Описание стартапа на английском'), max_length=500, blank=True, null=True)
+    description_uz = models.TextField(_('Описание стартапа на узбекском'), max_length=500, blank=True, null=True)
+
     logo = models.ImageField(_('Логотип стартапа'), upload_to=rename_uploaded_image, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)

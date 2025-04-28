@@ -13,8 +13,6 @@ def event_type_detail(request, slug):
     partners = event_type.partners.all() 
     achievements = event_type.achievements.all()
 
-    print(past_events)
-
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -28,17 +26,19 @@ def event_type_detail(request, slug):
     else:
         if not active_event:
             return render(request, 'event_detail.html', {
-                'event_type': event_type, 
-                'partners': partners, 
-                'achievements': achievements , 
-                'past_events': past_events})
+                    'event_type': event_type, 
+                    'partners': partners, 
+                    'achievements': achievements , 
+                    'past_events': past_events
+                })
         form = RegistrationForm()
    
     return render(request, 'event_detail.html', {
-        'event_type': event_type, 
-        'event':active_event, 
-        'form': form, 'partners': partners, 
-        'achievements': achievements, 
-        'past_events': past_events})
+            'event_type': event_type, 
+            'event':active_event, 
+            'form': form, 'partners': partners, 
+            'achievements': achievements, 
+            'past_events': past_events
+        })
 
 
