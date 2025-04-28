@@ -12,9 +12,9 @@
     <section class="section-content" id="mentors">
 
         <div class="section-heading">
-            <h1>Наши</h1>
+            <h1>{% trans 'Наши' %}</h1>
             <div class="styled-heading">
-                <h2>ментора</h2> 
+                <h2>{% trans 'ментора' %}</h2> 
             </div>
         </div>
 
@@ -42,9 +42,9 @@
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
-            <h1>Хотите стать</h1>
+            <h1>{% trans 'Хотите стать' %}</h1>
             <div class="styled-heading">
-                <h2>ментором?</h2> 
+                <h2>{% trans 'ментором?' %}</h2> 
             </div>
         </div>
 
@@ -139,7 +139,7 @@
                         <label for="id_reason">{{ form.reason.label }}</label>
                         {{ form.reason }}
                     </div>
-                    <button type="submit" class="btn submit-btn">Отправить заявку</button>
+                    <button type="submit" class="btn submit-btn">{% trans 'Отправить заявку' %}</button>
                 </form>
             </div>
         {% endif %}

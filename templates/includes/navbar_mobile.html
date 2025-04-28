@@ -1,0 +1,62 @@
+{% load static %}
+
+{% load i18n %}
+
+
+<!-- NAVBAR -->
+<section class="section">
+    <div class="navbar-mobile">    
+        <nav class="nav">
+            <div class="logo">
+                <a href="/">
+                    <img src="{% static 'images/footer-logo.png'%}" alt="PizzaPitch Logo">
+                </a>
+            </div>
+
+            
+            <div class="menu-btn">
+                <span class="menu-btn-burger"></span>
+                <span class="menu-btn-burger"></span>
+                <span class="menu-btn-burger"></span>
+            </div>
+    
+
+            <ul class="menu-mobile">
+                <li class="menu-item">
+                    <a href="{% url 'index' %}#about">{% trans 'О нас' %}</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="{% url 'index' %}#events">{% trans 'Мероприятия' %}</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="{% url 'index' %}#partners">{% trans 'Партнеры' %}</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="{% url 'index' %}#mentors">{% trans 'Менторы' %}</a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="{% url 'index' %}#contact-us">{% trans 'Связаться с нами' %}</a>
+                </li>
+
+                <ul class="lang-list">
+                    <li class="lang-item lang-item-selected">
+                        <a href="{{ request.path }}">RU</a>
+                    </li>
+        
+                    <li class="lang-item">
+                        <a href="/uz{{ request.path }}">UZ</a>
+                    </li>
+        
+                    <li class="lang-item">
+                        <a href="/en{{ request.path }}">EN</a>
+                    </li>
+                </ul>
+
+            </ul>
+        </nav> 
+    </div>
+</section>

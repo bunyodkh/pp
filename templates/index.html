@@ -31,7 +31,7 @@
     
                     <div id="countdown"></div>
     
-                    <a href="{{ event.event_type.get_absolute_url }}" class="btn register-btn">Зарегистрироваться</a>
+                    <a href="{{ event.event_type.get_absolute_url }}" class="btn register-btn">{% trans 'Зарегистрироваться' %}</a>
                 </div>
     
                 <div class="active-event-image">
@@ -46,9 +46,9 @@
 <section class="section-dark">
     <div class="section-content" id="about">
         <div class="section-heading">
-            <h1>Что такое</h1>
+            <h1>{% trans 'Что такое' %}</h1>
             <div class="styled-heading">
-                <h2>PIZZAPITCH</h2> 
+                <h2>{% trans 'PIZZAPITCH' %}</h2> 
             </div>
         </div>
 
@@ -58,8 +58,8 @@
             </div>
 
             <div class="about-text">
-                <p> PizzaPitch &#8212; это платформа для стартапов на ранних этапах развития. Здесь они могут представить свои проекты, получить советы и обратную связь от экспертов.</p>
-                <p>Участники также могут принимать участие в тренингах и расширять свои деловые связи, находя потенциальных партнеров или инвесторовю.</p>
+                <p>{% trans 'PizzaPitch &#8212; это платформа для стартапов на ранних этапах развития. Здесь они могут представить свои проекты, получить советы и обратную связь от экспертов.' %}</p>
+                <p>{% trans 'Участники также могут принимать участие в тренингах и расширять свои деловые связи, находя потенциальных партнеров или инвесторовю.' %}</p>
             </div>
         </div>
     </div>
@@ -70,9 +70,9 @@
 <section class="section">
     <div class="section-content" id="events">
         <div class="section-heading">
-            <h1>Наши</h1>
+            <h1>{% trans 'Наши' %}</h1>
             <div class="styled-heading">
-                <h2>мероприятия</h2> 
+                <h2>{% trans 'мероприятия' %}</h2> 
             </div>
         </div>
 
@@ -131,9 +131,9 @@
 <section class="section">
     <section class="section-content" id="mentors">
         <div class="section-heading">
-            <h1>Наши</h1>
+            <h1>{% trans 'Наши' %}</h1>
             <div class="styled-heading">
-                <h2>ментора</h2> 
+                <h2>{% trans 'ментора' %}</h2> 
             </div>
         </div>
 
@@ -152,7 +152,7 @@
             <li class="lg-card card-link">
                 <a href="{% url 'mentors:mentor-list' %}#be-mentor">
                     <img src="{% static 'images/plus-sign.png' %}" alt="Become Mentor Button">
-                    <p>Стать ментором</p>
+                    <p>{% trans 'Стать ментором' %}</p>
                 </a>
             </li>
         </ul>
@@ -160,7 +160,7 @@
         <div class="section-heading">
             <div class="btn-container">
                 <a href="{% url 'mentors:mentor-list' %}" class="btn link-btn">
-                    Показать всех
+                    {% trans 'Показать всех' %}
                     <img src="{% static 'images/right-arrow.png'%}" alt="Arrow icon in the link leading to the mentor's page">
                 </a>
             </div>

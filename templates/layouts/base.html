@@ -4,14 +4,32 @@
 <html lang="en">
     {% include 'includes/head.html' %}
 <body>
-    {% if request.path == '/'%}
-        {% include 'includes/homepage_navbar.html' %}
-    {% else %}
-        {% include 'includes/base_navbar.html' %}
-    {% endif %}
+    {% include 'includes/navbar.html' %}
+    {% include 'includes/navbar_mobile.html' %}
 
     {% block content %} {% endblock %}
 
     {% include 'includes/contacts.html' %}
+
+    {% include 'includes/footer.html' %}
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const menu = document.querySelector('.menu-mobile');                      
+        const menuLinks = document.querySelectorAll('.menu-item a');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            menu.classList.toggle('open');
+        });
+
+        
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                menu.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>

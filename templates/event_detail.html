@@ -149,9 +149,9 @@
 <section class="section">
     <section class="section-content" id="mentors">
         <div class="section-heading">
-            <h1>Наш</h1>
+            <h1>{% trans 'Наш' %}</h1>
             <div class="styled-heading">
-                <h2>таймлайн</h2> 
+                <h2>{% trans 'таймлайн' %}</h2> 
             </div>
         </div>
 
@@ -274,7 +274,7 @@
                         <label for="id_description">{{ form.description.label }}</label>
                         {{ form.description|add_class:"form-textarea" }}
                     </div>
-                    <button type="submit" class="btn submit-btn">Отправить заявку</button>
+                    <button type="submit" class="btn submit-btn">{% trans 'Отправить заявку' %}</button>
                 </form>
             </div>
         {% endif %}

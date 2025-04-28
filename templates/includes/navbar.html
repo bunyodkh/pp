@@ -1,5 +1,8 @@
 {% load static %}
 
+{% load i18n %}
+
+
 <!-- NAVBAR -->
 <section class="section">
     <div class="navbar">    
@@ -12,23 +15,23 @@
 
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="{% url 'index' %}#about">О нас</a>
+                    <a href="{% url 'index' %}#about">{% trans 'О нас' %}</a>
                 </li>
 
                 <li class="menu-item">
-                    <a href="{% url 'index' %}#events">Мероприятия</a>
+                    <a href="{% url 'index' %}#events">{% trans 'Мероприятия' %}</a>
                 </li>
 
                 <li class="menu-item">
-                    <a href="{% url 'partners:partner-list' %}">Партнеры</a>
+                    <a href="{% url 'index' %}#partners">{% trans 'Партнеры' %}</a>
                 </li>
 
                 <li class="menu-item">
-                    <a href="{% url 'mentors:mentor-list' %}">Менторы</a>
+                    <a href="{% url 'index' %}#mentors">{% trans 'Менторы' %}</a>
                 </li>
 
                 <li class="menu-item">
-                    <a href="#contact-us">Связаться с нами</a>
+                    <a href="{% url 'index' %}#contact-us">{% trans 'Связаться с нами' %}</a>
                 </li>
             </ul>
         </nav> 

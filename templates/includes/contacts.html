@@ -1,18 +1,22 @@
 {% load static %}
 
+{% load i18n %}
+
 <!-- CONTACTS -->
 <section class="section">
     <div class="section-content" id="contact-us">
         <div class="contacts-container">
             <div class="contacts-details">
-                <h2>Будьте в курсе всех новостей</h2>
-                <p>Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами</p>
+                <h2>{% trans 'Будьте в курсе всех новостей' %}</h2>
+                <p>{% trans 'Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей или свяжитесь с нами' %}</p>
                 <div class="social-links">
                     <a href="#">
-                        <img src="{% static 'images/email-link.png' %}" alt="Email Icon">
+                        <img src="{% static 'images/bubble-icon.png' %}" alt="Bubble Icon">
+                        <p>{% trans 'Связаться' %}</p>
                     </a>
                     <a href="https://t.me/pizzapitchuz" target="_blank">
-                        <img src="{% static 'images/tg-link.png' %}" alt="Telegram Icon">
+                        <img src="{% static 'images/tg-icon.png' %}" alt="Telegram Icon">
+                        <p>{% trans 'Подписаться' %}</p>
                     </a>
                 </div>
             </div>
