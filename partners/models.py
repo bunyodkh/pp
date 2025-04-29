@@ -5,9 +5,9 @@ from django.utils.translation import gettext as _
 class Partner(models.Model):
     # event_type = models.ForeignKey('events.EventType', on_delete=models.CASCADE, related_name='partners', verbose_name=_('Тип мероприятия'), blank=True, null=True)
     event_type = models.ManyToManyField('events.EventType', related_name='partners', verbose_name=_('Тип мероприятия'), blank=True)
-    name = models.CharField(_('Название'), max_length=200, blank=True, null=True)
-    name_en = models.CharField(_('Название на английском'), max_length=200, blank=True, null=True)
-    name_uz = models.CharField(_('Название на узбекском'), max_length=200, blank=True, null=True)
+    name = models.CharField(_('Название'), max_length=200, blank=True, null=True, help_text=_('Название на русском языке'), default='Партнер')
+    name_en = models.CharField(_('Название на английском'), max_length=200, blank=True, null=True, help_text=_('Название на английском языке'))
+    name_uz = models.CharField(_('Название на узбекском'), max_length=200, blank=True, null=True, help_text=_('Название на узбекском языке'))
 
     email = models.CharField(_('Электронная почта'), max_length=200, blank=True, null=True)
     phone = models.CharField(_('Телефон'), max_length=20, blank=True, null=True)
@@ -21,7 +21,7 @@ class Partner(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.created_at}'
         
     class Meta:
         ordering = ['-created_at']
