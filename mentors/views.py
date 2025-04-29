@@ -17,9 +17,11 @@ def mentor_add(request):
     if request.method == 'POST':
         form = MentorForm(request.POST)
         if form.is_valid():
-            form.save()
+            mentor = form.save(commit=False)
+            mentor.registration_source = 'website'
+            mentor.save()
             messages.success(request, _('Your application has been successfully submitted.'))
-            return render(request, 'mentor_list.html', {'form': form, 'mentors': mentors})
+            return redirect('partners:partner-list')
         else:
             messages.error(request, _('There was an error submitting your application. Please correct the errors below.'))
     else:

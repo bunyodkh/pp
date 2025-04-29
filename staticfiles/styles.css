@@ -165,7 +165,7 @@ form {
 
 .input-error-message {
     position: absolute;
-    top: 13rem;
+    top: 14rem;
     left: 0;
     font-size: 1rem;
     color: #a50000;
@@ -932,7 +932,7 @@ form {
 }
 
 
-@media (max-width: 1350px) {
+@media (max-width: 1352px) {
     .event-section {
         padding: 1.5rem 2rem;
         min-height: 0;
@@ -1000,7 +1000,7 @@ form {
     }
 
     .input-error-message {
-        top: 3rem;
+        top: 12rem;
     }
 
     .mentors-section {
