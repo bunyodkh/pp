@@ -16,9 +16,11 @@ def partner_add(request):
     if request.method == 'POST':
         form = PartnerForm(request.POST)
         if form.is_valid():
-            form.save()
+            partner = form.save(commit=False)
+            partner.registration_source = 'website'
+            partner.save()
             messages.success(request, _('Your application has been successfully submitted.'))
-            return redirect('mentors:mentor-list')
+            return redirect('partners:partner-list')
         else:
             messages.error(request, _('There was an error submitting your application. Please correct the errors below.'))
     else:

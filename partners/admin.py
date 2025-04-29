@@ -5,4 +5,6 @@ from .models import Partner
 
 @admin.register(Partner)
 class PartnerAdmin(ModelAdmin):
-    pass
+    list_display = ('name', 'registration_source')
+    list_filter = ('registration_source',)
+

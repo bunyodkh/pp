@@ -17,6 +17,8 @@ class Partner(models.Model):
 
     show_on_website = models.BooleanField(_('Показать на сайте'), default=False)
 
+    registration_source = models.CharField(max_length=50, choices=[('website', 'Website'), ('admin', 'Admin')], default='admin', verbose_name=_('Источник регистрации'))
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
