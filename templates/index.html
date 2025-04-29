@@ -79,9 +79,11 @@
         <ul class="event-list">
             {% for event_type in event_types %}
             <li class="event-item">
-                <div class="image-gradient"></div>
-                <img src="{{ event_type.image.url }}" alt="{{ event_type.name}} Photo">
-                <h2><a href="{{ event_type.get_absolute_url }}">{{ event_type.name }}</a></h2>
+                <a href="{{ event_type.get_absolute_url }}" class="event-link">
+                    <div class="image-gradient"></div>
+                    <img src="{{ event_type.image.url }}" alt="{{ event_type.name}} Photo">
+                    <h2>{{ event_type.name }}</h2>
+                </a>
             </li>
             {% endfor %}
         </ul>
