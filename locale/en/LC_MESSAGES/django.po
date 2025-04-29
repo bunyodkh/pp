@@ -136,7 +136,7 @@ msgstr "Organization"
 
 #: .\events\models.py:18
 msgid "Изображение"
-msgstr ""
+msgstr "Image"
 
 #: .\events\models.py:20
 #, fuzzy
@@ -159,11 +159,11 @@ msgstr ""
 #: .\events\models.py:40 .\events\models.py:72 .\events\models.py:94
 #: .\events\models.py:200 .\partners\models.py:7
 msgid "Тип мероприятия"
-msgstr ""
+msgstr "Even type"
 
 #: .\events\models.py:41
 msgid "Типы мероприятий"
-msgstr ""
+msgstr "Event types"
 
 #: .\events\models.py:74
 #, fuzzy
@@ -596,15 +596,15 @@ msgstr ""
 
 #: .\partners\models.py:15
 msgid "Почему хотите стать партнером?"
-msgstr ""
+msgstr "Why you want to be a mentor?"
 
 #: .\partners\models.py:16
 msgid "Логотипа"
-msgstr ""
+msgstr "Logo"
 
 #: .\partners\models.py:30
 msgid "Партнер"
-msgstr ""
+msgstr "Partner"
 
 #: .\partners\models.py:31 .\templates\includes\navbar.html:26
 #: .\templates\includes\navbar_mobile.html:34
@@ -616,45 +616,45 @@ msgstr ""
 #: .\templates\index.html:98 .\templates\index.html:136
 #: .\templates\mentor_list.html:15 .\templates\partner_list.html:13
 msgid "Наши"
-msgstr ""
+msgstr "Our"
 
 #: .\templates\event_detail.html:68
 msgid "достижения"
-msgstr ""
+msgstr "achievements"
 
 #: .\templates\event_detail.html:91 .\templates\index.html:100
 #: .\templates\partner_list.html:15
 msgid "партнеры"
-msgstr ""
+msgstr "partners"
 
 #: .\templates\event_detail.html:116
 msgid "победители"
-msgstr ""
+msgstr "winners"
 
 #: .\templates\event_detail.html:152
 msgid "Наш"
-msgstr ""
+msgstr "Our"
 
 #: .\templates\event_detail.html:154
 msgid "таймлайн"
-msgstr ""
+msgstr "timeline"
 
 #: .\templates\event_detail.html:176 .\templates\mentor_list.html:45
 #: .\templates\partner_list.html:35
 msgid "Хотите стать"
-msgstr ""
+msgstr "Do you want to"
 
 #: .\templates\event_detail.html:178
 msgid "участником?"
-msgstr ""
+msgstr "attend?"
 
 #: .\templates\event_detail.html:277 .\templates\mentor_list.html:142
 msgid "Отправить заявку"
-msgstr ""
+msgstr "Send"
 
 #: .\templates\includes\contacts.html:10
 msgid "Будьте в курсе всех новостей"
-msgstr ""
+msgstr "Stay up to date with all the news"
 
 #: .\templates\includes\contacts.html:11
 msgid ""
@@ -668,50 +668,50 @@ msgstr ""
 
 #: .\templates\includes\contacts.html:19
 msgid "Подписаться"
-msgstr ""
+msgstr "Subscribe"
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
-msgstr ""
+msgstr "PizzaPitch Platform"
 
 #: .\templates\includes\navbar.html:18
 #: .\templates\includes\navbar_mobile.html:26
 msgid "О нас"
-msgstr ""
+msgstr "About Us"
 
 #: .\templates\includes\navbar.html:30
 #: .\templates\includes\navbar_mobile.html:38
 msgid "Менторы"
-msgstr ""
+msgstr "Mentors"
 
 #: .\templates\includes\navbar.html:34
 #: .\templates\includes\navbar_mobile.html:42
 msgid "Связаться с нами"
-msgstr ""
+msgstr "Contact Us"
 
 #: .\templates\index.html:18
 msgid "дней"
-msgstr ""
+msgstr "days"
 
 #: .\templates\index.html:23
 msgid "часов"
-msgstr ""
+msgstr "hours"
 
 #: .\templates\index.html:28
 msgid "мин"
-msgstr ""
+msgstr "mins"
 
 #: .\templates\index.html:34
 msgid "Зарегистрироваться"
-msgstr ""
+msgstr "Register"
 
 #: .\templates\index.html:49
 msgid "Что такое"
-msgstr ""
+msgstr "What is"
 
 #: .\templates\index.html:51
 msgid "PIZZAPITCH"
-msgstr ""
+msgstr "PizzaPitch"
 
 #: .\templates\index.html:61
 msgid ""
@@ -728,31 +728,31 @@ msgstr ""
 
 #: .\templates\index.html:75
 msgid "мероприятия"
-msgstr ""
+msgstr "events"
 
 #: .\templates\index.html:116
 msgid "Стать партнером"
-msgstr ""
+msgstr "Become a partner"
 
 #: .\templates\index.html:124 .\templates\index.html:165
 msgid "Показать всех"
-msgstr ""
+msgstr "Show all"
 
 #: .\templates\index.html:138 .\templates\mentor_list.html:17
 msgid "ментора"
-msgstr ""
+msgstr "mentors"
 
 #: .\templates\index.html:157
 msgid "Стать ментором"
-msgstr ""
+msgstr "Become a mentor"
 
 #: .\templates\mentor_list.html:47
 msgid "ментором?"
-msgstr ""
+msgstr "mentor?"
 
 #: .\templates\partner_list.html:37
 msgid "партнером?"
-msgstr ""
+msgstr "partner?"
 
 #~ msgid "Краткая биография"
 #~ msgstr "Brief bio"

@@ -36,17 +36,23 @@
             </ul>
         </nav> 
 
+        
+
+        
+
+
+
         <ul class="lang-list">
             <li class="lang-item lang-item-selected">
-                <a href="{{ request.path }}">RU</a>
+                <a href="/ru{{ request.path|slice:'3:' }}">RU</a>
             </li>
 
             <li class="lang-item">
-                <a href="/uz{{ request.path }}">UZ</a>
+                <a href="/uz{{ request.path|slice:'3:' }}">UZ</a>
             </li>
 
             <li class="lang-item">
-                <a href="/en{{ request.path }}">EN</a>
+                <a href="/en{{ request.path|slice:'3:' }}">EN</a>
             </li>
         </ul>
     </div>

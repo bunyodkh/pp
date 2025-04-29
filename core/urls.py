@@ -3,23 +3,24 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from django.views.generic.base import RedirectView
 
 from .views import index
-from mentors.views import mentor_add
-from partners.views import partner_add
+
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/ru/', permanent=True)),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
     path('', index, name='index'),
-    path('admin/', admin.site.urls),
     path('mentors/', include('mentors.urls')),
     path('events/', include('events.urls')),
     path('partners/', include('partners.urls')),
+    path('admin/', admin.site.urls),
 
-    prefix_default_language=False,
+    prefix_default_language=True,
 )
 
 if settings.DEBUG:
