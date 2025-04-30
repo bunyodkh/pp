@@ -7,13 +7,13 @@ from .forms import MentorForm
 
 
 def mentor_list(request):
-    mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')
+    mentors = Mentor.objects.filter(show_on_page=True).order_by('-created_at')
     form = MentorForm()
     return render(request, 'mentor_list.html', {'mentors': mentors, 'form': form})
 
 
 def mentor_add(request):
-    mentors = Mentor.objects.filter(show_on_website=True).order_by('-created_at')
+    mentors = Mentor.objects.filter(show_on_page=True).order_by('-created_at')
     if request.method == 'POST':
         form = MentorForm(request.POST)
         if form.is_valid():

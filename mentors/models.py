@@ -22,7 +22,8 @@ class Mentor(models.Model):
     reason = models.TextField(_('Почему хотите стать ментором?'), blank=True, null=True)
     photo = models.ImageField(_('Фотография'), upload_to='mentors/', blank=True, null=True)
 
-    show_on_website = models.BooleanField(_('Показать на сайте'), default=False)
+    show_on_main = models.BooleanField(_('Показать на главной странице'), default=False)
+    show_on_page = models.BooleanField(_('Показать на странице менторов'), default=False)
 
     registration_source = models.CharField(max_length=50, choices=[('website', 'Website'), ('admin', 'Admin')], default='admin', verbose_name=_('Источник регистрации'))
 

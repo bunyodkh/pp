@@ -25,7 +25,7 @@
                     <li class="lg-card">
                         <img src="{% if mentor.photo %}{{ mentor.photo.url }}{% endif %}" alt="Mentor Photo">
                         <h2>{{ mentor.full_name }}</h2>
-                        <p>{{ mentor.position }}, {{ mentor.organization }}</p>
+                        <p>{{ mentor.position }} {% if mentor.organization %}, {{ mentor.organization }} {% endif %}</p>
                     </li>
                 {% endfor %}
             </ul>
