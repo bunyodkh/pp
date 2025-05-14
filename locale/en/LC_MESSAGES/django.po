@@ -228,59 +228,59 @@ msgstr ""
 #: .\events\models.py:149 .\templates\includes\navbar.html:22
 #: .\templates\includes\navbar_mobile.html:30
 msgid "Мероприятия"
-msgstr ""
+msgstr "Events"
 
 #: .\events\models.py:155 .\events\models.py:170
 msgid "Фотография мероприятия"
-msgstr ""
+msgstr "Event photo"
 
 #: .\events\models.py:156
 msgid "Главное изображение"
-msgstr ""
+msgstr "Main image"
 
 #: .\events\models.py:171
 msgid "Фотографии мероприятий"
-msgstr ""
+msgstr "Event photos"
 
 #: .\events\models.py:176
 msgid "Полное имя"
-msgstr ""
+msgstr "Full name"
 
 #: .\events\models.py:177
 msgid "Учебное заведение"
-msgstr ""
+msgstr "University"
 
 #: .\events\models.py:178 .\mentors\models.py:20
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: .\events\models.py:179 .\partners\models.py:11
 msgid "Электронная почта"
-msgstr ""
+msgstr "E-mail"
 
 #: .\events\models.py:181
 msgid "Название проекта"
-msgstr ""
+msgstr "Project name"
 
 #: .\events\models.py:182
 msgid "Ваша роль в проекте"
-msgstr ""
+msgstr "Your role in the project"
 
 #: .\events\models.py:184
 msgid "Ссылка на презентацию"
-msgstr ""
+msgstr "Link to the presentation"
 
 #: .\events\models.py:185
 msgid "Описание проекта"
-msgstr ""
+msgstr "Description of the project"
 
 #: .\events\models.py:197
 msgid "Участник"
-msgstr ""
+msgstr "Participant"
 
 #: .\events\models.py:198
 msgid "Участники"
-msgstr ""
+msgstr "Participants"
 
 #: .\events\models.py:205
 msgid "Значение"
@@ -620,32 +620,32 @@ msgstr ""
 #: .\templates\index.html:98 .\templates\index.html:136
 #: .\templates\mentor_list.html:15 .\templates\partner_list.html:14
 msgid "Наши"
-msgstr ""
+msgstr "Our"
 
 #: .\templates\event_detail.html:68
 msgid "достижения"
-msgstr ""
+msgstr "achievements"
 
 #: .\templates\event_detail.html:91 .\templates\index.html:100
 #: .\templates\partner_list.html:16
 msgid "партнеры"
-msgstr ""
+msgstr "partners"
 
 #: .\templates\event_detail.html:116
 msgid "победители"
-msgstr ""
+msgstr "winners"
 
 #: .\templates\event_detail.html:152
 msgid "Наш"
-msgstr ""
+msgstr "Our"
 
 #: .\templates\event_detail.html:154
 msgid "таймлайн"
-msgstr ""
+msgstr "timeline"
 
 #: .\templates\event_detail.html:176
 msgid "Хотите стать участником?"
-msgstr ""
+msgstr "Do you want to participate?"
 
 #: .\templates\event_detail.html:192
 msgid "Success. Your application is received"
@@ -653,7 +653,7 @@ msgstr ""
 
 #: .\templates\event_detail.html:274 .\templates\mentor_list.html:139
 msgid "Отправить заявку"
-msgstr ""
+msgstr "Send"
 
 #: .\templates\includes\contacts.html:10
 msgid "Будьте в курсе всех новостей"
@@ -667,92 +667,95 @@ msgstr ""
 
 #: .\templates\includes\contacts.html:15
 msgid "Связаться"
-msgstr ""
+msgstr "Contact"
 
 #: .\templates\includes\contacts.html:19
 msgid "Подписаться"
-msgstr ""
+msgstr "Subscribe"
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
-msgstr ""
+msgstr "PizzaPitch Platform"
 
 #: .\templates\includes\navbar.html:18
 #: .\templates\includes\navbar_mobile.html:26
 msgid "О нас"
-msgstr ""
+msgstr "About us"
 
 #: .\templates\includes\navbar.html:30
 #: .\templates\includes\navbar_mobile.html:38
 msgid "Менторы"
-msgstr ""
+msgstr "Mentors"
 
 #: .\templates\includes\navbar.html:34
 #: .\templates\includes\navbar_mobile.html:42
 msgid "Связаться с нами"
-msgstr ""
+msgstr "Contact Us"
 
 #: .\templates\index.html:18
 msgid "дней"
-msgstr ""
+msgstr "days"
 
 #: .\templates\index.html:23
 msgid "часов"
-msgstr ""
+msgstr "hours"
 
 #: .\templates\index.html:28
 msgid "мин"
-msgstr ""
+msgstr "mins"
 
 #: .\templates\index.html:34
 msgid "Зарегистрироваться"
-msgstr ""
+msgstr "Register"
 
 #: .\templates\index.html:49
 msgid "Что такое"
-msgstr ""
+msgstr "What is"
 
 #: .\templates\index.html:51
 msgid "PIZZAPITCH"
-msgstr ""
+msgstr "PIZZAPITCH"
 
 #: .\templates\index.html:61
 msgid ""
 "PizzaPitch &#8212; это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
 "для поддержки инноваций и развития бизнеса."
-msgstr ""
+msgstr "PizzaPitch is a unique promotion platform that brings together startup "
+"founders, entrepreneurs, mentors, and experts in one place to support "
+"innovation and business development."
 
 #: .\templates\index.html:62
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
-msgstr ""
+msgstr "Participants can also attend training and expand their business connections "
+"by finding potential partners or investors."
 
 #: .\templates\index.html:75
 msgid "мероприятия"
-msgstr ""
+msgstr "events"
 
 #: .\templates\index.html:116
 msgid "Стать партнером"
-msgstr ""
+msgstr "Become a partner"
 
 #: .\templates\index.html:124 .\templates\index.html:165
 msgid "Показать всех"
-msgstr ""
+msgstr "Show all"
 
 #: .\templates\index.html:138 .\templates\mentor_list.html:17
 msgid "ментора"
-msgstr ""
+msgstr "mentors"
 
 #: .\templates\index.html:157
 msgid "Стать ментором"
-msgstr ""
+msgstr "Become a mentor"
 
 #: .\templates\mentor_list.html:45
 msgid "Хотите стать ментором?"
-msgstr ""
+msgstr "Do you want to be a mentor?"
 
 #: .\templates\partner_list.html:37
 msgid "Хотите стать партнером?"
-msgstr ""
+msgstr "Do you want to be a partner?"

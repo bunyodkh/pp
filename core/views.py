@@ -11,8 +11,6 @@ def index(request):
     partners = Partner.objects.filter(show_on_website=True).order_by('-created_at')
     mentors = Mentor.objects.filter(show_on_main=True).order_by('-created_at')
 
-    print(event_types)
-
     return render(request, 'index.html', { 
         'event': event, 
         'partners': partners, 

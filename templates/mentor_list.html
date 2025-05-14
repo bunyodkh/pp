@@ -18,20 +18,35 @@
             </div>
         </div>
 
-
+        {% get_current_language as LANGUAGE_CODE %}
+        
         {% if mentors %}
             <ul class="lg-card-list">
                 {% for mentor in mentors %}
                     <li class="lg-card">
                         <img src="{% if mentor.photo %}{{ mentor.photo.url }}{% endif %}" alt="Mentor Photo">
-                        <h2>{{ mentor.full_name }}</h2>
-                        <p>{{ mentor.position }} {% if mentor.organization %}, {{ mentor.organization }} {% endif %}</p>
+                        <h2>
+                            {% if LANGUAGE_CODE == 'ru' %}{{ mentor.full_name }}{% endif %}
+                            {% if LANGUAGE_CODE == 'uz' %}{{ mentor.full_name_uz }}{% endif %}
+                            {% if LANGUAGE_CODE == 'en' %}{{ mentor.full_name_en }}{% endif %}
+                        </h2>
+                        <p>
+                            {% if LANGUAGE_CODE == 'ru' %}{{ mentor.position }}{% endif %}
+                            {% if LANGUAGE_CODE == 'uz' %}{{ mentor.position_uz }}{% endif %}
+                            {% if LANGUAGE_CODE == 'en' %}{{ mentor.position_en }}{% endif %} 
+                            
+                            {% if mentor.organization %}
+                                {% if LANGUAGE_CODE == 'ru' %}, {{ mentor.organization }}{% endif %}
+                                {% if LANGUAGE_CODE == 'uz' %}, {{ mentor.organization_uz }}{% endif %}
+                                {% if LANGUAGE_CODE == 'en' %}, {{ mentor.organization_en }}{% endif %}     
+                            {% endif %}
+                        </p>
                     </li>
                 {% endfor %}
             </ul>
         {% else %}
             <div class="no-mentors-message">
-                <p>На данный момент менторов нет.</p>
+                <p>{% trans 'На данный момент менторов нет.' %}</p>
             </div>
         {% endif %}
         
@@ -63,7 +78,7 @@
                 </div>
                 
                 <div class="submission-success-text">
-                    <p>Ваша заявка принята,мы скоро свяжемся с вами!</p>
+                    <p>{% trans 'Ваша заявка принята,мы скоро свяжемся с вами!' %}</p>
                 </div>
             </div>
         {% else %}
