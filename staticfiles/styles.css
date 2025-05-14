@@ -620,12 +620,12 @@ form {
 
 .sm-card {
     width: 23%;
-    max-height: 9rem;
+    height: 14rem;
     border-radius: 2rem;
-    background-color: #252627;
     padding: 0.5rem 1rem;
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--spot-color);
 }
 
 .sm-card-centered {
@@ -635,10 +635,15 @@ form {
     align-items: center;
 }
 
-.sm-card > img {
-    width: auto;
+.sm-card-image {
+    width: 100%;
+    padding: 1rem;
+}
+
+.sm-card-image > img {
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     object-position: center;
 }
 
@@ -664,7 +669,6 @@ form {
 .sm-card > a > p {
     font-family: 'TT Travels', sans-serif;
     font-size: 2rem;
-    color: var(--main-color);
     margin: 1rem 0 0 0;
 }
 
