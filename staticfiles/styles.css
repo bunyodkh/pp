@@ -1088,6 +1088,10 @@ form {
 
 @media (max-width: 400px) {
 
+    .sm-card-image {
+        padding: 0;
+    }
+    
     .navbar {
         display: none;
     }
