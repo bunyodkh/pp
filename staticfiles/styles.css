@@ -1358,15 +1358,16 @@ form {
     }
 
     .card-link {
-        width: 100%;
+        /* width: 100%; */
         border-radius: 1.5rem;
     }
 
     .card-link > a {
         width: 100%;
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        justify-content: center;
         align-items: center;
         padding: 0;
     }
@@ -1376,6 +1377,7 @@ form {
     }
 
     .card-link > a > p {
+        width: 100%;
         font-size: 1.2rem;
         margin: 0
     }
@@ -1442,26 +1444,26 @@ form {
 
 
     .card-link {
-        width: 100%;
+        /* width: 100%; */
         border-radius: 1.5rem;
         padding: 1rem;
     }
 
-    .card-link > a {
+    /* .card-link > a {
         width: 100%;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
         padding: 0;
-    }
+    } */
 
     .card-link > a > img {
         scale: 0.5;
     }
 
     .card-link > a > p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin: 0
     }
 
