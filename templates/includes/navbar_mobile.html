@@ -42,16 +42,18 @@
                     <a href="{% url 'index' %}#contact-us">{% trans 'Связаться с нами' %}</a>
                 </li>
 
+                {% get_current_language as LANGUAGE_CODE %}
+
                 <ul class="lang-list">
-                    <li class="lang-item lang-item-selected">
+                    <li class="lang-item {% if LANGUAGE_CODE == 'ru' %}lang-item-selected{% endif %}">
                         <a href="/ru{{ request.path|slice:'3:' }}">RU</a>
                     </li>
         
-                    <li class="lang-item">
+                    <li class="lang-item {% if LANGUAGE_CODE == 'uz' %}lang-item-selected{% endif %}">
                         <a href="/uz{{ request.path|slice:'3:' }}">UZ</a>
                     </li>
         
-                    <li class="lang-item">
+                    <li class="lang-item {% if LANGUAGE_CODE == 'en' %}lang-item-selected{% endif %}">
                         <a href="/en{{ request.path|slice:'3:' }}">EN</a>
                     </li>
                 </ul>

@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 import uuid
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from PIL import Image
 from django.utils.text import slugify
 
@@ -22,6 +22,8 @@ class EventType(models.Model):
     description_uz = models.TextField(_('Описание на узбекском'), blank=True, null=True, default='Tadbir haqida ma\'lumot')
 
     slug = models.SlugField(_('Slug'), max_length=200, unique=True, blank=True)  # Add slug field
+
+    show_on_main = models.BooleanField(_('Показывать на главной'), default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -66,6 +68,7 @@ class EventType(models.Model):
             if image.width > max_width or image.height > max_height:
                 image.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
                 image.save(image_path, optimize=True, quality=85)  # Save the optimized image
+
 
 
 class EventTimeline(models.Model):   

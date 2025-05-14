@@ -7,6 +7,7 @@
 {% block content %}
 
 <!-- PARTNERS -->
+{% if partners %}
 <section class="section-dark">
     <section class="section-content" id="partners">
         <div class="section-heading">
@@ -27,15 +28,13 @@
         </ul>
     </section>
 </section>
+{% endif %}
 
 
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
-            <h1>{% trans 'Хотите стать' %}</h1>
-            <div class="styled-heading">
-                <h2>{% trans 'партнером?' %}</h2> 
-            </div>
+            <h1>{% trans 'Хотите стать партнером?' %}</h1>
         </div>
 
         {% if messages %}
@@ -102,7 +101,7 @@
                         <label for="id_reason">{{ form.reason.label }}</label>
                         {{ form.reason|add_class:"form-textarea" }}
                     </div>
-                    <button type="submit" class="btn submit-btn">Отправить заявку</button>
+                    <button type="submit" class="btn submit-btn">{% trans 'Отправить заявку' %}</button>
                 </form>
             </div>
         {% endif %}

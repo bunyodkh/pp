@@ -28,50 +28,49 @@ class PartnerForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if not name or not name.strip():
-            raise forms.ValidationError(_('Name cannot be empty.'))
+            raise forms.ValidationError(_('Имя не может быть пустым.'))
         if len(name.strip()) < 2:
-            raise forms.ValidationError(_('Name must be at least 2 characters long.'))
+            raise forms.ValidationError(_('Имя должно быть длиной не менее 2 символов.'))
         if len(name.strip()) > 100:
-            raise forms.ValidationError(_('Name cannot exceed 100 characters.'))
+            raise forms.ValidationError(_('Имя не может превышать 100 символов.'))
         # Regex validation: Only letters and spaces allowed
         if not re.match(r'^[a-zA-Z\s]+$', name.strip()):
-            raise forms.ValidationError(_('Name can only contain letters and spaces.'))
+            raise forms.ValidationError(_('Имя может содержать только буквы и пробелы.'))
         return name
     
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if not email or not email.strip():
-            raise forms.ValidationError(_('Email cannot be empty.'))
+            raise forms.ValidationError(_('Электронная почта не может быть пустой.'))
         if len(email.strip()) > 100:
-            raise forms.ValidationError(_('Email cannot exceed 100 characters.'))
-        # Regex validation: Must be a valid email format
+            raise forms.ValidationError(_('Длина адреса электронной почты не может превышать 100 символов.'))
         if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email.strip()):
-            raise forms.ValidationError(_('Enter a valid email address (i.e., @ sign should be included.).'))
+            raise forms.ValidationError(_('Введите действительный адрес электронной почты (т. е. необходимо включить знак @).'))
         return email
 
 
     def clean_phone(self):
         phone = self.cleaned_data.get('phone')
         if not phone or not phone.strip():
-            raise forms.ValidationError(_('Phone number cannot be empty.'))
+            raise forms.ValidationError(_('Номер телефона не может быть пустым.'))
         if len(phone.strip()) < 9:
-            raise forms.ValidationError(_('Phone number must be at least 10 characters long.'))
+            raise forms.ValidationError(_('Номер телефона должен содержать не менее 10 символов.'))
         if len(phone.strip()) > 13:
-            raise forms.ValidationError(_('Phone number cannot exceed 15 characters.'))
+            raise forms.ValidationError(_('Номер телефона не может превышать 15 символов.'))
         # Regex validation: Must be a valid phone number format
         if not re.match(r'^\+?[0-9]{10,15}$', phone.strip()):
-            raise forms.ValidationError(_('Enter a valid phone number (e.g., +1234567890).'))
+            raise forms.ValidationError(_('Введите действительный номер телефона (например, +1234567890).'))
         return phone
     
 
     def clean_website(self):
         website = self.cleaned_data.get('website')
         if website and not website.strip():
-            raise forms.ValidationError(_('Website cannot be empty.'))
+            raise forms.ValidationError(_('Сайт не может быть пустым.'))
         if website and len(website.strip()) > 50:
-            raise forms.ValidationError(_('Website URL cannot exceed 50 characters.'))
+            raise forms.ValidationError(_('URL-адрес веб-сайта не может превышать 50 символов.'))
         # Regex validation: Must be a valid URL format
         if website and not re.match(r'^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$', website.strip()):
-            raise forms.ValidationError(_('Enter a valid website URL (e.g., https://example.com).'))
+            raise forms.ValidationError(_('Введите действительный URL-адрес веб-сайта (например, https://example.com).'))
         return website

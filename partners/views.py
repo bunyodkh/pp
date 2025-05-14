@@ -19,10 +19,10 @@ def partner_add(request):
             partner = form.save(commit=False)
             partner.registration_source = 'website'
             partner.save()
-            messages.success(request, _('Your application has been successfully submitted.'))
+            messages.success(request, _('Ваша заявка успешно отправлена.'))
             return redirect('partners:partner-list')
         else:
-            messages.error(request, _('There was an error submitting your application. Please correct the errors below.'))
+            messages.error(request, _('Произошла ошибка при отправке заявки. Пожалуйста, исправьте ошибки ниже.'))
     else:
         form = PartnerForm()
 

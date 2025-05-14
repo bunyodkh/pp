@@ -1,11 +1,10 @@
 from django.db import models
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 
 class Partner(models.Model):
-    # event_type = models.ForeignKey('events.EventType', on_delete=models.CASCADE, related_name='partners', verbose_name=_('Тип мероприятия'), blank=True, null=True)
     event_type = models.ManyToManyField('events.EventType', related_name='partners', verbose_name=_('Тип мероприятия'), blank=True)
-    name = models.CharField(_('Название'), max_length=200, blank=True, null=True, help_text=_('Название на русском языке'), default='Партнер')
+    name = models.CharField(_('Название'), max_length=200, blank=True, null=True, help_text=_('Название на русском языке'))
     name_en = models.CharField(_('Название на английском'), max_length=200, blank=True, null=True, help_text=_('Название на английском языке'))
     name_uz = models.CharField(_('Название на узбекском'), max_length=200, blank=True, null=True, help_text=_('Название на узбекском языке'))
 

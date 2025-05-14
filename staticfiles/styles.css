@@ -144,6 +144,10 @@ form {
     position: relative;
 }
 
+.input-container > input {
+    font-family: 'TT Travels', sans-serif;
+}
+
 .form-input-group > .input-container {
 	width: 47%;
     position: relative;
@@ -619,7 +623,7 @@ form {
     max-height: 9rem;
     border-radius: 2rem;
     background-color: #252627;
-    padding: 2rem;
+    padding: 0.5rem 1rem;
     overflow: hidden;
     position: relative;
 }
@@ -719,7 +723,7 @@ form {
 
 .card-link > a > p {
     font-family: 'TT Travels', sans-serif;
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin: 1rem 0 0 0;
 }   
 
@@ -842,7 +846,7 @@ form {
 .social-links > a > p {
     color: var(--main-color);
     font-family: 'TT Travels Bold', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .social-links > a > img {

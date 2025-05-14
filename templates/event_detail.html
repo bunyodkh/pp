@@ -173,10 +173,7 @@
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
-            <h1>{% trans 'Хотите стать' %} </h1>
-            <div class="styled-heading">
-                <h2>{% trans 'участником?' %}</h2> 
-            </div>
+            <h1>{% trans 'Хотите стать участником?' %} </h1>
         </div>
 
         {% if messages %}
@@ -192,7 +189,7 @@
 
     <section class="section-content">
         {% if success %}
-            <div class="">Success. Your application is received</div>
+            <div class="">{% trans 'Success. Your application is received' %}</div>
         {% else %}
             <div class="form-container" id="submission-form">
                 <form class="form" method="POST" action="{{ event_type.get_absolute_url }}#submission-form">
