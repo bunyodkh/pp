@@ -885,11 +885,22 @@ form {
     padding: 4.5rem 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 .socials-list {
     display: flex;
     gap: 2rem;
+}
+
+.footer-message {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.footer-message > p > a {
+    color: var(--main-color);
 }
 
 
@@ -1519,6 +1530,16 @@ form {
     .footer-content {
         align-items: center;
         padding: 1.5rem;
+    }
+
+    .footer-message {
+        width: 100%;
+        padding: 0 2rem 1rem 2rem;
+    }
+
+
+    .footer-message > p {
+        font-size: 0.7rem;
     }
 
     .socials-list {

@@ -1,35 +1,42 @@
-    {% load static %}
-    
-    <!-- FOOTER -->
-    <footer class="section-dark rounded-section">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="{% static 'images/footer-logo.png' %}" alt="Footer Logo">
-            </div>
+{% load static %}
 
-            <ul class="socials-list">
-                <li class="social-item">
-                    <a href="https://t.me/pizzapitchuz" target="_blank" rel="noopener noreferrer">
-                        <img src="{% static 'images/tg-icon.png' %}" alt="Telegram Icon">
-                    </a>
-                </li>
+{% load i18n %}
 
-                <li class="social-item">
-                    <a href="https://www.linkedin.com/company/pizzapitchuz/" target="_blank" rel="noopener noreferrer">
-                        <img src="{% static 'images/ln-icon.png' %}" alt="Linkedin Icon">
-                    </a>
-                </li>
 
-                <li class="social-item">
-                    <a href="https://www.instagram.com/pizzapitchuz/" target="_blank" rel="noopener noreferrer">
-                        <img src="{% static 'images/insta-icon.png' %}" alt="Instagram Icon">
-                    </a>
-                </li>
-                <!-- <li class="social-item">
-                    <a href="#">
-                        <img src="{% static 'images/fb-icon.png' %}" alt="Facebook Icon">
-                    </a>
-                </li> -->
-            </ul>
+<!-- FOOTER -->
+<footer class="section-dark rounded-section">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="{% static 'images/footer-logo.png' %}" alt="Footer Logo">
         </div>
-    </footer>
+
+        <ul class="socials-list">
+            <li class="social-item">
+                <a href="https://t.me/pizzapitchuz" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'images/tg-icon.png' %}" alt="Telegram Icon">
+                </a>
+            </li>
+
+            <li class="social-item">
+                <a href="https://www.linkedin.com/company/pizzapitchuz/" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'images/ln-icon.png' %}" alt="Linkedin Icon">
+                </a>
+            </li>
+
+            <li class="social-item">
+                <a href="https://www.instagram.com/pizzapitchuz/" target="_blank" rel="noopener noreferrer">
+                    <img src="{% static 'images/insta-icon.png' %}" alt="Instagram Icon">
+                </a>
+            </li>
+            <!-- <li class="social-item">
+                <a href="#">
+                    <img src="{% static 'images/fb-icon.png' %}" alt="Facebook Icon">
+                </a>
+            </li> -->
+        </ul>
+    </div>
+
+    <div class="footer-message">
+        <p>{% trans 'Платформа PizzaPitch реализуется при технической поддержке <a href="https://www.undp.org/ru/uzbekistan" target="_blank">ПРООН Узбекистан.</a>' %}</p>
+    </div>
+</footer>

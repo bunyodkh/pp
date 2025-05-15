@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 13:45+0500\n"
+"POT-Creation-Date: 2025-05-15 09:36+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -621,8 +621,8 @@ msgstr ""
 
 #: .\templates\event_detail.html:66 .\templates\event_detail.html:89
 #: .\templates\event_detail.html:114 .\templates\index.html:73
-#: .\templates\index.html:98 .\templates\index.html:136
-#: .\templates\mentor_list.html:15 .\templates\partner_list.html:14
+#: .\templates\index.html:98 .\templates\index.html:138
+#: .\templates\mentor_list.html:15 .\templates\partner_list.html:15
 msgid "Наши"
 msgstr "Bizning"
 
@@ -631,7 +631,7 @@ msgid "достижения"
 msgstr "yuqutqlar"
 
 #: .\templates\event_detail.html:91 .\templates\index.html:100
-#: .\templates\partner_list.html:16
+#: .\templates\partner_list.html:17
 msgid "партнеры"
 msgstr "hamkorlar"
 
@@ -655,7 +655,8 @@ msgstr "Ishtirok etish uchun ro'yxatdan o'ting."
 msgid "Success. Your application is received"
 msgstr "Arizangiz qabul qilindi."
 
-#: .\templates\event_detail.html:274 .\templates\mentor_list.html:139
+#: .\templates\event_detail.html:274 .\templates\mentor_list.html:156
+#: .\templates\partner_list.html:107
 msgid "Отправить заявку"
 msgstr "Yuborish"
 
@@ -678,6 +679,12 @@ msgstr "Bog'lanish"
 #: .\templates\includes\contacts.html:19
 msgid "Подписаться"
 msgstr "Obuna bo'lish"
+
+#: .\templates\includes\footer.html:40
+msgid ""
+"Платформа PizzaPitch реализуется при технической поддержке <a href=\"https://"
+"www.undp.org/ru/uzbekistan\" target=\"_blank\">ПРООН Узбекистан.</a>"
+msgstr ""
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
@@ -745,27 +752,35 @@ msgstr ""
 msgid "мероприятия"
 msgstr "tadbirlar"
 
-#: .\templates\index.html:116
+#: .\templates\index.html:118
 msgid "Стать партнером"
 msgstr "Hamkor bo'lish"
 
-#: .\templates\index.html:124 .\templates\index.html:165
+#: .\templates\index.html:126 .\templates\index.html:183
 msgid "Показать всех"
 msgstr "Barchasini ko'rish"
 
-#: .\templates\index.html:138 .\templates\mentor_list.html:17
+#: .\templates\index.html:140 .\templates\mentor_list.html:17
 msgid "ментора"
 msgstr "mentorlar"
 
-#: .\templates\index.html:157
+#: .\templates\index.html:175
 msgid "Стать ментором"
 msgstr "Mentor bo'lish"
 
-#: .\templates\mentor_list.html:45
+#: .\templates\mentor_list.html:51
+msgid "На данный момент менторов нет."
+msgstr ""
+
+#: .\templates\mentor_list.html:62
 msgid "Хотите стать ментором?"
 msgstr "Mentor bo'lishni xohlaysizmi?"
 
-#: .\templates\partner_list.html:37
+#: .\templates\mentor_list.html:83
+msgid "Ваша заявка принята,мы скоро свяжемся с вами!"
+msgstr ""
+
+#: .\templates\partner_list.html:40
 msgid "Хотите стать партнером?"
 msgstr "Hamkor bo'lishni xohlaysizmi?"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 13:45+0500\n"
+"POT-Creation-Date: 2025-05-15 11:41+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -530,8 +530,9 @@ msgstr "The email address cannot exceed 100 characters."
 msgid ""
 "Введите действительный адрес электронной почты (т. е. необходимо включить "
 "знак @)."
-msgstr "Enter a valid email address (i.e., it must include "
-"an '@' symbol and a domain name)."
+msgstr ""
+"Enter a valid email address (i.e., it must include an '@' symbol and a "
+"domain name)."
 
 #: .\partners\forms.py:56
 msgid "Номер телефона не может быть пустым."
@@ -619,8 +620,8 @@ msgstr ""
 
 #: .\templates\event_detail.html:66 .\templates\event_detail.html:89
 #: .\templates\event_detail.html:114 .\templates\index.html:73
-#: .\templates\index.html:98 .\templates\index.html:136
-#: .\templates\mentor_list.html:15 .\templates\partner_list.html:14
+#: .\templates\index.html:98 .\templates\index.html:138
+#: .\templates\mentor_list.html:15 .\templates\partner_list.html:15
 msgid "Наши"
 msgstr "Our"
 
@@ -629,7 +630,7 @@ msgid "достижения"
 msgstr "achievements"
 
 #: .\templates\event_detail.html:91 .\templates\index.html:100
-#: .\templates\partner_list.html:16
+#: .\templates\partner_list.html:17
 msgid "партнеры"
 msgstr "partners"
 
@@ -653,7 +654,8 @@ msgstr "Do you want to participate?"
 msgid "Success. Your application is received"
 msgstr ""
 
-#: .\templates\event_detail.html:274 .\templates\mentor_list.html:139
+#: .\templates\event_detail.html:274 .\templates\mentor_list.html:156
+#: .\templates\partner_list.html:107
 msgid "Отправить заявку"
 msgstr "Send"
 
@@ -665,8 +667,9 @@ msgstr "Keep up with all the news"
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами"
-msgstr "Subscribe to our Telegram channel and stay up to date with all the latest news "
-"or get in touch with us."
+msgstr ""
+"Subscribe to our Telegram channel and stay up to date with all the latest "
+"news or get in touch with us."
 
 #: .\templates\includes\contacts.html:15
 msgid "Связаться"
@@ -675,6 +678,13 @@ msgstr "Contact"
 #: .\templates\includes\contacts.html:19
 msgid "Подписаться"
 msgstr "Subscribe"
+
+#: .\templates\includes\footer.html:40
+msgid ""
+"Платформа PizzaPitch реализуется при технической поддержке <a href=\"https://"
+"www.undp.org/ru/uzbekistan\" target=\"_blank\">ПРООН Узбекистан.</a>"
+msgstr "The PizzaPitch platform is being implemented with the technical support of <a href=\"https://"
+"www.undp.org/ru/uzbekistan\" target=\"_blank\">UNDP Uzbekistan.</a>"
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
@@ -724,7 +734,8 @@ msgid ""
 "PizzaPitch &#8212; это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
 "для поддержки инноваций и развития бизнеса."
-msgstr "PizzaPitch is a unique promotion platform that brings together startup "
+msgstr ""
+"PizzaPitch is a unique promotion platform that brings together startup "
 "founders, entrepreneurs, mentors, and experts in one place to support "
 "innovation and business development."
 
@@ -732,33 +743,44 @@ msgstr "PizzaPitch is a unique promotion platform that brings together startup "
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
-msgstr "Participants can also attend training and expand their business connections "
+msgstr ""
+"Participants can also attend training and expand their business connections "
 "by finding potential partners or investors."
 
 #: .\templates\index.html:75
 msgid "мероприятия"
 msgstr "events"
 
-#: .\templates\index.html:116
+#: .\templates\index.html:118
 msgid "Стать партнером"
 msgstr "Become a partner"
 
-#: .\templates\index.html:124 .\templates\index.html:165
+#: .\templates\index.html:126 .\templates\index.html:183
 msgid "Показать всех"
 msgstr "Show all"
 
-#: .\templates\index.html:138 .\templates\mentor_list.html:17
+#: .\templates\index.html:140 .\templates\mentor_list.html:17
 msgid "ментора"
 msgstr "mentors"
 
-#: .\templates\index.html:157
+#: .\templates\index.html:175
 msgid "Стать ментором"
 msgstr "Become a mentor"
 
-#: .\templates\mentor_list.html:45
+#: .\templates\mentor_list.html:51
+msgid "На данный момент менторов нет."
+msgstr ""
+
+#: .\templates\mentor_list.html:62
 msgid "Хотите стать ментором?"
 msgstr "Do you want to be a mentor?"
 
-#: .\templates\partner_list.html:37
+#: .\templates\mentor_list.html:83
+#, fuzzy
+#| msgid "Ваша заявка успешно отправлена."
+msgid "Ваша заявка принята,мы скоро свяжемся с вами!"
+msgstr "Your application is received."
+
+#: .\templates\partner_list.html:40
 msgid "Хотите стать партнером?"
 msgstr "Do you want to be a partner?"
