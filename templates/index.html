@@ -153,9 +153,11 @@
                         {% if LANGUAGE_CODE == 'en' %}{{ mentor.full_name_en }}{% endif %}
                     </h2>
                     <p>
-                        {% if LANGUAGE_CODE == 'ru' %}{{ mentor.position }}{% endif %}
-                        {% if LANGUAGE_CODE == 'uz' %}{{ mentor.position_uz }}{% endif %}
-                        {% if LANGUAGE_CODE == 'en' %}{{ mentor.position_en }}{% endif %} 
+                        {% if mentor.position %}
+                            {% if LANGUAGE_CODE == 'ru' %}{{ mentor.position }}{% endif %}
+                            {% if LANGUAGE_CODE == 'uz' %}{{ mentor.position_uz }}{% endif %}
+                            {% if LANGUAGE_CODE == 'en' %}{{ mentor.position_en }}{% endif %} 
+                        {% endif %}
                         
                         {% if mentor.organization %}
                             {% if LANGUAGE_CODE == 'ru' %}, {{ mentor.organization }}{% endif %}
