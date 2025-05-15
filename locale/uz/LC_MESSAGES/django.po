@@ -684,7 +684,8 @@ msgstr "Obuna bo'lish"
 msgid ""
 "Платформа PizzaPitch реализуется при технической поддержке <a href=\"https://"
 "www.undp.org/ru/uzbekistan\" target=\"_blank\">ПРООН Узбекистан.</a>"
-msgstr ""
+msgstr "PizzaPitch platformasi <a href=\"https://www.undp.org/ru/uzbekistan\" target=\"_blank\">BMTTD O‘zbekistonning texnik ko‘magida "
+"amalga oshirilmoqda."
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
