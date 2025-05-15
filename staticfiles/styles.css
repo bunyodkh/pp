@@ -627,8 +627,7 @@ form {
     padding: 0.5rem 1rem;
     overflow: hidden;
     position: relative;
-    /* border: 1px solid var(--spot-color); */
-    background-color: #fff;
+    border: 1px solid var(--spot-color);
 }
 
 .sm-card-centered {
