@@ -11,7 +11,7 @@
 {% if form %}
     <section class="section"> 
         <div class="section-content">
-            <div class="active-event">
+            <div class="active-event no-min-height">
                 <div class="active-event-image">
                     <div class="image-gradient"></div>
                     <div class="active-event-info">
@@ -82,8 +82,8 @@
 </section>
 {% endif %}    
 
-{% if partners %}
-<section class="section-dark">
+<!-- PARTNERS -->
+<section class="section">
     <section class="section-content" id="partners">
         <div class="section-heading">
             <h1>{% trans 'Наши' %} </h1>
@@ -96,15 +96,15 @@
             {% for partner in partners %}
                 <li class="sm-card sm-card-centered">
                     {% if partner.logo %}
-                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                        <div class="sm-card-image">
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                        </div>        
                     {% endif %}
                 </li>
             {% endfor %}
         </ul>
-
     </section>
 </section>
-{% endif %}
 
 {% if past_events %}
 <!-- PAST EVENTS' WINNERS SECTION -->

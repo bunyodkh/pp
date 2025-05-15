@@ -304,9 +304,9 @@ form {
 
 .active-event-info {
     position: absolute;
-    width: 100%;
-    left: 3rem;
-    bottom: 3rem;
+    width: 80%;
+    left: 2rem;
+    bottom: 1rem;
 }
 
 .active-event-date, 
@@ -1224,6 +1224,7 @@ form {
 
     .section-heading > h1 {
         font-size: 2rem;
+        text-align: center;
     }
 
     .styled-heading {
@@ -1262,7 +1263,7 @@ form {
 
     .active-event-title {
         width: 100%;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         text-align: center;
         padding-top: 1rem;
     }
@@ -1282,7 +1283,8 @@ form {
     }
 
     .active-event-timer {
-        margin-top: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .active-event-timer > p {
@@ -1511,7 +1513,7 @@ form {
 
     .qr-code {
         width: 100%;
-        padding: 2rem;
+        padding: 0 2rem 2rem 2rem;
     }
     
     .social-links {
@@ -1521,6 +1523,8 @@ form {
     .social-links > a {
         width: 100%;
         margin-bottom: 1rem;
+        gap: 1.5rem;
+        padding: 1.2rem 2rem;
     }
 
     .social-links > a > p {
@@ -1540,6 +1544,7 @@ form {
 
     .footer-message > p {
         font-size: 0.7rem;
+        text-align: center;
     }
 
     .socials-list {
@@ -1569,6 +1574,13 @@ form {
         object-position: center;
     }
 
+    .vertical-list-container {
+        padding-top: 2rem;
+    }
+
+    .vertical-list {
+        margin-bottom: 1.5rem;
+    }
 
     .form-container {
         border-radius: 1rem;
@@ -1668,12 +1680,17 @@ form {
     .list-items {
         width: 100%;
         flex-direction: row;
+        margin-top: 2rem;
     }
 
     .list-item {
         width: 45%;
         padding: 1rem;
         border-radius: 1rem;
+        min-height: 0;
+    }
+
+    .no-min-height {
         min-height: 0;
     }
 
@@ -1693,7 +1710,7 @@ form {
     .list-item-image > img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: scale-down;
         object-position: center;
     }
 
