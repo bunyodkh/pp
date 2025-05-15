@@ -277,6 +277,7 @@ form {
 .active-event-details > p {
     font-size: 1.5rem;
     line-height: 2rem;
+    margin-top: 2rem;
 }
 
 .active-event-image {
@@ -310,8 +311,8 @@ form {
 .active-event-info {
     position: absolute;
     width: 80%;
-    left: 2rem;
-    bottom: 1rem;
+    left: 4rem;
+    bottom: 3rem;
 }
 
 .active-event-date, 
@@ -341,6 +342,11 @@ form {
 
 .active-event-date {
     margin-bottom: 1rem;
+}
+
+.active-event-desctiption > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 .submission-success {
@@ -637,6 +643,10 @@ form {
     overflow: hidden;
     position: relative;
     border: 1px solid #d7d7d7;
+}
+
+.card-with-pd {
+    padding: 1rem 1rem 1rem 2rem
 }
 
 .card-with-bg {
@@ -1117,7 +1127,12 @@ form {
 
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+
+    .active-event-info {
+        left: 2rem;
+        bottom: 1rem;
+    }
 
     .sm-card-image {
         padding: 0;
