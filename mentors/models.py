@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Mentor(models.Model):
-    full_name = models.CharField(_('Имя и фамилия'), max_length=100, blank=True, null=True, default='Имя Фамилия')
+    full_name = models.CharField(_('Имя и фамилия'), max_length=100, blank=True, null=True)
     full_name_en = models.CharField(_('Имя и фамилия на английском'), max_length=100, blank=True, null=True)
     full_name_uz = models.CharField(_('Имя и фамилия на узбекском'), max_length=100, blank=True, null=True)
 

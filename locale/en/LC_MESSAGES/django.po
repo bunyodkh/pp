@@ -422,75 +422,75 @@ msgstr ""
 
 #: .\mentors\models.py:7
 msgid "Имя и фамилия"
-msgstr ""
+msgstr "Full name"
 
 #: .\mentors\models.py:8
 msgid "Имя и фамилия на английском"
-msgstr ""
+msgstr "Full name in English"
 
 #: .\mentors\models.py:9
 msgid "Имя и фамилия на узбекском"
-msgstr ""
+msgstr "Full name in Uzbek"
 
 #: .\mentors\models.py:11
 msgid "Название организации"
-msgstr ""
+msgstr "Organization"
 
 #: .\mentors\models.py:12
 msgid "Название организации на английском"
-msgstr ""
+msgstr "Organization in English"
 
 #: .\mentors\models.py:13
 msgid "Название организации на узбекском"
-msgstr ""
+msgstr "Organization in Uzbek"
 
 #: .\mentors\models.py:15
 msgid "Должность"
-msgstr ""
+msgstr "Position"
 
 #: .\mentors\models.py:16
 msgid "Должность на английском"
-msgstr ""
+msgstr "Position in English"
 
 #: .\mentors\models.py:17
 msgid "Должность на узбекском"
-msgstr ""
+msgstr "Position in Uzbek"
 
 #: .\mentors\models.py:19
 msgid "Номер телефона"
-msgstr ""
+msgstr "Phone number"
 
 #: .\mentors\models.py:21
 msgid "Linkedin"
-msgstr ""
+msgstr "Linkedin"
 
 #: .\mentors\models.py:22
 msgid "Почему хотите стать ментором?"
-msgstr ""
+msgstr "Why do you want to become a mentor?"
 
 #: .\mentors\models.py:23
 msgid "Фотография"
-msgstr ""
+msgstr "Photo"
 
 #: .\mentors\models.py:25
 msgid "Показать на главной странице"
-msgstr ""
+msgstr "Show on main page"
 
 #: .\mentors\models.py:26
 msgid "Показать на странице менторов"
-msgstr ""
+msgstr "Show on the mentors page"
 
 #: .\mentors\models.py:28 .\partners\models.py:19
 msgid "Источник регистрации"
-msgstr ""
+msgstr "Registration source"
 
 #: .\mentors\models.py:41
 msgid "Наставник"
-msgstr ""
+msgstr "Mentor"
 
 #: .\mentors\models.py:42
 msgid "Наставники"
-msgstr ""
+msgstr "Mentors"
 
 #: .\mentors\views.py:23
 msgid "Your application has been successfully submitted."
@@ -504,116 +504,118 @@ msgstr ""
 
 #: .\partners\forms.py:31
 msgid "Имя не может быть пустым."
-msgstr ""
+msgstr "Name cannot be empty."
 
 #: .\partners\forms.py:33
 msgid "Имя должно быть длиной не менее 2 символов."
-msgstr ""
+msgstr "The name must be at least 2 characters long."
 
 #: .\partners\forms.py:35
 msgid "Имя не может превышать 100 символов."
-msgstr ""
+msgstr "The name cannot exceed 100 characters."
 
 #: .\partners\forms.py:38
 msgid "Имя может содержать только буквы и пробелы."
-msgstr ""
+msgstr "The name may contain only letters and spaces."
 
 #: .\partners\forms.py:45
 msgid "Электронная почта не может быть пустой."
-msgstr ""
+msgstr "Email cannot be empty."
 
 #: .\partners\forms.py:47
 msgid "Длина адреса электронной почты не может превышать 100 символов."
-msgstr ""
+msgstr "The email address cannot exceed 100 characters."
 
 #: .\partners\forms.py:49
 msgid ""
 "Введите действительный адрес электронной почты (т. е. необходимо включить "
 "знак @)."
-msgstr ""
+msgstr "Enter a valid email address (i.e., it must include "
+"an '@' symbol and a domain name)."
 
 #: .\partners\forms.py:56
 msgid "Номер телефона не может быть пустым."
-msgstr ""
+msgstr "Phone number cannot be empty."
 
 #: .\partners\forms.py:58
 msgid "Номер телефона должен содержать не менее 10 символов."
-msgstr ""
+msgstr "The phone number must be at least 10 characters long."
 
 #: .\partners\forms.py:60
 msgid "Номер телефона не может превышать 15 символов."
-msgstr ""
+msgstr "The phone number cannot exceed 15 characters."
 
 #: .\partners\forms.py:63
 msgid "Введите действительный номер телефона (например, +1234567890)."
-msgstr ""
+msgstr "Enter a valid phone number (e.g., +1234567890)."
 
 #: .\partners\forms.py:70
 msgid "Сайт не может быть пустым."
-msgstr ""
+msgstr "Website cannot be empty."
 
 #: .\partners\forms.py:72
 msgid "URL-адрес веб-сайта не может превышать 50 символов."
-msgstr ""
+msgstr "The website URL cannot exceed 50 characters."
 
 #: .\partners\forms.py:75
 msgid ""
 "Введите действительный URL-адрес веб-сайта (например, https://example.com)."
-msgstr ""
+msgstr "Enter a valid website URL (e.g., https://example.com)."
 
 #: .\partners\models.py:7
 msgid "Название"
-msgstr ""
+msgstr "Name"
 
 #: .\partners\models.py:7
 msgid "Название на русском языке"
-msgstr ""
+msgstr "Name in Russian"
 
 #: .\partners\models.py:8
 msgid "Название на английском языке"
-msgstr ""
+msgstr "Name in English"
 
 #: .\partners\models.py:9
 msgid "Название на узбекском языке"
-msgstr ""
+msgstr "Name in Uzbek"
 
 #: .\partners\models.py:12
 msgid "Телефон"
-msgstr ""
+msgstr "Phone"
 
 #: .\partners\models.py:13
 msgid "Сайт"
-msgstr ""
+msgstr "Website"
 
 #: .\partners\models.py:14
 msgid "Почему хотите стать партнером?"
-msgstr ""
+msgstr "Why do you want to become a partner?"
 
 #: .\partners\models.py:15
 msgid "Логотипа"
-msgstr ""
+msgstr "Logo"
 
 #: .\partners\models.py:17
 msgid "Показать на сайте"
-msgstr ""
+msgstr "Show on website"
 
 #: .\partners\models.py:29
 msgid "Партнер"
-msgstr ""
+msgstr "Partner"
 
 #: .\partners\models.py:30 .\templates\includes\navbar.html:26
 #: .\templates\includes\navbar_mobile.html:34
 msgid "Партнеры"
-msgstr ""
+msgstr "Partners"
 
 #: .\partners\views.py:22
 msgid "Ваша заявка успешно отправлена."
-msgstr ""
+msgstr "Your application is received."
 
 #: .\partners\views.py:25
 msgid ""
 "Произошла ошибка при отправке заявки. Пожалуйста, исправьте ошибки ниже."
 msgstr ""
+"An error occurred while submitting the form. Please correct the errors below."
 
 #: .\templates\event_detail.html:66 .\templates\event_detail.html:89
 #: .\templates\event_detail.html:114 .\templates\index.html:73
@@ -657,13 +659,14 @@ msgstr "Send"
 
 #: .\templates\includes\contacts.html:10
 msgid "Будьте в курсе всех новостей"
-msgstr ""
+msgstr "Keep up with all the news"
 
 #: .\templates\includes\contacts.html:11
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами"
-msgstr ""
+msgstr "Subscribe to our Telegram channel and stay up to date with all the latest news "
+"or get in touch with us."
 
 #: .\templates\includes\contacts.html:15
 msgid "Связаться"

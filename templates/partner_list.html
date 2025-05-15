@@ -8,10 +8,11 @@
 
 <!-- PARTNERS -->
 {% if partners %}
-<section class="section-dark">
-    <section class="section-content" id="partners">
+<!-- PARTNERS -->
+<section class="section">
+    <section class="section-content no-top-padding" id="partners">
         <div class="section-heading">
-            <h1>{% trans 'Наши' %}</h1>
+            <h1>{% trans 'Наши' %} </h1>
             <div class="styled-heading">
                 <h2>{% trans 'партнеры' %}</h2> 
             </div>
@@ -21,7 +22,9 @@
             {% for partner in partners %}
                 <li class="sm-card sm-card-centered">
                     {% if partner.logo %}
-                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                        <div class="sm-card-image">
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }} Logo">
+                        </div>        
                     {% endif %}
                 </li>
             {% endfor %}

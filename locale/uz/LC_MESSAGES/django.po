@@ -657,7 +657,7 @@ msgstr "Arizangiz qabul qilindi."
 
 #: .\templates\event_detail.html:274 .\templates\mentor_list.html:139
 msgid "Отправить заявку"
-msgstr "Ariza yuborish"
+msgstr "Yuborish"
 
 #: .\templates\includes\contacts.html:10
 msgid "Будьте в курсе всех новостей"
