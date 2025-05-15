@@ -427,14 +427,16 @@ form {
     display: block;
     border-radius: 2rem;
     width: 110%;
+    font-size: 1.5rem;
 }
 
 .link-btn > img {
     position: absolute;
-    top: 2.5rem;
+    top: 2.2rem;
     right: 2rem;
+    height: 1.5rem;
+    width: 1rem;
 }
-
 
 
 /* About section */
@@ -619,13 +621,14 @@ form {
 }
 
 .sm-card {
-    width: 23%;
-    height: 14rem;
+    width: 17%;
+    height: 8rem;
     border-radius: 2rem;
     padding: 0.5rem 1rem;
     overflow: hidden;
     position: relative;
-    border: 1px solid var(--spot-color);
+    /* border: 1px solid var(--spot-color); */
+    background-color: #fff;
 }
 
 .sm-card-centered {
@@ -1390,6 +1393,7 @@ form {
         width: 47%;
         padding: 1rem;
         border-radius: 1rem;
+        height: 7rem
     }
 
     .sm-card > h3 {
