@@ -274,6 +274,11 @@ form {
     width: 48%;
 }
 
+.active-event-details > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
 .active-event-image {
     overflow: hidden;
     position: relative;
@@ -632,6 +637,11 @@ form {
     overflow: hidden;
     position: relative;
     border: 1px solid #d7d7d7;
+}
+
+.card-with-bg {
+    background-color: #252627;
+    border: none;
 }
 
 .spot-color-border {

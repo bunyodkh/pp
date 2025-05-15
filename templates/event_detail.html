@@ -45,7 +45,7 @@
 {% else %}
     <section class="section">
         <div class="section-content">
-            <div class="active-event">
+            <div class="active-event no-min-height">
                 <div class="active-event-details">
                     <h1 class="active-event-title">{{ event_type.name }}</h1>
                     <p>{{ event_type.description }}</p>
@@ -71,7 +71,7 @@
 
         <ul class="sm-card-list">
             {% for achievement in achievements %}
-                <li class="sm-card spot-color-border">
+                <li class="sm-card card-with-bg">
                     <h3>{{ achievement.value }}</h3>
                     <p>{{ achievement.title }}</p>
                 </li>
