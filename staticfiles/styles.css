@@ -927,6 +927,10 @@ form {
 }
 
 
+.flex-h-center {
+    justify-content: center;
+}
+
 
 @media (max-width: 1550px) {
     .event-section,

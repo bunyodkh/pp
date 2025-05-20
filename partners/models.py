@@ -14,6 +14,7 @@ class Partner(models.Model):
     reason = models.TextField(_('Почему хотите стать партнером?'), blank=True, null=True)
     logo = models.ImageField(_('Логотипа'), upload_to='partners/', blank=True, null=True)
 
+    show_on_main = models.BooleanField(_('Показать на главной странице'), default=False)
     show_on_website = models.BooleanField(_('Показать на сайте'), default=False)
 
     registration_source = models.CharField(max_length=50, choices=[('website', 'Website'), ('admin', 'Admin')], default='admin', verbose_name=_('Источник регистрации'))

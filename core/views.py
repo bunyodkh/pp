@@ -8,7 +8,7 @@ from mentors.models import Mentor
 def index(request):
     event = Event.objects.filter(show_on_main=True, active=True).first()
     event_types = EventType.objects.filter(show_on_main=True)
-    partners = Partner.objects.filter(show_on_website=True).order_by('-created_at')[:3]
+    partners = Partner.objects.filter(show_on_main=True).order_by('-created_at')[:3]
     mentors = Mentor.objects.filter(show_on_main=True).order_by('-created_at')
 
     return render(request, 'index.html', { 
