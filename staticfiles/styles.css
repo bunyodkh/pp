@@ -1130,6 +1130,86 @@ form {
 }
 
 
+@media (max-width: 1280px) {
+    .active-event-title {
+        font-size: 6.5rem;
+    }
+
+    .active-event {
+        min-height: 40rem;
+    }
+
+    .active-event-timer {
+        margin-top: 4rem;
+    }
+
+    .btn {
+        bottom: 0;
+        font-size: 1.5rem;
+    }
+
+    .list-item {
+        width: 45%;
+        min-height: 15rem;
+    }
+
+    .list-item > h3 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .list-item > p {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .form-input-group > .input-container > label, 
+    .form-input-group > label, 
+    .input-container > label {
+        font-size: 1.5rem;
+    }
+
+    .social-links > a > p {
+        font-size: 1.2rem;
+    }
+
+    .section-heading > h1, h2 {
+        font-size: 3rem;
+    }
+
+    .sm-card {
+        width: 19%;
+    }
+
+    .sm-card > h3 {
+        font-size: 2.5rem;
+    }
+
+    .sm-card > p {
+        font-size: 1.2rem;
+    }
+
+    .about-text > p {
+        font-size: 1.3rem;
+    }
+
+    .lg-card {
+        padding: 1rem;
+    }
+
+    .lg-card > h2 {
+        padding-top: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .lg-card > p {
+        font-size: 1rem;
+    }
+}
+
+.no-padding {
+    padding: 0;
+}
 
 @media (max-width: 500px) {
 
