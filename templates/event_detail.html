@@ -226,70 +226,133 @@
                         </div>  
 
                         <div class="input-container">
-                            <label for="id_institution">{{ form.institution.label }}*</label>
-                            {% if form.institution.errors %}
-                                {{ form.institution|add_class:"error-input" }}
-                                <p class="input-error-message">{{ form.institution.errors.0 }}</p>
+                            <label for="id_phone_number">{{ form.phone_number.label }}*</label>
+                            {% if form.phone_number.errors %}
+                                {{ form.phone_number|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.phone_number.errors.0 }}</p>
                             {% else %}
-                                {{ form.institution }}
+                                {{ form.phone_number }}
                             {% endif %}         
                         </div>  
                 
                         <div class="input-container">
-                            <label for="id_tg">{{ form.tg.label }}*</label>
-                            {% if form.tg.errors %}
-                                {{ form.tg|add_class:"error-input" }}
-                                <p class="input-error-message">{{ form.tg.errors.0 }}</p>
+                            <label for="id_tg_username">{{ form.tg_username.label }}*</label>
+                            {% if form.tg_username.errors %}
+                                {{ form.tg_username|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.tg_username.errors.0 }}</p>
                             {% else %}
-                                {{ form.tg }}
+                                {{ form.tg_username }}
                             {% endif %}
                         </div>
 
                         <div class="input-container">
-                            <label for="id_email">{{ form.email.label }}*</label>
-                            {% if form.email.errors %}
-                                {{ form.email|add_class:"error-input" }}
-                                <p class="input-error-message">{{ form.email.errors.0 }}</p>
+                            <label for="id_startup_name">{{ form.startup_name.label }}*</label>
+                            {% if form.startup_name.errors %}
+                                {{ form.startup_name|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.startup_name.errors.0 }}</p>
                             {% else %}
-                                {{ form.email }}
-                            {% endif %}
-                        </div>
-
-                        <div class="input-container">
-                            <label for="id_project">{{ form.project.label }}*</label>
-                            {% if form.project.errors %}
-                                {{ form.project|add_class:"error-input" }}
-                                <p class="input-error-message">{{ form.project.errors.0 }}</p>
-                            {% else %}
-                                {{ form.project }}
-                            {% endif %}
-                        </div>
-
-                        <div class="input-container">
-                            <label for="id_role">{{ form.role.label }}*</label>
-                            {% if form.role.errors %}
-                                {{ form.role|add_class:"error-input" }}
-                                <p class="input-error-message">{{ form.role.errors.0 }}</p>
-                            {% else %}
-                                {{ form.role }}
+                                {{ form.startup_name }}
                             {% endif %}
                         </div>
                     </div>
+                    
+                    <div class="input-container">
+                        <label for="id_startup_description">{{ form.startup_description.label }}</label>
+                        {{ form.startup_description|add_class:"form-textarea" }}
+                    </div>
+
+                    <div class="form-input-group">
+                        <div class="input-container">
+                            <label for="id_startup_status">{{ form.startup_status.label }}*</label>
+                            {% if form.startup_status.errors %}
+                                {{ form.startup_status|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.startup_status.errors.0 }}</p>
+                            {% else %}
+                                {{ form.startup_status }}
+                            {% endif %}         
+                        </div>  
+
+                        <div class="input-container">
+                            <label for="id_startup_sphere">{{ form.startup_sphere.label }}*</label>
+                            {% if form.startup_sphere.errors %}
+                                {{ form.startup_sphere|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.startup_sphere.errors.0 }}</p>
+                            {% else %}
+                                {{ form.startup_sphere }}
+                            {% endif %}         
+                        </div> 
+
+                        <div class="input-container">
+                            <label for="id_startup_sphere_other">{{ form.startup_sphere_other.label }}*</label>
+                            {% if form.startup_sphere_other.errors %}
+                                {{ form.startup_sphere_other|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.startup_sphere_other.errors.0 }}</p>
+                            {% else %}
+                                {{ form.startup_sphere_other }}
+                            {% endif %}         
+                        </div> 
+
+                        <div class="input-container">
+                            <label for="id_startup_sphere_other">{{ form.position_in_startup.label }}*</label>
+                            {% if form.position_in_startup.errors %}
+                                {{ form.position_in_startup|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.position_in_startup.errors.0 }}</p>
+                            {% else %}
+                                {{ form.position_in_startup }}
+                            {% endif %}         
+                        </div> 
+
+                        <div class="input-container custom-select-wrapper">
+                            <label for="id_has_entrepreneurship_experience">{{ form.has_entrepreneurship_experience.label }}*</label>
+                            {% if form.has_entrepreneurship_experience.errors %}
+                                {{ form.has_entrepreneurship_experience|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.has_entrepreneurship_experience.errors.0 }}</p>
+                            {% else %}
+                                {{ form.has_entrepreneurship_experience }}
+                            {% endif %}         
+                        </div> 
+
+                        <div class="input-container custom-select-wrapper">
+                            <label for="id_has_attracted_investment">{{ form.has_attracted_investment.label }}*</label>
+                            {% if form.has_attracted_investment.errors %}
+                                {{ form.has_attracted_investment|add_class:"error-input" }}
+                                <p class="input-error-message">{{ form.has_attracted_investment.errors.0 }}</p>
+                            {% else %}
+                                {{ form.has_attracted_investment }}
+                            {% endif %}         
+                        </div>  
+                    </div>
 
                     <div class="input-container">
-                        <label for="id_link">{{ form.link.label }}</label>
-                        {% if form.link.errors %}
-                            {{ form.link|add_class:"error-input" }}
-                            <p class="input-error-message">{{ form.link.errors.0 }}</p>
+                        <label for="id_incubators_accelerators">{{ form.incubators_accelerators.label }}*</label>
+                        {% if form.incubators_accelerators.errors %}
+                            {{ form.incubators_accelerators|add_class:"error-input" }}
+                            <p class="input-error-message">{{ form.incubators_accelerators.errors.0 }}</p>
                         {% else %}
-                            {{ form.link }}
-                        {% endif %}
-                    </div>
+                            {{ form.incubators_accelerators }}
+                        {% endif %}         
+                    </div> 
 
                     <div class="input-container">
-                        <label for="id_description">{{ form.description.label }}</label>
-                        {{ form.description|add_class:"form-textarea" }}
+                        <label for="id_presentation_link">{{ form.presentation_link.label }}*</label>
+                        {% if form.presentation_link.errors %}
+                            {{ form.presentation_link|add_class:"error-input" }}
+                            <p class="input-error-message">{{ form.presentation_link.errors.0 }}</p>
+                        {% else %}
+                            {{ form.presentation_link }}
+                        {% endif %}         
                     </div>
+
+                    <div class="input-container custom-select-wrapper">
+                        <label for="id_consent">{{ form.consent.label }}*</label>
+                        {% if form.consent.errors %}
+                            {{ form.consent|add_class:"error-input" }}
+                            <p class="input-error-message">{{ form.consent.errors.0 }}</p>
+                        {% else %}
+                            {{ form.consent }}
+                        {% endif %}         
+                    </div> 
+                        
                     <button type="submit" class="btn submit-btn">{% trans 'Отправить заявку' %}</button>
                 </form>
             </div>

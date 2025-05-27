@@ -173,25 +173,98 @@ class EventPhoto(models.Model):
 
 
 class Participant(models.Model):
-    full_name = models.CharField(_('Полное имя'), max_length=100, blank=True, null=True)
-    institution = models.CharField(_('Учебное заведение'), max_length=100, blank=True, null=True)
-    tg = models.CharField(_('Telegram'), max_length=100, blank=True, null=True)
-    email = models.EmailField(_('Электронная почта'), max_length=100, blank=True, null=True)
+    # Personal Information
+    full_name = models.CharField(_('Полное имя'), max_length=200, blank=False, null=False)
+    phone_number = models.CharField(_('Номер телефона'), max_length=20, blank=False, null=False)
+    tg_username = models.CharField(_('Telegram username'), max_length=100, blank=True, null=True)
 
-    project = models.CharField(_('Название проекта'), max_length=100, blank=True, null=True)
-    role = models.CharField(_('Ваша роль в проекте'), max_length=100, blank=True, null=True)
+    # Startup Information
+    startup_name = models.CharField(_('Название стартапа'), max_length=200, blank=False, null=False)
+    startup_description = models.TextField(_('Краткая информация о стартапе'), max_length=500, blank=False, null=False)
 
-    link = models.CharField(_('Ссылка на презентацию'), max_length=500, blank=True, null=True)
-    description = models.TextField(_('Описание проекта'), max_length=500, blank=True, null=True)
+    # Startup Status (Multiple Choice)
+    STARTUP_STATUS_CHOICES = [
+        ('idea', _('Идея')),
+        ('mvp', _('MVP')),
+        ('traction', _('Есть продажи')),
+    ]
+    startup_status = models.CharField(_('Статус стартапа'), max_length=20, choices=STARTUP_STATUS_CHOICES, blank=False, null=False, default='idea')
 
+    # Startup Sphere (Multiple Choice)
+    STARTUP_SPHERE_CHOICES = [
+        ('ecommerce', _('E-commerce')),
+        ('edtech', _('EdTech')),
+        ('fintech', _('FinTech')),
+        ('medtech', _('MedTech')),
+        ('agritech', _('AgriTech')),
+        ('erp_crm', _('ERP/CRM')),
+        ('entertainment', _('Entertainment')),
+        ('other', _('Другое')),
+    ]
+    startup_sphere = models.CharField(_('Сфера стартапа'), max_length=20, choices=STARTUP_SPHERE_CHOICES, blank=False, null=False, default='other')
+    startup_sphere_other = models.CharField(_('Если другое, напишите'), max_length=200, blank=True, null=True)
+
+    # Role in Startup
+    position_in_startup = models.CharField(_('Ваша должность в стартапе'), max_length=200, blank=False, null=False)
+
+    # Entrepreneurship Experience (Choice-Based)
+    ENTREPRENEURSHIP_EXPERIENCE_CHOICES = [
+        ('yes', _('Да')),
+        ('no', _('Нет')),
+    ]
+    has_entrepreneurship_experience = models.CharField(
+        _('У вас был предпринимательский опыт ранее?'),
+        max_length=3,
+        choices=ENTREPRENEURSHIP_EXPERIENCE_CHOICES,
+        blank=False,
+        null=False,
+        default='no'
+    )
+
+    # Investment Information (Choice-Based)
+    INVESTMENT_CHOICES = [
+        ('yes', _('Да')),
+        ('no', _('Нет')),
+    ]
+    has_attracted_investment = models.CharField(
+        _('Привлекали ли вы инвестиции в свой стартап?'),
+        max_length=3,
+        choices=INVESTMENT_CHOICES,
+        blank=False,
+        null=False,
+        default='no'
+    )
+
+    # Incubators/Accelerators
+    incubators_accelerators = models.TextField(_('В каких инкубаторах и/или акселераторах вы участвовали?'), max_length=500, blank=True, null=True)
+
+    # Startup Presentation Link
+    presentation_link = models.CharField(_('Ссылка на презентацию стартапа'), max_length=500, blank=False, null=False)
+
+    # Consent Checkbox (Choice-Based)
+    CONSENT_CHOICES = [
+        ('yes', _('Согласен')),
+        ('no', _('Не согласен')),
+    ]
+    consent = models.CharField(
+        _('Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем стартапе и делиться своими контактами с партнерами проекта и заинтересованными сторонами?'),
+        max_length=3,
+        choices=CONSENT_CHOICES,
+        blank=False,
+        null=False,
+        default='no'
+    )
+
+    # Event Association
     event = models.ForeignKey('Event', on_delete=models.CASCADE, related_name='participants')
 
+    # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name
-    
+
     class Meta:
         ordering = ['-created_at']
         verbose_name = _('Участник')
