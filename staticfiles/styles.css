@@ -711,27 +711,27 @@ form {
 }
 
 .lg-card {
-    width: 31%;
+    width: 22%;
     max-height: 40rem;
     border-radius: 2.5rem;
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--bg-color);
     text-align: center;
 }
 
 .lg-card > h2 {
     font-family: 'TT Travels Bold', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
     color: var(--secondary-color);
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .lg-card > p {
     font-family: 'TT Travels', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgba(130, 152, 171, 1);
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     margin: 0;
 }
 
@@ -742,6 +742,24 @@ form {
     object-position: center;
     border-radius: 2rem;
 }   
+
+
+.small {
+    width: 17%;
+    max-height: 25rem;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.small > h2 {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+
+.small > p {
+    font-size: 0.9rem;
+    padding-top: 0.2rem;
+}
 
 
 .card-link {
@@ -1204,6 +1222,10 @@ form {
 
     .lg-card > p {
         font-size: 1rem;
+    }
+
+    .form-control {
+        border-radius: 1.5rem;
     }
 }
 

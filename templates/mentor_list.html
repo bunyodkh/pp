@@ -23,7 +23,7 @@
         {% if mentors %}
             <ul class="lg-card-list">
                 {% for mentor in mentors %}
-                    <li class="lg-card">
+                    <li class="lg-card small">
                         <img src="{% if mentor.photo %}{{ mentor.photo.url }}{% endif %}" alt="Mentor Photo">
                         <h2>
                             {% if LANGUAGE_CODE == 'ru' %}{{ mentor.full_name }}{% endif %}
