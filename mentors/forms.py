@@ -36,9 +36,6 @@ class MentorForm(forms.ModelForm):
             raise forms.ValidationError(_('Full name must be at least 2 characters long.'))
         if len(full_name.strip()) > 100:
             raise forms.ValidationError(_('Full name cannot exceed 100 characters.'))
-        # Regex validation: Only letters and spaces allowed
-        if not re.match(r'^[a-zA-Z\s]+$', full_name.strip()):
-            raise forms.ValidationError(_('Full name can only contain letters and spaces.'))
         return full_name
     
     def clean_organization(self):
@@ -49,9 +46,6 @@ class MentorForm(forms.ModelForm):
             raise forms.ValidationError(_('Organization must be at least 2 characters long.'))
         if len(organization.strip()) > 100:
             raise forms.ValidationError(_('Organization cannot exceed 100 characters.'))
-        # Regex validation: Only letters, numbers, spaces, and special characters like "-" and "&" allowed
-        if not re.match(r'^[a-zA-Z0-9\s\-\&]+$', organization.strip()):
-            raise forms.ValidationError(_('Organization can only contain letters, numbers, spaces, hyphens, and ampersands.'))
         return organization
 
     def clean_position(self):
@@ -62,9 +56,6 @@ class MentorForm(forms.ModelForm):
             raise forms.ValidationError(_('Position must be at least 2 characters long.'))
         if len(position.strip()) > 100:
             raise forms.ValidationError(_('Position cannot exceed 100 characters.'))
-        # Regex validation: Only letters, spaces, and special characters like "-" allowed
-        if not re.match(r'^[a-zA-Z\s\-]+$', position.strip()):
-            raise forms.ValidationError(_('Position can only contain letters, spaces, and hyphens.'))
         return position
 
     def clean_phone(self):
@@ -72,12 +63,9 @@ class MentorForm(forms.ModelForm):
         if not phone or not phone.strip():
             raise forms.ValidationError(_('Phone number cannot be empty.'))
         if len(phone.strip()) < 9:
-            raise forms.ValidationError(_('Phone number must be at least 10 characters long.'))
+            raise forms.ValidationError(_('Phone number must be at least 9 characters long.'))
         if len(phone.strip()) > 13:
             raise forms.ValidationError(_('Phone number cannot exceed 15 characters.'))
-        # Regex validation: Must be a valid phone number format
-        if not re.match(r'^\+?[0-9]{10,15}$', phone.strip()):
-            raise forms.ValidationError(_('Enter a valid phone number (e.g., +1234567890).'))
         return phone
 
     def clean_tg(self):
@@ -88,9 +76,6 @@ class MentorForm(forms.ModelForm):
             raise forms.ValidationError(_('Telegram username must be at least 2 characters long.'))
         if len(tg.strip()) > 50:
             raise forms.ValidationError(_('Telegram username cannot exceed 50 characters.'))
-        # Regex validation: Must start with '@' and contain only letters, numbers, and underscores
-        if not re.match(r'^@[a-zA-Z0-9_]+$', tg.strip()):
-            raise forms.ValidationError(_('Telegram username must start with "@" and contain only letters, numbers, and underscores.'))
         return tg
 
     def clean_linkedin_profile(self):
@@ -101,7 +86,4 @@ class MentorForm(forms.ModelForm):
             raise forms.ValidationError(_('LinkedIn profile must be at least 10 characters long.'))
         if len(linkedin_profile.strip()) > 200:
             raise forms.ValidationError(_('LinkedIn profile cannot exceed 200 characters.'))
-        # Regex validation: Must be a valid LinkedIn URL
-        if not re.match(r'^https://(www\.)?linkedin\.com/.*$', linkedin_profile.strip()):
-            raise forms.ValidationError(_('Enter a valid LinkedIn profile URL (e.g., https://www.linkedin.com/in/username).'))
         return linkedin_profile

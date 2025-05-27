@@ -5,7 +5,7 @@ import uuid
 from django.utils.translation import gettext_lazy as _
 from PIL import Image
 from django.utils.text import slugify
-
+from django.core.files.storage import default_storage
 
 from core.utils import rename_uploaded_image
 
@@ -55,7 +55,7 @@ class EventType(models.Model):
                 counter += 1
 
             self.slug = slug
-        
+
         super().save(*args, **kwargs)
 
         # Optimize the image
@@ -68,7 +68,6 @@ class EventType(models.Model):
             if image.width > max_width or image.height > max_height:
                 image.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
                 image.save(image_path, optimize=True, quality=85)  # Save the optimized image
-
 
 
 class EventTimeline(models.Model):   
@@ -140,6 +139,7 @@ class Event(models.Model):
             self.event_number = str(uuid.uuid4().hex[:8])
         if self.show_on_main:
             Event.objects.filter(show_on_main=True).update(show_on_main=False)
+        
         super().save(*args, **kwargs)
 
 
@@ -163,7 +163,19 @@ class EventPhoto(models.Model):
     def save(self, *args, **kwargs):
         if self.hero_image:
             EventPhoto.objects.filter(event=self.event, hero_image=True).update(hero_image=False)
+        
         super().save(*args, **kwargs)
+
+        # Optimize the image
+        if self.photo and default_storage.exists(self.photo.name):
+            image_path = self.photo.path  # Get the file path of the uploaded image
+            image = Image.open(image_path)
+
+            # Resize the image if it exceeds the desired dimensions
+            max_width, max_height = 800, 800  
+            if image.width > max_width or image.height > max_height:
+                image.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+                image.save(image_path, optimize=True, quality=90)  
 
     class Meta:
         ordering = ['-created_at']
@@ -252,7 +264,7 @@ class Participant(models.Model):
         choices=CONSENT_CHOICES,
         blank=False,
         null=False,
-        default='no'
+        default='yes'
     )
 
     # Event Association

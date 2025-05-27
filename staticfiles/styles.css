@@ -386,7 +386,7 @@ form {
 }
 
 .submission-success {
-    margin: 5rem 0 3rem 0;
+    margin: 0 auto;
     padding: 10rem 2rem 3rem 2rem;
     display: flex;
     flex-direction: column;
@@ -402,7 +402,6 @@ form {
     font-family: 'TT Travels Bold', sans-serif;
     font-size: 5rem;
 }
-
 
 /* COUNTDOWN TIMER */
 .active-event-timer {
@@ -1644,15 +1643,6 @@ form {
         padding: 1rem;
     }
 
-    /* .card-link > a {
-        width: 100%;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-    } */
-
     .card-link > a > img {
         scale: 0.5;
     }
@@ -1883,6 +1873,18 @@ form {
         object-fit: scale-down;
         object-position: center;
     }
+
+    .submission-success {
+        padding: 2rem;
+    }
+    
+    .submission-success-text {
+        font-size: 1.5rem;
+    }
+    
+    .submission-success-icon {
+        scale: 70%;
+    }    
 
 }
     

@@ -33,9 +33,6 @@ class PartnerForm(forms.ModelForm):
             raise forms.ValidationError(_('Имя должно быть длиной не менее 2 символов.'))
         if len(name.strip()) > 100:
             raise forms.ValidationError(_('Имя не может превышать 100 символов.'))
-        # Regex validation: Only letters and spaces allowed
-        if not re.match(r'^[a-zA-Z\s]+$', name.strip()):
-            raise forms.ValidationError(_('Имя может содержать только буквы и пробелы.'))
         return name
     
 
@@ -45,8 +42,6 @@ class PartnerForm(forms.ModelForm):
             raise forms.ValidationError(_('Электронная почта не может быть пустой.'))
         if len(email.strip()) > 100:
             raise forms.ValidationError(_('Длина адреса электронной почты не может превышать 100 символов.'))
-        if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email.strip()):
-            raise forms.ValidationError(_('Введите действительный адрес электронной почты (т. е. необходимо включить знак @).'))
         return email
 
 
@@ -58,9 +53,6 @@ class PartnerForm(forms.ModelForm):
             raise forms.ValidationError(_('Номер телефона должен содержать не менее 10 символов.'))
         if len(phone.strip()) > 13:
             raise forms.ValidationError(_('Номер телефона не может превышать 15 символов.'))
-        # Regex validation: Must be a valid phone number format
-        if not re.match(r'^\+?[0-9]{10,15}$', phone.strip()):
-            raise forms.ValidationError(_('Введите действительный номер телефона (например, +1234567890).'))
         return phone
     
 
@@ -70,7 +62,4 @@ class PartnerForm(forms.ModelForm):
             raise forms.ValidationError(_('Сайт не может быть пустым.'))
         if website and len(website.strip()) > 50:
             raise forms.ValidationError(_('URL-адрес веб-сайта не может превышать 50 символов.'))
-        # Regex validation: Must be a valid URL format
-        if website and not re.match(r'^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$', website.strip()):
-            raise forms.ValidationError(_('Введите действительный URL-адрес веб-сайта (например, https://example.com).'))
         return website

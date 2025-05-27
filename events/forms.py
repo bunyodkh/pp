@@ -106,6 +106,4 @@ class RegistrationForm(forms.ModelForm):
 
     def clean_consent(self):
         consent = self.cleaned_data.get('consent')
-        if not consent:
-            raise forms.ValidationError(_('Вы должны согласиться с условиями, чтобы продолжить.'))
         return consent
