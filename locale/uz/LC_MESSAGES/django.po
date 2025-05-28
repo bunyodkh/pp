@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-15 09:36+0500\n"
+"POT-Creation-Date: 2025-05-28 08:10+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,100 +30,128 @@ msgstr "Rus tili"
 msgid "Uzbek"
 msgstr "O'zbek tili"
 
-#: .\events\forms.py:36 .\mentors\forms.py:34
-msgid "Full name cannot be empty."
+#: .\events\forms.py:29
+#, fuzzy
+#| msgid "Победители"
+msgid "Введите ваше имя"
+msgstr "G'oliblar"
+
+#: .\events\forms.py:30
+#, fuzzy
+#| msgid "Номер телефона"
+msgid "Введите номер телефона"
+msgstr "Telefon raqami"
+
+#: .\events\forms.py:31
+msgid "Введите Telegram username"
 msgstr ""
 
-#: .\events\forms.py:38 .\mentors\forms.py:36
-msgid "Full name must be at least 2 characters long."
+#: .\events\forms.py:32
+#, fuzzy
+#| msgid "Название стартапа"
+msgid "Введите название стартапа"
+msgstr "Startap nomi"
+
+#: .\events\forms.py:33
+msgid "Введите краткую информацию о стартапе"
 msgstr ""
 
-#: .\events\forms.py:40 .\mentors\forms.py:38
-msgid "Full name cannot exceed 100 characters."
+#: .\events\forms.py:36 .\events\models.py:217
+msgid "Если другое, напишите"
 msgstr ""
 
-#: .\events\forms.py:47
-msgid "Institution cannot be empty."
+#: .\events\forms.py:37
+msgid "Введите вашу должность в стартапе"
 msgstr ""
 
-#: .\events\forms.py:49
-msgid "Institution must be at least 2 characters long."
+#: .\events\forms.py:40
+msgid "Введите информацию об инкубаторах и акселераторах"
 msgstr ""
 
-#: .\events\forms.py:51
-msgid "Institution cannot exceed 100 characters."
+#: .\events\forms.py:41
+#, fuzzy
+#| msgid "Ссылка на презентацию"
+msgid "Введите ссылку на презентацию стартапа"
+msgstr "Taqdimotga havola"
+
+#: .\events\forms.py:49 .\mentors\forms.py:34
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Полное имя не может быть пустым."
+msgstr "Elektron manzil"
+
+#: .\events\forms.py:51 .\mentors\forms.py:36
+msgid "Полное имя должно содержать не менее 2 символов."
 msgstr ""
 
-#: .\events\forms.py:58
-msgid "Telegram cannot be empty."
+#: .\events\forms.py:53 .\mentors\forms.py:38
+msgid "Полное имя не может превышать 100 символов."
 msgstr ""
 
-#: .\events\forms.py:60
-msgid "Telegram must be at least 2 characters long."
+#: .\events\forms.py:59 .\mentors\forms.py:64 .\partners\forms.py:51
+msgid "Номер телефона не может быть пустым."
 msgstr ""
 
-#: .\events\forms.py:62
-msgid "Telegram cannot exceed 100 characters."
-msgstr ""
-
-#: .\events\forms.py:69
-msgid "Email cannot be empty."
+#: .\events\forms.py:65
+msgid "Введите корректный Telegram username (например, @username)."
 msgstr ""
 
 #: .\events\forms.py:71
-msgid "Email cannot exceed 100 characters."
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Название стартапа не может быть пустым."
+msgstr "Elektron manzil"
+
+#: .\events\forms.py:73
+msgid "Название стартапа должно содержать не менее 2 символов."
 msgstr ""
 
-#: .\events\forms.py:74
-msgid "Enter a valid email address (i.e., @ sign should be included.)."
-msgstr ""
+#: .\events\forms.py:75
+#, fuzzy
+#| msgid "Описание стартапа на русском"
+msgid "Название стартапа не может превышать 100 символов."
+msgstr "Startap tasnifi"
 
 #: .\events\forms.py:81
-msgid "Project name cannot be empty."
-msgstr ""
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Краткая информация о стартапе не может быть пустой."
+msgstr "Elektron manzil"
 
 #: .\events\forms.py:83
-msgid "Project name must be at least 2 characters long."
+msgid "Краткая информация о стартапе не может превышать 500 символов."
 msgstr ""
 
-#: .\events\forms.py:85
-msgid "Project name cannot exceed 100 characters."
-msgstr ""
-
-#: .\events\forms.py:92
-msgid "Role cannot be empty."
-msgstr ""
-
-#: .\events\forms.py:94
-msgid "Role must be at least 2 characters long."
+#: .\events\forms.py:90
+msgid "Если выбрано \"Другое\", необходимо указать сферу стартапа."
 msgstr ""
 
 #: .\events\forms.py:96
-msgid "Role cannot exceed 100 characters."
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Ваша должность в стартапе не может быть пустой."
+msgstr "Elektron manzil"
+
+#: .\events\forms.py:98
+msgid "Ваша должность в стартапе не может превышать 200 символов."
 msgstr ""
 
-#: .\events\forms.py:103
-msgid "Link cannot be empty."
-msgstr ""
+#: .\events\forms.py:104
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Ссылка на презентацию стартапа не может быть пустой."
+msgstr "Elektron manzil"
 
-#: .\events\forms.py:105
-msgid "Link must be at least 3 characters long."
-msgstr ""
-
-#: .\events\forms.py:107
-msgid "Link cannot exceed 500 characters."
-msgstr ""
-
-#: .\events\models.py:14 .\events\models.py:99 .\events\models.py:207
+#: .\events\models.py:14 .\events\models.py:98 .\events\models.py:292
 msgid "Название на русском"
 msgstr ""
 
-#: .\events\models.py:15 .\events\models.py:100 .\events\models.py:208
+#: .\events\models.py:15 .\events\models.py:99 .\events\models.py:293
 #: .\partners\models.py:8
 msgid "Название на английском"
 msgstr ""
 
-#: .\events\models.py:16 .\events\models.py:101 .\events\models.py:209
+#: .\events\models.py:16 .\events\models.py:100 .\events\models.py:294
 #: .\partners\models.py:9
 msgid "Название на узбекском"
 msgstr ""
@@ -148,12 +176,12 @@ msgstr ""
 msgid "Slug"
 msgstr "Havola"
 
-#: .\events\models.py:26 .\events\models.py:116
+#: .\events\models.py:26 .\events\models.py:115
 msgid "Показывать на главной"
 msgstr "Asosiy sahifada ko'rsatish"
 
-#: .\events\models.py:42 .\events\models.py:75 .\events\models.py:97
-#: .\events\models.py:203 .\partners\models.py:6
+#: .\events\models.py:42 .\events\models.py:74 .\events\models.py:96
+#: .\events\models.py:288 .\partners\models.py:6
 msgid "Тип мероприятия"
 msgstr "Tadbir turi"
 
@@ -161,67 +189,67 @@ msgstr "Tadbir turi"
 msgid "Типы мероприятий"
 msgstr "Tadbir turlari"
 
-#: .\events\models.py:77
+#: .\events\models.py:76
 msgid "Название этапа на русском"
 msgstr ""
 
-#: .\events\models.py:78
+#: .\events\models.py:77
 msgid "Название этапа на английском"
 msgstr ""
 
-#: .\events\models.py:79
+#: .\events\models.py:78
 msgid "Название этапа на узбекском"
 msgstr ""
 
-#: .\events\models.py:81
+#: .\events\models.py:80
 msgid "Срок выполнения"
 msgstr ""
 
-#: .\events\models.py:88
+#: .\events\models.py:87
 msgid "Этап мероприятия"
 msgstr "Tadbir bosqichi"
 
-#: .\events\models.py:89
+#: .\events\models.py:88
 msgid "Этапы мероприятий"
 msgstr "Tadbir bosqichlari"
 
-#: .\events\models.py:103
+#: .\events\models.py:102
 msgid "Акцент к названию"
 msgstr ""
 
-#: .\events\models.py:104
+#: .\events\models.py:103
 msgid "Акцент к названию на английском"
 msgstr ""
 
-#: .\events\models.py:105
+#: .\events\models.py:104
 msgid "Акцент к названию на узбекском"
 msgstr ""
 
-#: .\events\models.py:107
+#: .\events\models.py:106
 msgid "Место проведения на русском"
 msgstr ""
 
-#: .\events\models.py:108
+#: .\events\models.py:107
 msgid "Место проведения на английском"
 msgstr ""
 
-#: .\events\models.py:109
+#: .\events\models.py:108
 msgid "Место проведения на узбекском"
 msgstr ""
 
-#: .\events\models.py:111
+#: .\events\models.py:110
 msgid "Дата проведения"
 msgstr ""
 
-#: .\events\models.py:112
+#: .\events\models.py:111
 msgid "Дата окончания регистрации"
 msgstr ""
 
-#: .\events\models.py:115
+#: .\events\models.py:114
 msgid "Активно"
 msgstr "Faol"
 
-#: .\events\models.py:148 .\events\models.py:154 .\events\models.py:225
+#: .\events\models.py:148 .\events\models.py:154 .\events\models.py:310
 msgid "Мероприятие"
 msgstr "Tadbirlar"
 
@@ -230,7 +258,7 @@ msgstr "Tadbirlar"
 msgid "Мероприятия"
 msgstr "Tadbirlar"
 
-#: .\events\models.py:155 .\events\models.py:170
+#: .\events\models.py:155 .\events\models.py:182
 msgid "Фотография мероприятия"
 msgstr ""
 
@@ -238,87 +266,182 @@ msgstr ""
 msgid "Главное изображение"
 msgstr ""
 
-#: .\events\models.py:171
+#: .\events\models.py:183
 msgid "Фотографии мероприятий"
 msgstr "Tadbir rasmlari"
 
-#: .\events\models.py:176
+#: .\events\models.py:189
 msgid "Полное имя"
 msgstr "To'liq ism"
 
-#: .\events\models.py:177
-msgid "Учебное заведение"
-msgstr "Oliy ta'lim muassasasi"
+#: .\events\models.py:190 .\mentors\models.py:19
+msgid "Номер телефона"
+msgstr "Telefon raqami"
 
-#: .\events\models.py:178 .\mentors\models.py:20
-msgid "Telegram"
+#: .\events\models.py:191
+#, fuzzy
+#| msgid "Telegram"
+msgid "Telegram username"
 msgstr "Telegram"
 
-#: .\events\models.py:179 .\partners\models.py:11
-msgid "Электронная почта"
-msgstr "Elektron manzil"
-
-#: .\events\models.py:181
-msgid "Название проекта"
-msgstr "loyiha nomi"
-
-#: .\events\models.py:182
-msgid "Ваша роль в проекте"
-msgstr "Loyidagi rolingiz"
-
-#: .\events\models.py:184
-msgid "Ссылка на презентацию"
-msgstr "Taqdimotga havola"
-
-#: .\events\models.py:185
-msgid "Описание проекта"
-msgstr "Loyiha tasnifi"
-
-#: .\events\models.py:197
-msgid "Участник"
-msgstr "Ishtirokchi"
-
-#: .\events\models.py:198
-msgid "Участники"
-msgstr "Ishtirokchilar"
-
-#: .\events\models.py:205
-msgid "Значение"
-msgstr "Ma'no"
-
-#: .\events\models.py:220
-msgid "Достижение"
-msgstr "Yuqut"
-
-#: .\events\models.py:221
-msgid "Достижения"
-msgstr "Yutuqlar"
-
-#: .\events\models.py:227
+#: .\events\models.py:194 .\events\models.py:312
 msgid "Название стартапа"
 msgstr "Startap nomi"
 
-#: .\events\models.py:229
+#: .\events\models.py:195
+#, fuzzy
+#| msgid "Название стартапа"
+msgid "Краткая информация о стартапе"
+msgstr "Startap nomi"
+
+#: .\events\models.py:199
+msgid "Идея"
+msgstr ""
+
+#: .\events\models.py:200
+msgid "MVP"
+msgstr ""
+
+#: .\events\models.py:201
+msgid "Есть продажи"
+msgstr ""
+
+#: .\events\models.py:203
+#, fuzzy
+#| msgid "Логотип стартапа"
+msgid "Статус стартапа"
+msgstr "Startap logotipi"
+
+#: .\events\models.py:207
+msgid "E-commerce"
+msgstr ""
+
+#: .\events\models.py:208
+msgid "EdTech"
+msgstr ""
+
+#: .\events\models.py:209
+msgid "FinTech"
+msgstr ""
+
+#: .\events\models.py:210
+msgid "MedTech"
+msgstr ""
+
+#: .\events\models.py:211
+msgid "AgriTech"
+msgstr ""
+
+#: .\events\models.py:212
+msgid "ERP/CRM"
+msgstr ""
+
+#: .\events\models.py:213
+msgid "Entertainment"
+msgstr ""
+
+#: .\events\models.py:214
+msgid "Другое"
+msgstr ""
+
+#: .\events\models.py:216
+#, fuzzy
+#| msgid "Логотип стартапа"
+msgid "Сфера стартапа"
+msgstr "Startap logotipi"
+
+#: .\events\models.py:220
+#, fuzzy
+#| msgid "Название стартапа"
+msgid "Ваша должность в стартапе"
+msgstr "Startap nomi"
+
+#: .\events\models.py:224 .\events\models.py:238
+#, fuzzy
+#| msgid "Наш"
+msgid "Да"
+msgstr "Bizning"
+
+#: .\events\models.py:225 .\events\models.py:239
+#, fuzzy
+#| msgid "Наш"
+msgid "Нет"
+msgstr "Bizning"
+
+#: .\events\models.py:228
+msgid "У вас был предпринимательский опыт ранее?"
+msgstr ""
+
+#: .\events\models.py:242
+msgid "Привлекали ли вы инвестиции в свой стартап?"
+msgstr ""
+
+#: .\events\models.py:251
+msgid "В каких инкубаторах и/или акселераторах вы участвовали?"
+msgstr ""
+
+#: .\events\models.py:254
+#, fuzzy
+#| msgid "Ссылка на презентацию"
+msgid "Ссылка на презентацию стартапа"
+msgstr "Taqdimotga havola"
+
+#: .\events\models.py:258
+msgid "Согласен"
+msgstr ""
+
+#: .\events\models.py:259
+msgid "Не согласен"
+msgstr ""
+
+#: .\events\models.py:262
+msgid ""
+"Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем "
+"стартапе и делиться своими контактами с партнерами проекта и "
+"заинтересованными сторонами?"
+msgstr ""
+
+#: .\events\models.py:282
+msgid "Участник"
+msgstr "Ishtirokchi"
+
+#: .\events\models.py:283
+msgid "Участники"
+msgstr "Ishtirokchilar"
+
+#: .\events\models.py:290
+msgid "Значение"
+msgstr "Ma'no"
+
+#: .\events\models.py:305
+msgid "Достижение"
+msgstr "Yuqut"
+
+#: .\events\models.py:306
+msgid "Достижения"
+msgstr "Yutuqlar"
+
+#: .\events\models.py:314
 msgid "Описание стартапа на русском"
 msgstr "Startap tasnifi"
 
-#: .\events\models.py:230
+#: .\events\models.py:315
 msgid "Описание стартапа на английском"
 msgstr ""
 
-#: .\events\models.py:231
+#: .\events\models.py:316
 msgid "Описание стартапа на узбекском"
 msgstr ""
 
-#: .\events\models.py:233
+#: .\events\models.py:318
 msgid "Логотип стартапа"
 msgstr "Startap logotipi"
 
-#: .\events\models.py:240
+#: .\events\models.py:325
 msgid "Победитель"
 msgstr "G'olib"
 
-#: .\events\models.py:241
+#: .\events\models.py:326
 msgid "Победители"
 msgstr "G'oliblar"
 
@@ -330,95 +453,79 @@ msgstr "Siz tadbirga ro'yxatdan o'tdingiz."
 msgid "There was an error with your registration. Please try again."
 msgstr ""
 
-#: .\mentors\forms.py:41
-msgid "Full name can only contain letters and spaces."
-msgstr ""
+#: .\mentors\forms.py:44
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Организация не может быть пустой."
+msgstr "Elektron manzil"
 
-#: .\mentors\forms.py:47
-msgid "Organization cannot be empty."
-msgstr ""
+#: .\mentors\forms.py:46
+#, fuzzy
+#| msgid "Название организации на английском"
+msgid "Название организации должно содержать не менее 2 символов."
+msgstr "Tashkilot nomi ingliz tilida"
 
-#: .\mentors\forms.py:49
-msgid "Organization must be at least 2 characters long."
-msgstr ""
-
-#: .\mentors\forms.py:51
-msgid "Organization cannot exceed 100 characters."
-msgstr ""
+#: .\mentors\forms.py:48
+#, fuzzy
+#| msgid "Описание стартапа на русском"
+msgid "Название организации не может превышать 100 символов."
+msgstr "Startap tasnifi"
 
 #: .\mentors\forms.py:54
-msgid ""
-"Organization can only contain letters, numbers, spaces, hyphens, and "
-"ampersands."
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Должность не может быть пустой."
+msgstr "Elektron manzil"
+
+#: .\mentors\forms.py:56
+msgid "Должность должна содержать не менее 2 символов."
 msgstr ""
 
-#: .\mentors\forms.py:60
-msgid "Position cannot be empty."
+#: .\mentors\forms.py:58
+#, fuzzy
+#| msgid "Описание стартапа на русском"
+msgid "Должность не может превышать 100 символов."
+msgstr "Startap tasnifi"
+
+#: .\mentors\forms.py:66
+msgid "Номер телефона должен содержать не менее 9 символов."
 msgstr ""
 
-#: .\mentors\forms.py:62
-msgid "Position must be at least 2 characters long."
+#: .\mentors\forms.py:68 .\partners\forms.py:55
+msgid "Номер телефона не может превышать 15 символов."
 msgstr ""
 
-#: .\mentors\forms.py:64
-msgid "Position cannot exceed 100 characters."
+#: .\mentors\forms.py:74
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Имя пользователя Telegram не может быть пустым."
+msgstr "Elektron manzil"
+
+#: .\mentors\forms.py:76
+msgid "Имя пользователя Telegram должно содержать не менее 2 символов."
 msgstr ""
 
-#: .\mentors\forms.py:67
-msgid "Position can only contain letters, spaces, and hyphens."
-msgstr ""
+#: .\mentors\forms.py:78
+#, fuzzy
+#| msgid "Описание стартапа на русском"
+msgid "Имя пользователя Telegram не может превышать 50 символов."
+msgstr "Startap tasnifi"
 
-#: .\mentors\forms.py:73
-msgid "Phone number cannot be empty."
-msgstr ""
-
-#: .\mentors\forms.py:75
-msgid "Phone number must be at least 10 characters long."
-msgstr ""
-
-#: .\mentors\forms.py:77
-msgid "Phone number cannot exceed 15 characters."
-msgstr ""
-
-#: .\mentors\forms.py:80
-msgid "Enter a valid phone number (e.g., +1234567890)."
-msgstr ""
+#: .\mentors\forms.py:84
+#, fuzzy
+#| msgid "Электронная почта"
+msgid "Профиль LinkedIn не может быть пустым."
+msgstr "Elektron manzil"
 
 #: .\mentors\forms.py:86
-msgid "Telegram username cannot be empty."
+msgid "Профиль LinkedIn должен содержать не менее 10 символов."
 msgstr ""
 
 #: .\mentors\forms.py:88
-msgid "Telegram username must be at least 2 characters long."
-msgstr ""
-
-#: .\mentors\forms.py:90
-msgid "Telegram username cannot exceed 50 characters."
-msgstr ""
-
-#: .\mentors\forms.py:93
-msgid ""
-"Telegram username must start with \"@\" and contain only letters, numbers, "
-"and underscores."
-msgstr ""
-
-#: .\mentors\forms.py:99
-msgid "LinkedIn profile cannot be empty."
-msgstr ""
-
-#: .\mentors\forms.py:101
-msgid "LinkedIn profile must be at least 10 characters long."
-msgstr ""
-
-#: .\mentors\forms.py:103
-msgid "LinkedIn profile cannot exceed 200 characters."
-msgstr ""
-
-#: .\mentors\forms.py:106
-msgid ""
-"Enter a valid LinkedIn profile URL (e.g., https://www.linkedin.com/in/"
-"username)."
-msgstr ""
+#, fuzzy
+#| msgid "Описание стартапа на русском"
+msgid "Профиль LinkedIn не может превышать 200 символов."
+msgstr "Startap tasnifi"
 
 #: .\mentors\models.py:7
 msgid "Имя и фамилия"
@@ -456,9 +563,9 @@ msgstr "Lavozim ingliz tilida"
 msgid "Должность на узбекском"
 msgstr "Lavozim o'zbek tilida"
 
-#: .\mentors\models.py:19
-msgid "Номер телефона"
-msgstr "Telefon raqami"
+#: .\mentors\models.py:20
+msgid "Telegram"
+msgstr "Telegram"
 
 #: .\mentors\models.py:21
 msgid "Linkedin"
@@ -472,7 +579,7 @@ msgstr "Nega mentor bo'lmoqchisiz?"
 msgid "Фотография"
 msgstr "Surat"
 
-#: .\mentors\models.py:25
+#: .\mentors\models.py:25 .\partners\models.py:17
 msgid "Показать на главной странице"
 msgstr "Asosiy sahifada ko'rsatish"
 
@@ -480,7 +587,7 @@ msgstr "Asosiy sahifada ko'rsatish"
 msgid "Показать на странице менторов"
 msgstr "Mentorlar sahifasida ko'rsatish"
 
-#: .\mentors\models.py:28 .\partners\models.py:19
+#: .\mentors\models.py:28 .\partners\models.py:20
 msgid "Источник регистрации"
 msgstr "Ro'yxatdan otish manbasi"
 
@@ -492,17 +599,11 @@ msgstr "Mentor"
 msgid "Наставники"
 msgstr "Mentorlar"
 
-#: .\mentors\views.py:23
-msgid "Your application has been successfully submitted."
+#: .\mentors\views.py:34
+#, fuzzy
+#| msgid "Your application has been successfully submitted."
+msgid "Your application has been submitted successfully!"
 msgstr "Sizning arizangiz qabul qilindi."
-
-#: .\mentors\views.py:26
-msgid ""
-"There was an error submitting your application. Please correct the errors "
-"below."
-msgstr ""
-"Arizangizni qabul qilishda xatolik ro'y berdi. Iltimos ko'rsatilgan "
-"xatolarni to'g'irlang."
 
 #: .\partners\forms.py:31
 msgid "Имя не может быть пустым."
@@ -516,53 +617,26 @@ msgstr ""
 msgid "Имя не может превышать 100 символов."
 msgstr ""
 
-#: .\partners\forms.py:38
-msgid "Имя может содержать только буквы и пробелы."
-msgstr ""
-
-#: .\partners\forms.py:45
+#: .\partners\forms.py:42
 #, fuzzy
 #| msgid "Электронная почта"
 msgid "Электронная почта не может быть пустой."
 msgstr "Elektron manzil"
 
-#: .\partners\forms.py:47
+#: .\partners\forms.py:44
 msgid "Длина адреса электронной почты не может превышать 100 символов."
 msgstr ""
 
-#: .\partners\forms.py:49
-msgid ""
-"Введите действительный адрес электронной почты (т. е. необходимо включить "
-"знак @)."
-msgstr ""
-
-#: .\partners\forms.py:56
-msgid "Номер телефона не может быть пустым."
-msgstr ""
-
-#: .\partners\forms.py:58
+#: .\partners\forms.py:53
 msgid "Номер телефона должен содержать не менее 10 символов."
 msgstr ""
 
-#: .\partners\forms.py:60
-msgid "Номер телефона не может превышать 15 символов."
-msgstr ""
-
-#: .\partners\forms.py:63
-msgid "Введите действительный номер телефона (например, +1234567890)."
-msgstr ""
-
-#: .\partners\forms.py:70
+#: .\partners\forms.py:62
 msgid "Сайт не может быть пустым."
 msgstr ""
 
-#: .\partners\forms.py:72
+#: .\partners\forms.py:64
 msgid "URL-адрес веб-сайта не может превышать 50 символов."
-msgstr ""
-
-#: .\partners\forms.py:75
-msgid ""
-"Введите действительный URL-адрес веб-сайта (например, https://example.com)."
 msgstr ""
 
 #: .\partners\models.py:7
@@ -581,6 +655,10 @@ msgstr ""
 msgid "Название на узбекском языке"
 msgstr ""
 
+#: .\partners\models.py:11
+msgid "Электронная почта"
+msgstr "Elektron manzil"
+
 #: .\partners\models.py:12
 msgid "Телефон"
 msgstr "Telefon raqami"
@@ -597,65 +675,86 @@ msgstr "Nima uchun hamkor bo'lmoqchisiz?"
 msgid "Логотипа"
 msgstr "Logotip"
 
-#: .\partners\models.py:17
+#: .\partners\models.py:18
 msgid "Показать на сайте"
 msgstr "Saytda ko'rsatish"
 
-#: .\partners\models.py:29
+#: .\partners\models.py:30
 msgid "Партнер"
 msgstr "Hamkor"
 
-#: .\partners\models.py:30 .\templates\includes\navbar.html:26
+#: .\partners\models.py:31 .\templates\includes\navbar.html:26
 #: .\templates\includes\navbar_mobile.html:34
 msgid "Партнеры"
 msgstr "Hamkorlar"
 
 #: .\partners\views.py:22
 msgid "Ваша заявка успешно отправлена."
-msgstr ""
+msgstr "Arizangiz muvaffaqiyatli yuborildi."
 
 #: .\partners\views.py:25
 msgid ""
 "Произошла ошибка при отправке заявки. Пожалуйста, исправьте ошибки ниже."
 msgstr ""
+"Arizangizni yuborishda xatolik yuz berdi. Iltimos, quyidagi xatolarni to'g'rilang."
 
-#: .\templates\event_detail.html:66 .\templates\event_detail.html:89
-#: .\templates\event_detail.html:114 .\templates\index.html:73
+#: .\templates\404.html:13
+msgid "Страница не найдена"
+msgstr "Sahifa topilmadi"
+
+#: .\templates\404.html:15
+msgid "404"
+msgstr "404"
+
+#: .\templates\event_detail.html:45 .\templates\index.html:18
+msgid "дней"
+msgstr "kun"
+
+#: .\templates\event_detail.html:50 .\templates\index.html:23
+msgid "часов"
+msgstr "soat"
+
+#: .\templates\event_detail.html:55 .\templates\index.html:28
+msgid "мин"
+msgstr "min"
+
+#: .\templates\event_detail.html:85 .\templates\event_detail.html:108
+#: .\templates\event_detail.html:133 .\templates\index.html:73
 #: .\templates\index.html:98 .\templates\index.html:138
 #: .\templates\mentor_list.html:15 .\templates\partner_list.html:15
 msgid "Наши"
 msgstr "Bizning"
 
-#: .\templates\event_detail.html:68
+#: .\templates\event_detail.html:87
 msgid "достижения"
 msgstr "yuqutqlar"
 
-#: .\templates\event_detail.html:91 .\templates\index.html:100
+#: .\templates\event_detail.html:110 .\templates\index.html:100
 #: .\templates\partner_list.html:17
 msgid "партнеры"
 msgstr "hamkorlar"
 
-#: .\templates\event_detail.html:116
+#: .\templates\event_detail.html:135
 msgid "победители"
 msgstr "g'oliblar"
 
-#: .\templates\event_detail.html:152
+#: .\templates\event_detail.html:171
 msgid "Наш"
 msgstr "Bizning"
 
-#: .\templates\event_detail.html:154
+#: .\templates\event_detail.html:173
 msgid "таймлайн"
 msgstr "jadval"
 
-#: .\templates\event_detail.html:176
+#: .\templates\event_detail.html:195
 msgid "Хотите стать участником?"
 msgstr "Ishtirok etish uchun ro'yxatdan o'ting."
 
-#: .\templates\event_detail.html:192
+#: .\templates\event_detail.html:211
 msgid "Success. Your application is received"
 msgstr "Arizangiz qabul qilindi."
 
-#: .\templates\event_detail.html:274 .\templates\mentor_list.html:156
+#: .\templates\event_detail.html:356 .\templates\mentor_list.html:148
 #: .\templates\partner_list.html:107
 msgid "Отправить заявку"
 msgstr "Yuborish"
@@ -684,8 +783,9 @@ msgstr "Obuna bo'lish"
 msgid ""
 "Платформа PizzaPitch реализуется при технической поддержке <a href=\"https://"
 "www.undp.org/ru/uzbekistan\" target=\"_blank\">ПРООН Узбекистан.</a>"
-msgstr "PizzaPitch platformasi <a href=\"https://www.undp.org/ru/uzbekistan\" target=\"_blank\">BMTTD O‘zbekistonning texnik ko‘magida "
-"amalga oshirilmoqda."
+msgstr ""
+"PizzaPitch platformasi <a href=\"https://www.undp.org/ru/uzbekistan\" "
+"target=\"_blank\">BMTTD O‘zbekistonning texnik ko‘magida amalga oshirilmoqda."
 
 #: .\templates\includes\head.html:8
 msgid "Платформа PizzaPitch"
@@ -705,18 +805,6 @@ msgstr "Mentorlar"
 #: .\templates\includes\navbar_mobile.html:42
 msgid "Связаться с нами"
 msgstr "Biz bilan bog'lanish"
-
-#: .\templates\index.html:18
-msgid "дней"
-msgstr "kun"
-
-#: .\templates\index.html:23
-msgid "часов"
-msgstr "soat"
-
-#: .\templates\index.html:28
-msgid "мин"
-msgstr "min"
 
 #: .\templates\index.html:34
 msgid "Зарегистрироваться"
@@ -777,13 +865,32 @@ msgstr ""
 msgid "Хотите стать ментором?"
 msgstr "Mentor bo'lishni xohlaysizmi?"
 
-#: .\templates\mentor_list.html:83
-msgid "Ваша заявка принята,мы скоро свяжемся с вами!"
-msgstr ""
+#: .\templates\mentor_list.html:74
+msgid "Ваша заявка принята, мы скоро свяжемся с вами!"
+msgstr "Sizning arizangiz qabul qilindi, tez orada siz bilan bog‘lanamiz!
 
 #: .\templates\partner_list.html:40
 msgid "Хотите стать партнером?"
 msgstr "Hamkor bo'lishni xohlaysizmi?"
+
+#~ msgid "Учебное заведение"
+#~ msgstr "Oliy ta'lim muassasasi"
+
+#~ msgid "Название проекта"
+#~ msgstr "loyiha nomi"
+
+#~ msgid "Ваша роль в проекте"
+#~ msgstr "Loyidagi rolingiz"
+
+#~ msgid "Описание проекта"
+#~ msgstr "Loyiha tasnifi"
+
+#~ msgid ""
+#~ "There was an error submitting your application. Please correct the errors "
+#~ "below."
+#~ msgstr ""
+#~ "Arizangizni qabul qilishda xatolik ro'y berdi. Iltimos ko'rsatilgan "
+#~ "xatolarni to'g'irlang."
 
 #~ msgid "Name cannot be empty."
 #~ msgstr "Ism kiritilishi lozim."

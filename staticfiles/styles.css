@@ -411,7 +411,7 @@ form {
     justify-content: space-between;
     align-items: center;
     font-family: 'TT Travels Bold', sans-serif;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .active-event-timer > p {
@@ -1884,7 +1884,11 @@ form {
     
     .submission-success-icon {
         scale: 70%;
-    }    
+    }   
+    
+    .custom-select {
+        background-size: 0.9rem;
+    }
 
 }
     
