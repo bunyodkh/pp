@@ -63,8 +63,8 @@
         </div>
     </section>
 
+    <section class="section-content">
     {% if form_success %}
-        <section class="section-content">    
             <div class="submission-success">
                 <div class="submission-success-icon">
                     <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">
@@ -74,7 +74,6 @@
                     <p>{% trans 'Ваша заявка принята, мы скоро свяжемся с вами!' %}</p>
                 </div>
             </div>
-        </section>
     {% else %}        
         <div class="form-container">
             <form id="be-mentor" class="form" method="post" action="{% url 'mentors:mentor-add'%}">
@@ -149,6 +148,7 @@
             </form>
         </div>
     {% endif %}
+    </section>
 </section>
 
 {% endblock %}

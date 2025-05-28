@@ -82,8 +82,8 @@ class MentorForm(forms.ModelForm):
         linkedin_profile = self.cleaned_data.get('linkedin_profile')
         if not linkedin_profile or not linkedin_profile.strip():
             raise forms.ValidationError(_('Профиль LinkedIn не может быть пустым.'))
-        if len(linkedin_profile.strip()) < 10:
-            raise forms.ValidationError(_('Профиль LinkedIn должен содержать не менее 10 символов.'))
+        if len(linkedin_profile.strip()) < 2:
+            raise forms.ValidationError(_('Профиль LinkedIn должен содержать не менее 2 символов.'))
         if len(linkedin_profile.strip()) > 200:
             raise forms.ValidationError(_('Профиль LinkedIn не может превышать 200 символов.'))
         return linkedin_profile

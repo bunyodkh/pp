@@ -61,8 +61,6 @@ class RegistrationForm(forms.ModelForm):
 
     def clean_tg_username(self):
         tg_username = self.cleaned_data.get('tg_username')
-        if tg_username and not re.match(r'^@?[a-zA-Z0-9_]{3,32}$', tg_username.strip()):
-            raise forms.ValidationError(_('Введите корректный Telegram username (например, @username).'))
         return tg_username
 
     def clean_startup_name(self):
@@ -86,7 +84,7 @@ class RegistrationForm(forms.ModelForm):
     def clean_startup_sphere_other(self):
         startup_sphere = self.cleaned_data.get('startup_sphere')
         startup_sphere_other = self.cleaned_data.get('startup_sphere_other')
-        if startup_sphere == 'other' and not startup_sphere_other.strip():
+        if startup_sphere == 'other' and not startup_sphere_other:
             raise forms.ValidationError(_('Если выбрано "Другое", необходимо указать сферу стартапа.'))
         return startup_sphere_other
 

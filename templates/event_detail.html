@@ -192,26 +192,26 @@
 <section class="section">
     <section class="section-content no-padding">
         <div class="section-heading">
-            <h1>{% trans 'Хотите стать участником?' %} </h1>
+            <h1>{% trans 'Хотите стать участником?' %}</h1>
         </div>
-
-        {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
     </section>
 
     <section class="section-content">
-        {% if success %}
-            <div class="">{% trans 'Success. Your application is received' %}</div>
+        {% if form_success %}
+            <section class="section-content">    
+                <div class="submission-success">
+                    <div class="submission-success-icon">
+                        <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">
+                    </div>
+                    
+                    <div class="submission-success-text">
+                        <p>{% trans 'Ваша заявка принята, мы скоро свяжемся с вами!' %}</p>
+                    </div>
+                </div>
+            </section>
         {% else %}
             <div class="form-container" id="submission-form">
-                <form class="form" method="POST" action="{{ event_type.get_absolute_url }}#submission-form">
+                <form class="form" method="POST" action="{{ event_type.get_absolute_url }}">
                     {% csrf_token %}
 
                     <div class="form-input-group">

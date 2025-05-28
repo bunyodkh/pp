@@ -186,13 +186,13 @@ class EventPhoto(models.Model):
 
 class Participant(models.Model):
     # Personal Information
-    full_name = models.CharField(_('Полное имя'), max_length=200, blank=False, null=False)
-    phone_number = models.CharField(_('Номер телефона'), max_length=20, blank=False, null=False)
+    full_name = models.CharField(_('Полное имя'), max_length=200, blank=True, null=True)
+    phone_number = models.CharField(_('Номер телефона'), max_length=20, blank=True, null=True)
     tg_username = models.CharField(_('Telegram username'), max_length=100, blank=True, null=True)
 
     # Startup Information
-    startup_name = models.CharField(_('Название стартапа'), max_length=200, blank=False, null=False)
-    startup_description = models.TextField(_('Краткая информация о стартапе'), max_length=500, blank=False, null=False)
+    startup_name = models.CharField(_('Название стартапа'), max_length=200, blank=True, null=True)
+    startup_description = models.TextField(_('Краткая информация о стартапе'), max_length=500, blank=True, null=True)
 
     # Startup Status (Multiple Choice)
     STARTUP_STATUS_CHOICES = [
@@ -200,7 +200,7 @@ class Participant(models.Model):
         ('mvp', _('MVP')),
         ('traction', _('Есть продажи')),
     ]
-    startup_status = models.CharField(_('Статус стартапа'), max_length=20, choices=STARTUP_STATUS_CHOICES, blank=False, null=False, default='idea')
+    startup_status = models.CharField(_('Статус стартапа'), max_length=20, choices=STARTUP_STATUS_CHOICES, blank=True, null=True, default='idea')
 
     # Startup Sphere (Multiple Choice)
     STARTUP_SPHERE_CHOICES = [
@@ -213,11 +213,11 @@ class Participant(models.Model):
         ('entertainment', _('Entertainment')),
         ('other', _('Другое')),
     ]
-    startup_sphere = models.CharField(_('Сфера стартапа'), max_length=20, choices=STARTUP_SPHERE_CHOICES, blank=False, null=False, default='other')
+    startup_sphere = models.CharField(_('Сфера стартапа'), max_length=20, choices=STARTUP_SPHERE_CHOICES, blank=True, null=True, default='other')
     startup_sphere_other = models.CharField(_('Если другое, напишите'), max_length=200, blank=True, null=True)
 
     # Role in Startup
-    position_in_startup = models.CharField(_('Ваша должность в стартапе'), max_length=200, blank=False, null=False)
+    position_in_startup = models.CharField(_('Ваша должность в стартапе'), max_length=200, blank=True, null=True)
 
     # Entrepreneurship Experience (Choice-Based)
     ENTREPRENEURSHIP_EXPERIENCE_CHOICES = [
@@ -228,8 +228,8 @@ class Participant(models.Model):
         _('У вас был предпринимательский опыт ранее?'),
         max_length=3,
         choices=ENTREPRENEURSHIP_EXPERIENCE_CHOICES,
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         default='no'
     )
 
@@ -242,8 +242,8 @@ class Participant(models.Model):
         _('Привлекали ли вы инвестиции в свой стартап?'),
         max_length=3,
         choices=INVESTMENT_CHOICES,
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         default='no'
     )
 
@@ -251,7 +251,7 @@ class Participant(models.Model):
     incubators_accelerators = models.TextField(_('В каких инкубаторах и/или акселераторах вы участвовали?'), max_length=500, blank=True, null=True)
 
     # Startup Presentation Link
-    presentation_link = models.CharField(_('Ссылка на презентацию стартапа'), max_length=500, blank=False, null=False)
+    presentation_link = models.CharField(_('Ссылка на презентацию стартапа'), max_length=500, blank=True, null=True)
 
     # Consent Checkbox (Choice-Based)
     CONSENT_CHOICES = [
@@ -262,8 +262,8 @@ class Participant(models.Model):
         _('Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем стартапе и делиться своими контактами с партнерами проекта и заинтересованными сторонами?'),
         max_length=3,
         choices=CONSENT_CHOICES,
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         default='yes'
     )
 
