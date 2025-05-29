@@ -28,11 +28,11 @@ class PartnerForm(forms.ModelForm):
     def clean_name(self):
         name = self.cleaned_data.get('name')
         if not name or not name.strip():
-            raise forms.ValidationError(_('Имя не может быть пустым.'))
+            raise forms.ValidationError(_('Название не может быть пустым.'))
         if len(name.strip()) < 2:
-            raise forms.ValidationError(_('Имя должно быть длиной не менее 2 символов.'))
+            raise forms.ValidationError(_('Название должно быть длиной не менее 2 символов.'))
         if len(name.strip()) > 100:
-            raise forms.ValidationError(_('Имя не может превышать 100 символов.'))
+            raise forms.ValidationError(_('Название не может превышать 100 символов.'))
         return name
     
 
@@ -50,7 +50,7 @@ class PartnerForm(forms.ModelForm):
         if not phone or not phone.strip():
             raise forms.ValidationError(_('Номер телефона не может быть пустым.'))
         if len(phone.strip()) < 9:
-            raise forms.ValidationError(_('Номер телефона должен содержать не менее 10 символов.'))
+            raise forms.ValidationError(_('Номер телефона должен содержать не менее 9 символов.'))
         if len(phone.strip()) > 13:
             raise forms.ValidationError(_('Номер телефона не может превышать 15 символов.'))
         return phone

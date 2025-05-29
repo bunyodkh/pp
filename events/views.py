@@ -9,6 +9,9 @@ from .forms import RegistrationForm
 def event_type_detail(request, slug):
     event_type = get_object_or_404(EventType, slug=slug)
     active_event = event_type.events.filter(active=True).first()
+
+    print(active_event)
+
     past_events = event_type.events.filter(active=False).order_by('-planned_date')
     partners = event_type.partners.all()
     achievements = event_type.achievements.all()
@@ -19,7 +22,7 @@ def event_type_detail(request, slug):
     # Check for success message (from previous POST redirect)
     storage = messages.get_messages(request)
     form_success = any(message.tags == 'success' for message in storage)
-    storage.used = False  # Allow template to read messages again
+    storage.used = True  
 
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -28,7 +31,7 @@ def event_type_detail(request, slug):
             participant.event = active_event
             participant.save()
             messages.success(request, _('Your application has been submitted successfully!'))
-            return redirect(event_type.get_absolute_url())
+            return redirect(f'{event_type.get_absolute_url()}#submission-success')  # Redirect to the same page with anchor
 
     # Render the template
     return render(request, 'event_detail.html', {

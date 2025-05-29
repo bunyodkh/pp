@@ -8,7 +8,7 @@
 {% block content %}
 
 
-{% if form %}
+{% if form and event %}
     <section class="section"> 
         <div class="section-content">
             <div class="active-event no-min-height">
@@ -187,7 +187,7 @@
 </section>
 {% endif %}
 
-{% if form %} 
+{% if form and event %} 
 <!-- REGISTRATION SECTION -->
 <section class="section">
     <section class="section-content no-padding">
@@ -196,9 +196,9 @@
         </div>
     </section>
 
-    <section class="section-content">
+    <section class="section-content" id="registration-form">
         {% if form_success %}
-            <section class="section-content">    
+            <section class="section-content" id="submission-success">    
                 <div class="submission-success">
                     <div class="submission-success-icon">
                         <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">

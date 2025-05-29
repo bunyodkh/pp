@@ -251,7 +251,7 @@ class Participant(models.Model):
     incubators_accelerators = models.TextField(_('В каких инкубаторах и/или акселераторах вы участвовали?'), max_length=500, blank=True, null=True)
 
     # Startup Presentation Link
-    presentation_link = models.CharField(_('Ссылка на презентацию стартапа'), max_length=500, blank=True, null=True)
+    presentation_link = models.CharField(_('Ссылка на презентацию стартапа (убедитесь что открыт доступ к чтению)'), max_length=500, blank=True, null=True)
 
     # Consent Checkbox (Choice-Based)
     CONSENT_CHOICES = [

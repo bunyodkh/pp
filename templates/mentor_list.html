@@ -65,15 +65,15 @@
 
     <section class="section-content">
     {% if form_success %}
-            <div class="submission-success">
-                <div class="submission-success-icon">
-                    <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">
-                </div>
-                
-                <div class="submission-success-text">
-                    <p>{% trans 'Ваша заявка принята, мы скоро свяжемся с вами!' %}</p>
-                </div>
+        <div class="submission-success">
+            <div class="submission-success-icon">
+                <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">
             </div>
+            
+            <div class="submission-success-text">
+                <p>{% trans 'Ваша заявка принята, мы скоро свяжемся с вами!' %}</p>
+            </div>
+        </div>
     {% else %}        
         <div class="form-container">
             <form id="be-mentor" class="form" method="post" action="{% url 'mentors:mentor-add'%}">

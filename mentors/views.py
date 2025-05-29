@@ -23,7 +23,7 @@ def mentor_add(request):
     # Check for success message (from previous POST redirect)
     storage = get_messages(request)
     form_success = any(message.tags == 'success' for message in storage)
-    storage.used = False  # allow template to read messages again
+    storage.used = True 
 
     if request.method == 'POST':
         form = MentorForm(request.POST)

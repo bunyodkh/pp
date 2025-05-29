@@ -37,23 +37,21 @@
 <section class="section">
     <section class="section-content">
         <div class="section-heading">
-            <h1>{% trans 'Хотите стать партнером?' %}</h1>
+            <h1>{% trans 'Хотите стать партнером?' %}{{ form_success }}</h1>
         </div>
-
-        {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
     </section>
 
     <section class="section-content">
-        {% if success %}
-            <div class="">Success. Your application is received</div>
+        {% if form_success %}
+            <div class="submission-success">
+                <div class="submission-success-icon">
+                    <img src="{% static 'images/application-success-icon.png' %}" alt="Submission Success Icon">
+                </div>
+                
+                <div class="submission-success-text">
+                    <p>{% trans 'Ваша заявка принята, мы скоро свяжемся с вами!' %}</p>
+                </div>
+            </div>
         {% else %}
             <div class="form-container">
                 <form id="be-partner" class="form" method="post" enctype="multipart/form-data" action="{% url 'partners:partner-add'%}">
