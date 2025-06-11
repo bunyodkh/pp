@@ -14,7 +14,11 @@ SECURE_SSL_REDIRECT = True
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
+
 INSTALLED_APPS = [
+    'import_export',
+    
     'unfold',  
     'unfold.contrib.filters',  
     'unfold.contrib.forms',  
@@ -150,8 +154,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
 
 UNFOLD = {
     "SITE_TITLE": "PizzaPitch Admin Panel",  # Title displayed in the admin panel
